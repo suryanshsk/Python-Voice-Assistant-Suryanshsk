@@ -28,13 +28,14 @@ A sophisticated Python-based virtual assistant utilizing Gemini AI. This project
 - **Wikipedia Information**: Retrieves data from Wikipedia.
 - **Music Management**: Handles and plays music.
 - **Web Interface**: Interactive frontend with animations.
+- **Your Question**: It Give Answer OF Your Questions.
 
 ## Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone [https://github.com/username/repository.git](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk.git)
+   git clone https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk.git
    ```
 
 2. Navigate to the project directory:
@@ -52,15 +53,35 @@ A sophisticated Python-based virtual assistant utilizing Gemini AI. This project
    The `requirements.txt` file includes the following modules:
 
    ```
-   speechrecognition==3.8.1
+   pip install speechrecognition==3.8.1
    gtts==2.2.3
    requests==2.28.1
    beautifulsoup4==4.12.0
    flask==2.3.2
    websocket-client==1.5.1
    google-generativeai==0.3.1
+   request
+   speechrecognition
+   pyttsx3
+   wikipedia
+   requests
+   pyjokes
    ```
-
+   ```
+   pip install -U google-generativeai
+   ```
+## Notice
+User Your Own Api Key 
+```
+genai.configure(api_key="Your_Own_API_KEY_FOR_GEMINI_AI")  # Replace with your actual API key
+```
+```
+# Example API call, replace with a real news API
+    api_key = 'YOUR_NEWS_API_KEY'
+```
+```
+API_KEY = 'YOUR_WEATHER_API_KEY'  # Replace with your API key
+```
 ## Usage
 
 Run the main script to start the assistant:
