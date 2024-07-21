@@ -1,6 +1,9 @@
 # Python-Voice-Assistant-Suryanshsk
 A Python-based virtual assistant using Gemini AI. Features include voice recognition, text-to-speech, weather updates, news retrieval, jokes, Wikipedia info, and music management. Comes with an interactive web interface. Easily extendable and customizable.
 
+<p align="center">
+<img src="https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/blob/main/%E2%80%9CHey%2CSuryanshsk%E2%80%9D.png" alt="Suryanshsk Python Voice Assistant" > </p>
+
 1. **Generate `requirements.txt`:**
 
    If you have a virtual environment set up with all the necessary packages, you can generate the `requirements.txt` file with the following command:
