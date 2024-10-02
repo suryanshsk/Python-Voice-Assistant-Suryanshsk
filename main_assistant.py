@@ -10,7 +10,17 @@ import webbrowser
 from song_data import SONGS
 from website_data import WEBSITES
 import time
+from datetime import datetime  # Import to get current time
 
+def get_greeting():
+    """Function to get the appropriate greeting based on the current time."""
+    current_hour = datetime.now().hour
+    if current_hour < 12:
+        return "Good morning"
+    elif 12 <= current_hour < 18:
+        return "Good afternoon"
+    else:
+        return "Good evening"
 def main():
     while True:
         print("Listening for command...")  # Debug print
@@ -27,6 +37,14 @@ def main():
             print(response)  # Debug print
             speak(response)
             continue  # Restart listening
+
+        if 'time' in query.lower():
+            greeting = get_greeting()  # Get the appropriate greeting
+            current_time = datetime.now().strftime("%H:%M:%S")  # Get current time in HH:MM:SS format
+            response = f"{greeting}! The current time is {current_time}."
+            print(response)  # Debug print
+            speak(response)
+            continue  # Restart listening for the next command
 
         if 'wikipedia' in query.lower():
             response = "Searching Wikipedia..."
