@@ -97,6 +97,10 @@ python main_assistant.py
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
+## Our Valuable Contributors ❤️✨
+
+[![Contributors](https://contrib.rocks/image?repo=suryanshsk/Python-Voice-Assistant-Suryanshsk)](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/graphs/contributors)
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
@@ -105,4 +109,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or feedback, reach out to [suryanshskcontact@gmail.com](mailto:your-email@example.com).
 
-```
