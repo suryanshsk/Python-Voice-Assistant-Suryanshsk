@@ -102,7 +102,12 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 ## Contributors
 
 [![Contributors](https://contrib.rocks/image?repo=suryanshsk/Python-Voice-Assistant-Suryanshsk)](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/graphs/contributors)
-
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/Kritika75"><img src="https://avatars.githubusercontent.com/u/142504516?v=4" width="100px;" alt="Kritika Singh"/><br /><sub><b>Kritika Singh</b></sub></a><br /><a href="https://github.com/Kritika75" title="Code">💻</a></td>
+    <!-- Add more contributors here -->
+  </tr>
+</table>
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
