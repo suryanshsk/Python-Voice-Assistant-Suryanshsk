@@ -99,7 +99,7 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 ## Our Valuable Contributors ❤️✨
 
-[![Contributors](https://contrib.rocks/image?repo=suryanshsk/Python-Voice-Assistant-Suryanshsk)](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=suryanshsk/Python-Voice-Assistant-Suryanshsk)]()
 
 ## License
 
