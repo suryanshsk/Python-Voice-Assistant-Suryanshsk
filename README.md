@@ -98,9 +98,17 @@ python main_assistant.py
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
 ## Our Valuable Contributors ❤️✨
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/suryanshsk"><img src="https://instagram.fdel27-3.fna.fbcdn.net/v/t51.29350-15/451553924_1548462102547828_8464495893970958389_n.webp?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEzNTAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fdel27-3.fna.fbcdn.net&_nc_cat=104&_nc_ohc=DAiGNQv9H7sQ7kNvgE-Jeq8&_nc_gid=4007d6463b164e5fbe31ec3fe633ece6&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzQxMzkzNDgzMjIwODg2NzA5OA%3D%3D.3-ccb7-5&oh=00_AYBqm3Q-dBlpohQFVkPJ0m3ocv23rZ-GxxxL1B0QPwvDVg&oe=67073A45&_nc_sid=10d13b" width="100px;" alt="Suryanshsk"/><br /><sub><b>Avanish Singh(Founder And CEO Of Suryanshsk)</b></sub></a><br /><a href="https://github.com/suryanshsk" title="Code">💻</a></td>
 
 [![Contributors](https://contrib.rocks/image?repo=suryanshsk/Python-Voice-Assistant-Suryanshsk)](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/graphs/contributors)
-
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/Kritika75"><img src="https://avatars.githubusercontent.com/u/142504516?v=4" width="100px;" alt="Kritika Singh"/><br /><sub><b>Kritika Singh</b></sub></a><br /><a href="https://github.com/Kritika75" title="Code">💻</a></td>
+    <!-- Add more contributors here -->
+  </tr>
+</table>
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
