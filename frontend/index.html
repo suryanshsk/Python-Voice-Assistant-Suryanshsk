@@ -6,6 +6,12 @@
     <title>Python Voice Assistant</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+    <!-- jQuery and Slick Slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
 </head>
 <body>
     <!-- Header Section -->
@@ -29,26 +35,48 @@
     <!-- Features Section -->
     <section id="features" class="features-section">
         <h2>Features</h2>
-        <div class="features-container">
+        <div class="features-slider">
             <div class="feature-item">
                 <i class="fas fa-microphone"></i>
                 <h3>Voice Recognition</h3>
-                <p>Processes and understands spoken commands.</p>
+                <p>Processes and understands 
+                    <span></span>spoken commands.
+                </p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-comment-dots"></i>
+                <h3>Text-to-Speech</h3>
+                <p>Converts written text into natural, clear speech,enabling auditory feedback.
+            </p>
             </div>
             <div class="feature-item">
                 <i class="fas fa-cloud-sun"></i>
                 <h3>Weather Updates</h3>
-                <p>Provides real-time weather information.</p>
+                <p>Provides real-time <br>weather information.</p>
             </div>
             <div class="feature-item">
                 <i class="fas fa-newspaper"></i>
                 <h3>News Retrieval</h3>
-                <p>Fetches the latest news headlines.</p>
+                <p>Fetches the latest<br> news headlines.
+                </p>
             </div>
             <div class="feature-item">
                 <i class="fas fa-joke"></i>
                 <h3>Jokes</h3>
-                <p>Delivers fun and entertaining jokes.</p>
+                <p>Delivers fun and entertaining <br>jokes.
+                </p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-book"></i>
+                <h3>Wikipedia Information</h3>
+                <p>Retrieves relevant information from Wiki,offering quick access to knowledge.
+                </p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-music"></i>
+                <h3>Music Management</h3>
+                <p>Plays,pauses,and manages your music library,letting you enjoy your favorite tracks.
+                </p>
             </div>
         </div>
     </section>
