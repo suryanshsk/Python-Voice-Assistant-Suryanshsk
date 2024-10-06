@@ -101,7 +101,7 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/suryanshsk"><img src="https://avatars.githubusercontent.com/u/12345678?v=4" width="100px;" alt="Suryanshsk"/><br /><sub><b>Avanish Singh</b></sub></a><br /><a href="https://github.com/suryanshsk" title="Founder And CEO Of Suryanshsk">💻</a></td>
+    <td align="center"><a href="https://github.com/suryanshsk"><img src="https://avatars.githubusercontent.com/u/88218773?v=4" width="100px;" alt="Suryanshsk"/><br /><sub><b>Avanish Singh</b></sub></a><br /><a href="https://github.com/suryanshsk" title="Founder And CEO Of Suryanshsk">💻</a></td>
     <td align="center"><a href="https://github.com/Kritika75"><img src="https://avatars.githubusercontent.com/u/142504516?v=4" width="100px;" alt="Kritika Singh"/><br /><sub><b>Kritika Singh</b></sub></a><br /><a href="https://github.com/Kritika75" title="Code">💻</a></td>
     <!-- Add more contributors below in the same format -->
   </tr>
