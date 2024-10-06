@@ -96,23 +96,6 @@ Follow these steps to set up the project on your local machine:
      pip install -r requirements.txt
      ```
 
-   - The `requirements.txt` file includes the following modules:
-     ```
-     speechrecognition==3.8.1
-     gtts==2.2.3
-     requests==2.28.1
-     beautifulsoup4==4.12.0
-     flask==2.3.2
-     websocket-client==1.5.1
-     google-generativeai==0.3.1
-     request
-     speechrecognition
-     pyttsx3
-     wikipedia
-     requests
-     pyjokes
-     ```
-
    - Additionally, ensure you have the latest version of `google-generativeai`:
      ```bash
      pip install -U google-generativeai
