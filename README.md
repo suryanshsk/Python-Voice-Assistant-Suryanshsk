@@ -168,6 +168,107 @@ Make sure to replace `"GEMINI_API_KEY"`, `'YOUR_NEWS_API_KEY'`, and `'YOUR_WEATH
 We are grateful to all the contributors who have helped improve this project. Your contributions are what make this project better!
 
 <!-- readme: contributors -start -->
+<table>
+	<tbody>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/suryanshsk">
+                    <img src="https://avatars.githubusercontent.com/u/88218773?v=4" width="100;" alt="suryanshsk"/>
+                    <br />
+                    <sub><b>Suryansh singh</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Chin-may02">
+                    <img src="https://avatars.githubusercontent.com/u/179141504?v=4" width="100;" alt="Chin-may02"/>
+                    <br />
+                    <sub><b>Vuppu Chinmay</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/yashksaini-coder">
+                    <img src="https://avatars.githubusercontent.com/u/115717039?v=4" width="100;" alt="yashksaini-coder"/>
+                    <br />
+                    <sub><b>Yash Kumar Saini</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/djv554">
+                    <img src="https://avatars.githubusercontent.com/u/174509658?v=4" width="100;" alt="djv554"/>
+                    <br />
+                    <sub><b>Deanne Vaz</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/jaidh01">
+                    <img src="https://avatars.githubusercontent.com/u/117927011?v=4" width="100;" alt="jaidh01"/>
+                    <br />
+                    <sub><b>Jai Dhingra</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/AnujSaha0111">
+                    <img src="https://avatars.githubusercontent.com/u/153378181?v=4" width="100;" alt="AnujSaha0111"/>
+                    <br />
+                    <sub><b>Anuj Saha</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/Deeptig9138">
+                    <img src="https://avatars.githubusercontent.com/u/156528626?v=4" width="100;" alt="Deeptig9138"/>
+                    <br />
+                    <sub><b>Deepti Gupta</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/say-het">
+                    <img src="https://avatars.githubusercontent.com/u/71073587?v=4" width="100;" alt="say-het"/>
+                    <br />
+                    <sub><b>Het Modi</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Kritika75">
+                    <img src="https://avatars.githubusercontent.com/u/142504516?v=4" width="100;" alt="Kritika75"/>
+                    <br />
+                    <sub><b>Kritika Singh </b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Herostomo">
+                    <img src="https://avatars.githubusercontent.com/u/155301429?v=4" width="100;" alt="Herostomo"/>
+                    <br />
+                    <sub><b>Kshitij Vijay Hedau</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/ShrishtiSingh26">
+                    <img src="https://avatars.githubusercontent.com/u/142707684?v=4" width="100;" alt="ShrishtiSingh26"/>
+                    <br />
+                    <sub><b>Shrishti</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Dsmita03">
+                    <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
+                    <br />
+                    <sub><b>Debasmita Sarkar</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/zsquare12">
+                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="zsquare12"/>
+                    <br />
+                    <sub><b>Jitendra Kumar</b></sub>
+                </a>
+            </td>
+		</tr>
+	<tbody>
+</table>
 <!-- readme: contributors -end -->
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
