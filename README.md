@@ -114,6 +114,24 @@ Follow these steps to set up the project on your local machine:
       - get news api key from : https://newsapi.org/
       - get weather api key from : https://openweathermap.org/api
 
+    - How to access environment variables in a Python file which are set in a `.env` file:
+        ```python
+        # load environment variables from .env
+        from dotenv import load_dotenv
+        import os
+
+        load_dotenv()
+
+        # access the environment variables
+        gemini_api_key = os.getenv('GEMINI_API_KEY')
+        news_api_key = os.getenv('NEWS_API_KEY')
+        weather_api_key = os.getenv('WEATHER_API_KEY')
+
+        print(f"Gemini API Key: {gemini_api_key}")
+        print(f"News API Key: {news_api_key}")
+        print(f"Weather API Key: {weather_api_key}")
+        ```
+
 7. **Run the Application**
 
    - Start the virtual assistant by running the main script:
