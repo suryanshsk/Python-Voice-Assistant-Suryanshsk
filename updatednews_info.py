@@ -1,4 +1,8 @@
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_news(api_key, category=None, country='us', num_articles=5):
     """
@@ -44,7 +48,7 @@ def get_news(api_key, category=None, country='us', num_articles=5):
 
 # Example usage:
 if __name__ == '__main__':
-    api_key = 'YOUR_API_KEY'  # Replace with your actual API key
+    api_key = os.environ.get('NEWS_API_KEY')
     headlines = get_news(api_key, category='technology')
     for title in headlines:
         print(title)

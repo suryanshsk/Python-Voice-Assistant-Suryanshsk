@@ -1,6 +1,9 @@
 import requests
 import json
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_news(api_key, category='general', page=1, page_size=5, query=None):
     try:

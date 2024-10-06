@@ -4,12 +4,16 @@ import requests
 import re
 from voice_recognition import recognize_speech
 from text_to_speech import speak
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Replace with your actual Google Maps API key
-GOOGLE_MAPS_API_KEY = "YOUR_GOOGLE_MAPS_API_KEY"
+GOOGLE_MAPS_API_KEY = os.getenv('GEMINI_API_KEY')
 
 def strip_html_tags(text: str) -> str:
     """Remove HTML tags from a string."""
