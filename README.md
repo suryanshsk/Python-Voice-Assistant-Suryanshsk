@@ -193,6 +193,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/Dsmita03">
+                    <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
+                    <br />
+                    <sub><b>Debasmita Sarkar</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/djv554">
                     <img src="https://avatars.githubusercontent.com/u/174509658?v=4" width="100;" alt="djv554"/>
                     <br />
@@ -206,6 +213,8 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>Jai Dhingra</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Codewithmeowmeow">
                     <img src="https://avatars.githubusercontent.com/u/182342654?v=4" width="100;" alt="Codewithmeowmeow"/>
@@ -213,8 +222,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>codewithvibha</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/AnujSaha0111">
                     <img src="https://avatars.githubusercontent.com/u/153378181?v=4" width="100;" alt="AnujSaha0111"/>
@@ -250,20 +257,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>Kshitij Vijay Hedau</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/ShrishtiSingh26">
                     <img src="https://avatars.githubusercontent.com/u/142707684?v=4" width="100;" alt="ShrishtiSingh26"/>
                     <br />
                     <sub><b>Shrishti</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/Dsmita03">
-                    <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
-                    <br />
-                    <sub><b>Debasmita Sarkar</b></sub>
                 </a>
             </td>
             <td align="center">
