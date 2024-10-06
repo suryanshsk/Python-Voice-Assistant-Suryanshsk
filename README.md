@@ -184,6 +184,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/zsquare12">
+                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="zsquare12"/>
+                    <br />
+                    <sub><b>Jitendra Kumar</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/yashksaini-coder">
                     <img src="https://avatars.githubusercontent.com/u/115717039?v=4" width="100;" alt="yashksaini-coder"/>
                     <br />
@@ -202,13 +209,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
                     <br />
                     <sub><b>Debasmita Sarkar</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/zsquare12">
-                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="zsquare12"/>
-                    <br />
-                    <sub><b>Jitendra Kumar</b></sub>
                 </a>
             </td>
             <td align="center">
