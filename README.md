@@ -120,12 +120,16 @@ Follow these steps to set up the project on your local machine:
 
 6. **Configure API Keys**
 
-   - Replace the placeholder API keys in the code with your actual API keys:
-     ```python
-     genai.configure(api_key="Your_Own_API_KEY_FOR_GEMINI_AI")  # Replace with your actual API key
-     api_key = 'YOUR_NEWS_API_KEY'  # Replace with a real news API key
-     API_KEY = 'YOUR_WEATHER_API_KEY'  # Replace with your weather API key
-     ```
+    - Create a `.env` file in the root directory of your project and add your API keys as shown below:
+      ```
+      GEMINI_API_KEY=Your_Own_API_KEY_FOR_GEMINI_AI
+      NEWS_API_KEY=YOUR_NEWS_API_KEY
+      WEATHER_API_KEY=YOUR_WEATHER_API_KEY
+      ```
+    - reference to set get API keys
+      - get Gemini api key from : https://aistudio.google.com/app/apikey
+      - get news api key from : https://newsapi.org/
+      - get weather api key from : https://openweathermap.org/api
 
 7. **Run the Application**
 
