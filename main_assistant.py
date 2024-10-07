@@ -24,7 +24,7 @@ import json
 
 """ 
 
-Guidelines for new ability contributions
+Guidelines for new ability/feature contributions
 
 1. Please create your code into a separate file or a separate function. 
 2. Define your functions's inputs properly.
