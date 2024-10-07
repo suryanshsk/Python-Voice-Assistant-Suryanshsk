@@ -186,6 +186,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/PavanTeja2005">
+                    <img src="https://avatars.githubusercontent.com/u/98730339?v=4" width="100;" alt="PavanTeja2005"/>
+                    <br />
+                    <sub><b>PavanTeja2005</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/Chin-may02">
                     <img src="https://avatars.githubusercontent.com/u/179141504?v=4" width="100;" alt="Chin-may02"/>
                     <br />
@@ -206,6 +213,8 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>Jitendra Kumar</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/djv554">
                     <img src="https://avatars.githubusercontent.com/u/174509658?v=4" width="100;" alt="djv554"/>
@@ -213,8 +222,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>Deanne Vaz</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/jaidh01">
                     <img src="https://avatars.githubusercontent.com/u/117927011?v=4" width="100;" alt="jaidh01"/>
@@ -250,6 +257,8 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>Harsh Bhardwaj</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Deeptig9138">
                     <img src="https://avatars.githubusercontent.com/u/156528626?v=4" width="100;" alt="Deeptig9138"/>
@@ -257,8 +266,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>Deepti Gupta</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/say-het">
                     <img src="https://avatars.githubusercontent.com/u/71073587?v=4" width="100;" alt="say-het"/>
@@ -271,13 +278,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <img src="https://avatars.githubusercontent.com/u/155301429?v=4" width="100;" alt="Herostomo"/>
                     <br />
                     <sub><b>Kshitij Vijay Hedau</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/PavanTeja2005">
-                    <img src="https://avatars.githubusercontent.com/u/98730339?v=4" width="100;" alt="PavanTeja2005"/>
-                    <br />
-                    <sub><b>PavanTeja2005</b></sub>
                 </a>
             </td>
             <td align="center">
