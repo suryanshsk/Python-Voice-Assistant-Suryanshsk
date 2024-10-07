@@ -6,7 +6,7 @@ import pyttsx3
 class AkinatorApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Akinator Game")
+        self.root.title("Akinator Game!")
         self.questions = [
             "Is your character real?",
             "Is your character an animal?",
