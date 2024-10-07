@@ -186,13 +186,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/PavanTeja2005">
-                    <img src="https://avatars.githubusercontent.com/u/98730339?v=4" width="100;" alt="PavanTeja2005"/>
-                    <br />
-                    <sub><b>PavanTeja2005</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/Chin-may02">
                     <img src="https://avatars.githubusercontent.com/u/179141504?v=4" width="100;" alt="Chin-may02"/>
                     <br />
@@ -200,10 +193,10 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/Dsmita03">
-                    <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
+                <a href="https://github.com/PavanTeja2005">
+                    <img src="https://avatars.githubusercontent.com/u/98730339?v=4" width="100;" alt="PavanTeja2005"/>
                     <br />
-                    <sub><b>Debasmita Sarkar</b></sub>
+                    <sub><b>PavanTeja2005</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -211,6 +204,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="zsquare12"/>
                     <br />
                     <sub><b>Jitendra Kumar</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Dsmita03">
+                    <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
+                    <br />
+                    <sub><b>Debasmita Sarkar</b></sub>
                 </a>
             </td>
 		</tr>
@@ -244,12 +244,21 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/23wh1a0513">
+                    <img src="https://avatars.githubusercontent.com/u/150132045?v=4" width="100;" alt="23wh1a0513"/>
+                    <br />
+                    <sub><b>23wh1a0513</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/AnujSaha0111">
                     <img src="https://avatars.githubusercontent.com/u/153378181?v=4" width="100;" alt="AnujSaha0111"/>
                     <br />
                     <sub><b>Anuj Saha</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/harshbharadwaj000">
                     <img src="https://avatars.githubusercontent.com/u/166915051?v=4" width="100;" alt="harshbharadwaj000"/>
@@ -257,8 +266,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>Harsh Bhardwaj</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/Deeptig9138">
                     <img src="https://avatars.githubusercontent.com/u/156528626?v=4" width="100;" alt="Deeptig9138"/>
