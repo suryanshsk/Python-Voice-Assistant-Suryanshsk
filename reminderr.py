@@ -1,11 +1,12 @@
 from gemini_info import get_gemini_response
 import re
+from datetime import datetime
 
 def extract_reminder(input_text):
-    template = f"""I will provide a natural language text that contains a reminder request. Your task is to extract two main components from it:
+    template = f"""I will provide a natural language text that contains a reminder request and today is {datetime.today()}. Your task is to extract two main components from it:
 
         Reminder Message: What the user wants to be reminded about.
-        Reminder Time: The specific date and time when the user wants to be reminded, formatted as an ISO 8601 date-time string (YYYY-MM-DDTHH:MM:SS).
+        Reminder Time: Carefuly return the specific date and time carefully when the user wants to be reminded, formatted as an ISO 8601 date-time string (YYYY-MM-DDTHH:MM:SS).
 
     For any unclear or ambiguous time references (like "next Monday" or "tomorrow"), convert them to a specific date and time. Use the following rules:
 
@@ -85,7 +86,18 @@ def extract_reminder(input_text):
     # print(f"Reminder Message: {reminder_message}")
     # print(f"Reminder Time: {reminder_time}")
 
-    return reminder_time, reminder_message
+    rem_time, message = reminder_time, reminder_message
+    print(rem_time, message)
+    reminder_dt = datetime.fromisoformat(rem_time)
+    from main_assistant import REMINDERS
+    # Check if the reminder time is in the past
+    if reminder_dt < datetime.now():
+        print("The reminder time is in the past. Please set a future reminder.")
+    else:
+        # If not in the past, append the message to the reminders
+        REMINDERS[rem_time].append(message)
+        print(f"Reminder set: '{message}' at {rem_time}")
+
 
 if __name__ == "__main__":
     print(extract_reminder("Remind me to leave for Movie tonight at 9pm"))
