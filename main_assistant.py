@@ -15,6 +15,15 @@ from open_app import open_application
 from gemini_info import get_gemini_response
 from song_data import SONGS
 from website_data import WEBSITES
+from collections import defaultdict
+from reminderr import *
+import threading
+
+global REMINDERS
+global RUNNING
+
+REMINDERS = defaultdict(list)
+
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -30,8 +39,23 @@ def get_greeting():
     else:
         return "Good evening"
 
+def check_reminders():
+    global REMINDERS
+    while RUNNING:
+        current_time = datetime.now()
+
+        # Convert current time to ISO 8601 format
+        current_time_iso = current_time.isoformat()
+        if REMINDERS[current_time_iso]:
+            print("Reminder:", REMINDERS[current_time_iso])
+            del REMINDERS[current_time_iso]
+        time.sleep(10)
+reminder_thread = threading.Thread(target=check_reminders)
 
 def main():
+    global RUNNING
+    global REMINDERS
+    
     while True:
         logging.info("Listening for command...")
         try:
@@ -53,8 +77,22 @@ def main():
             response = "Goodbye!"
             logging.info(response)
             speak(response)
+            reminder_thread.join()
+            RUNNING = False
             break
 
+        if query.startswith("remind") or query.startswith("please remind") or query.startswith("set a reminder"):
+            rem_time, message = extract_reminder(query)
+            reminder_dt = datetime.fromisoformat(rem_time)
+
+            # Check if the reminder time is in the past
+            if reminder_dt < datetime.now():
+                print("The reminder time is in the past. Please set a future reminder.")
+            else:
+                # If not in the past, append the message to the reminders
+                REMINDERS[rem_time].append(message)
+                print(f"Reminder set: '{message}' at {rem_time}")
+        
         if 'time' in query:
             greeting = get_greeting()
             current_time = datetime.now().strftime("%H:%M:%S")
@@ -63,6 +101,7 @@ def main():
             speak(response)
             continue
 
+        
         if 'wikipedia' in query:
             response = "Searching Wikipedia..."
             logging.info(response)
@@ -184,6 +223,9 @@ def main():
 
 
 if __name__ == "__main__":
+    RUNNING = True
+    
+    reminder_thread.start()
     response = "Hello, I'm Your PA. How can I assist you today?"
     logging.info(response)
     speak(response)

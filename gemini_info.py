@@ -1,7 +1,7 @@
 import google.generativeai as genai
 
 # Configure the API key
-genai.configure(api_key="YOUR_API_KEY")  # Replace with your actual API key
+genai.configure(api_key="API_KEY")  # Replace with your actual API key
 
 # Set up the model configuration
 generation_config = {
@@ -43,3 +43,6 @@ def get_gemini_response(prompt):
         return response.text.strip()
     except Exception as e:
         return f"Error: {e}"
+
+
+
