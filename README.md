@@ -184,17 +184,17 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/zsquare12">
-                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="zsquare12"/>
-                    <br />
-                    <sub><b>Jitendra Kumar</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/yashksaini-coder">
                     <img src="https://avatars.githubusercontent.com/u/115717039?v=4" width="100;" alt="yashksaini-coder"/>
                     <br />
                     <sub><b>Yash Kumar Saini</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/zsquare12">
+                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="zsquare12"/>
+                    <br />
+                    <sub><b>Jitendra Kumar</b></sub>
                 </a>
             </td>
             <td align="center">
