@@ -43,7 +43,7 @@ pip install -r requirements.txt
 
 ## 📂 **Project Structure**
 ```
-jarvis-assistant/
+JARVIS/
 │
 ├── Functions/               # Core functionalities
 │   ├── Run.py               # Core logic for running JARVIS
