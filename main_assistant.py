@@ -12,6 +12,7 @@ from weather_info import get_weather
 from news_info import get_news
 from jokes import tell_joke
 from open_app import open_application
+from open_files import *
 from gemini_info import get_gemini_response
 from song_data import SONGS
 from website_data import WEBSITES
@@ -155,7 +156,14 @@ TOOLS = [
         'description': 'Aborts',
         'inputs': ['message'],
         'action': abort
-    }
+    },
+    {
+        'name': 'open_file',
+        'description': 'Opens files',
+        'inputs': ['file'],
+        'action': open_file
+    },
+    
 ]
 
 
@@ -250,7 +258,8 @@ def main():
         7. "open_website": Requires "website_name" ( return an empty string if no website if specified )
         8. "open_application": Requires "app_name".
         9. "get_news": Requires no inputs.
-        9. "abort" : Requires a "message" . Call this if the user wants to leave.
+        10. "open_file": Requires "file" (If path is there give file name if there is location description please build file path from description)
+        10. "abort" : Requires a "message" . Call this if the user wants to leave.
         If the tool requires no inputs, leave the "inputs" field empty.
 
         Query: "{query}"
