@@ -38,12 +38,12 @@ Thank You.
 """
 
 
-def recognize_speech(timeout=10):
-    # Simulate speech recognition
-    return input("You: ")
+# def recognize_speech(timeout=10):
+#     # Simulate speech recognition
+#     return input("You: ")
 
-def speak(message):
-    print(f"Assistant: {message}")
+# def speak(message):
+#     print(f"Assistant: {message}")
 
 def just_Say(msg):
     logging.info(msg)
