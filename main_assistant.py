@@ -38,12 +38,12 @@ Thank You.
 """
 
 
-# def recognize_speech(timeout=10):
-#     # Simulate speech recognition
-#     return input("You: ")
+def recognize_speech(timeout=10):
+    # Simulate speech recognition
+    return input("You: ")
 
-# def speak(message):
-#     print(f"Assistant: {message}")
+def speak(message):
+    print(f"Assistant: {message}")
 
 def just_Say(msg):
     logging.info(msg)
@@ -87,9 +87,13 @@ def open_website(website_name = ""):
             speak(response)
             webbrowser.open(website_url)
         else:
-            response = "Website not found in the database."
+            response = "Website not found in the database.Searching in google."
             logging.warning(response)
             speak(response)
+            from googlesearch import search
+            webs = search(website_name, advanced=True)
+            webbrowser.open(list(webs)[0].url)
+            
 
 TOOLS = [
     {
