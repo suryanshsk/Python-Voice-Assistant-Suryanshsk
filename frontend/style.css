@@ -1,5 +1,5 @@
  /* General Styles */
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -269,6 +269,7 @@ nav ul li a:hover{
     padding: 20px 0;
     width: 100%;
 }
+
 
 .footer-bottom p {
     margin: 0;
