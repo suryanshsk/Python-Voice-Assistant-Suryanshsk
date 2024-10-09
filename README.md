@@ -193,6 +193,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/djv554">
+                    <img src="https://avatars.githubusercontent.com/u/174509658?v=4" width="100;" alt="djv554"/>
+                    <br />
+                    <sub><b>Deanne Vaz</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/PavanTeja2005">
                     <img src="https://avatars.githubusercontent.com/u/98730339?v=4" width="100;" alt="PavanTeja2005"/>
                     <br />
@@ -206,20 +213,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>Jitendra Kumar</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Dsmita03">
                     <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
                     <br />
                     <sub><b>Debasmita Sarkar</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/djv554">
-                    <img src="https://avatars.githubusercontent.com/u/174509658?v=4" width="100;" alt="djv554"/>
-                    <br />
-                    <sub><b>Deanne Vaz</b></sub>
                 </a>
             </td>
             <td align="center">
