@@ -1,4 +1,5 @@
- /* General Styles */
+
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +9,59 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
+    padding-top: 80px; /* Prevent content from being hidden under the fixed navbar */
 }
 
+/* Navbar Styles */
+nav {
+    background-color: #a8c7dc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+nav .logo {
+    color: #3498db;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Adjusted nav ul styles for inline buttons */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+nav ul li {
+    margin: 0 10px; /* Add margin for spacing */
+}
+
+nav ul li a {
+    border: 2px solid white;
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; /* Keep links in one line */
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #3498db;
+    color: #333;
+}
+
+/* Responsive Styles */
 /* Header Section */
 .main-header {
     width: 100%;
@@ -19,56 +71,19 @@ body {
     text-align: center;
     padding: 50px 20px;
 }
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-nav .logo {
-    color: #3498db;
-    margin-left: 5px;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin:0 -20px;
-}
-
-nav ul li a {
-    border-width: 2px;
-    border-style: solid;
-    border-color: white;
-    padding: 8px;
-    margin: 50px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-nav ul li a:hover{
-    background-color: #3498db;
-    color:#333;
-}
-
-.header-content img{
+.header-content img {
     margin-top: 30px;
     width: 20%;
     align-content: center;
     justify-content: center;
-    
 }
+
 .header-image {
     max-width: 100%; /* Ensure the image is responsive */
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 20px; /* Add some space below the image */
 }
-
 
 .header-content h1 {
     font-size: 2.5rem;
@@ -77,6 +92,64 @@ nav ul li a:hover{
 
 .header-content p {
     font-size: 1.2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    nav .logo {
+        margin-bottom: 10px;
+        font-size: 1.2rem; /* Adjust logo size on smaller screens */
+    }
+
+    nav ul {
+        flex-direction: row; /* Keep buttons in one line */
+        justify-content: flex-start; /* Align buttons to the left */
+        width: auto; /* Adjust width to fit buttons */
+    }
+
+    nav ul li {
+        margin: 0 5px; /* Adjust margin for closer spacing */
+    }
+
+    nav ul li a {
+        padding: 10px 15px; /* More padding for better touch targets */
+    }
+
+    body {
+        padding-top: 90px; /* Adjust padding to avoid overlap with the navbar */
+    }
+
+    .header-content img {
+        width: 50%; /* Adjust image size for smaller screens */
+    }
+    
+    .header-content h1 {
+        font-size: 2rem; /* Adjust heading size for smaller screens */
+    }
+
+    .header-content p {
+        font-size: 1rem; /* Adjust paragraph size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content img {
+        width: 70%; /* Further reduce image size on very small screens */
+    }
+    
+    .header-content h1 {
+        font-size: 1.8rem; /* Further adjust heading size */
+    }
+
+    .header-content p {
+        font-size: 0.9rem; /* Further adjust paragraph size */
+    }
 }
 
 .cta-button {
@@ -209,8 +282,6 @@ nav ul li a:hover{
 .api-item ul li a:hover {
     text-decoration: underline;
 }
-
- 
 /* Footer Section */
 .footer {
     background-color: #333;
@@ -227,11 +298,13 @@ nav ul li a:hover{
     width: 100%;
     max-width: 1200px;
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Allows the content to wrap on smaller screens */
 }
 
 .footer-section {
     flex: 1;
     padding: 10px;
+    min-width: 250px; /* Ensures each section has a minimum width */
 }
 
 .footer-section h2 {
@@ -264,6 +337,8 @@ nav ul li a:hover{
 }
 
 .footer-bottom {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     border-top: 1px solid #444;
     padding: 20px 0;
@@ -274,4 +349,16 @@ nav ul li a:hover{
     margin: 0;
     font-size: 0.9rem;
     color: #bbb;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack the sections vertically on smaller screens */
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px; /* Add spacing between sections */
+    }
 }
