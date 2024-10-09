@@ -216,13 +216,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
 		</tr>
 		<tr>
             <td align="center">
-                <a href="https://github.com/jitendra-ky">
-                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="jitendra-ky"/>
-                    <br />
-                    <sub><b>Jitendra Kumar</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/Dsmita03">
                     <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
                     <br />
@@ -230,17 +223,17 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/jaidh01">
-                    <img src="https://avatars.githubusercontent.com/u/117927011?v=4" width="100;" alt="jaidh01"/>
+                <a href="https://github.com/jitendra-ky">
+                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="jitendra-ky"/>
                     <br />
-                    <sub><b>Jai Dhingra</b></sub>
+                    <sub><b>Jitendra Kumar</b></sub>
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/pratikwayal01">
-                    <img src="https://avatars.githubusercontent.com/u/97722446?v=4" width="100;" alt="pratikwayal01"/>
+                <a href="https://github.com/Codewithmeowmeow">
+                    <img src="https://avatars.githubusercontent.com/u/182342654?v=4" width="100;" alt="Codewithmeowmeow"/>
                     <br />
-                    <sub><b>Pratik wayal</b></sub>
+                    <sub><b>codewithvibha</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -251,10 +244,17 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/Codewithmeowmeow">
-                    <img src="https://avatars.githubusercontent.com/u/182342654?v=4" width="100;" alt="Codewithmeowmeow"/>
+                <a href="https://github.com/pratikwayal01">
+                    <img src="https://avatars.githubusercontent.com/u/97722446?v=4" width="100;" alt="pratikwayal01"/>
                     <br />
-                    <sub><b>codewithvibha</b></sub>
+                    <sub><b>Pratik wayal</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/jaidh01">
+                    <img src="https://avatars.githubusercontent.com/u/117927011?v=4" width="100;" alt="jaidh01"/>
+                    <br />
+                    <sub><b>Jai Dhingra</b></sub>
                 </a>
             </td>
 		</tr>
