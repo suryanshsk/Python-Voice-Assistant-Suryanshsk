@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure User Login | MyWebsite</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header"><span>Welcome Back</span></div>
+    <form action="#">
+      <div class="input-group">
+        <i class="fas fa-envelope"></i>
+        <input type="text" placeholder="Email or Phone Number" required />
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Enter your Password" required />
+      </div>
+      <div class="forgot-password"><a href="#">Forgot your password?</a></div>
+      <div class="input-group submit">
+        <input type="submit" value="Sign In" />
+      </div>
+      <div class="register-link">Don’t have an account? <a href="#">Create one</a></div>
+    </form>
+  </div>
+</body>
+</html>
+
+
+
+#############################CSS##############
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  background: #3498db; /* Change background color */
+  overflow: hidden;
+}
+
+.container {
+  max-width: 450px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  height: 100px;
+  background: #2980b9; /* Change header color */
+  border-radius: 8px 8px 0 0;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container form {
+  padding: 20px 30px;
+}
+
+.container form .input-group {
+  height: 55px;
+  margin-top: 15px;
+  position: relative;
+}
+
+.container form .input-group input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 65px; /* Adjust padding */
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  font-size: 18px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.input-group input:focus {
+  border-color: #2980b9; /* Change focus color */
+}
+
+.input-group input::placeholder {
+  color: #b0b0b0; /* Lighter placeholder color */
+}
+
+.container form .input-group i {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  color: #ffffff;
+  font-size: 20px;
+  background: #2980b9; /* Change icon background color */
+  border: 1px solid #2980b9;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container form .forgot-password {
+  margin-top: 10px;
+}
+
+.container form .forgot-password a {
+  color: #2980b9; /* Update link color */
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.container form .forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.container form .submit input {
+  margin-top: 15px;
+  color: #ffffff;
+  font-size: 18px;
+  background: #2980b9;
+  border: 1px solid #2980b9;
+  cursor: pointer;
+  padding: 10px 0; /* Add vertical padding */
+}
+
+.submit input:hover {
+  background: #216b9f; /* Darker hover color */
+}
+
+.container form .register-link {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+.container form .register-link a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
