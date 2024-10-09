@@ -9,3 +9,10 @@ speechrecognition
 pyttsx3
 wikipedia
 pyjokes
+requests
+yfinance
+pillow
+beautifulsoup4
+setuptools
+google-ai-generativelanguage
+SpeechRecognition
