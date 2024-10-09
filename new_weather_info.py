@@ -2,7 +2,7 @@ import requests
 import json
 import logging
 
-API_KEY = '543b5648bc699b99edc78d2cf55c436f'  # Replace with your OpenWeatherMap API key
+API_KEY = 'YOUR_API_KEY' Replace with your OpenWeatherMap API key
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
 FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast?"
 ONE_CALL_URL = "http://api.openweathermap.org/data/2.5/onecall?"
