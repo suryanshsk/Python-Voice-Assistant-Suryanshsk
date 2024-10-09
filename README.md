@@ -186,17 +186,17 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/Chin-may02">
-                    <img src="https://avatars.githubusercontent.com/u/179141504?v=4" width="100;" alt="Chin-may02"/>
-                    <br />
-                    <sub><b>Vuppu Chinmay</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/PavanTeja2005">
                     <img src="https://avatars.githubusercontent.com/u/98730339?v=4" width="100;" alt="PavanTeja2005"/>
                     <br />
                     <sub><b>PavanTeja2005</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Chin-may02">
+                    <img src="https://avatars.githubusercontent.com/u/179141504?v=4" width="100;" alt="Chin-may02"/>
+                    <br />
+                    <sub><b>Vuppu Chinmay</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -207,14 +207,21 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/Kritika75">
+                    <img src="https://avatars.githubusercontent.com/u/142504516?v=4" width="100;" alt="Kritika75"/>
+                    <br />
+                    <sub><b>Kritika Singh </b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
                 <a href="https://github.com/zsquare12">
                     <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="zsquare12"/>
                     <br />
                     <sub><b>Jitendra Kumar</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/Dsmita03">
                     <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
@@ -230,10 +237,10 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/Kritika75">
-                    <img src="https://avatars.githubusercontent.com/u/142504516?v=4" width="100;" alt="Kritika75"/>
+                <a href="https://github.com/pratikwayal01">
+                    <img src="https://avatars.githubusercontent.com/u/97722446?v=4" width="100;" alt="pratikwayal01"/>
                     <br />
-                    <sub><b>Kritika Singh </b></sub>
+                    <sub><b>Pratik wayal</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -250,6 +257,8 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>23wh1a0513</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/AnujSaha0111">
                     <img src="https://avatars.githubusercontent.com/u/153378181?v=4" width="100;" alt="AnujSaha0111"/>
@@ -257,8 +266,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>Anuj Saha</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/harshbharadwaj000">
                     <img src="https://avatars.githubusercontent.com/u/166915051?v=4" width="100;" alt="harshbharadwaj000"/>
