@@ -39,12 +39,12 @@ Thank You.
 """
 
 
-# def recognize_speech(timeout=10):
-#     # Simulate speech recognition
-#     return input("You: ")
+def recognize_speech(timeout=10):
+    # Simulate speech recognition
+    return input("You: ")
 
-# def speak(message):
-#     print(f"Assistant: {message}")
+def speak(message):
+    print(f"Assistant: {message}")
 
 def just_Say(msg):
     logging.info(msg)
@@ -206,6 +206,8 @@ def check_reminders():
         time.sleep(10)
 reminder_thread = threading.Thread(target=check_reminders)
 
+import json
+import logging
 
 # Process the response from Gemini to extract the tool and its inputs
 def process_gemini_response(response):
@@ -218,13 +220,33 @@ def process_gemini_response(response):
         logging.error(f"Error processing Gemini AI response: {e}")
         return None, None
 
+# Predefined headstart options
+HEADSTART_OPTIONS = {
+    "1": "Get today's weather in New York.",
+    "2": "Set a reminder for tomorrow's meeting.",
+    "3": "Tell me a joke.",
+    "4": "Play some music.",
+    "5": "Search Wikipedia for Python programming."
+}
+
+# Function to display headstart options
+def display_headstart_options():
+    print("Choose a headstart option:")
+    for key, option in HEADSTART_OPTIONS.items():
+        print(f"{key}: {option}")
+
 # The main loop to handle user commands
 def main():
     global RUNNING
     global REMINDERS
 
+    head_start_not_done = 0
     while RUNNING:
         logging.info("Listening for command...")
+        if head_start_not_done < 1:
+            display_headstart_options()  # Display options before listening for commands
+            head_start_not_done = 1
+
         try:
             query = recognize_speech(timeout=10)  # Replace with actual speech recognition function
         except Exception as e:
@@ -239,38 +261,45 @@ def main():
         query = query.lower()
         logging.info(f"Recognized command: {query}")
 
-        # Prompt Gemini AI to select tool and provide inputs
-        gemini_prompt = f"""
-        I have a list of tools that can perform specific actions. Based on the user query, select the appropriate tool from the list and extract the necessary inputs. Please respond in the following JSON format:
+        # Check if the query matches any headstart option
+        if query in HEADSTART_OPTIONS.values() and head_start_not_done == 1:
+            head_start_not_done += 1
+            # Map the option to the appropriate command
+            option_key = next(key for key, option in HEADSTART_OPTIONS.items() if option == query)
+            query = HEADSTART_OPTIONS[option_key]  # Use the selected headstart option
+        else:
+            head_start_not_done += 1
+            # Prompt Gemini AI to select tool and provide inputs
+            gemini_prompt = f"""
+            I have a list of tools that can perform specific actions. Based on the user query, select the appropriate tool from the list and extract the necessary inputs. Please respond in the following JSON format:
 
-        {{
-            "tool": "<tool_name>",
-            "inputs": {{
-                "input1": "<value1>",
-                "input2": "<value2>",
-                ...
+            {{
+                "tool": "<tool_name>",
+                "inputs": {{
+                    "input1": "<value1>",
+                    "input2": "<value2>",
+                    ...
+                }}
             }}
-        }}
 
-        Here is the list of tools:
-        1. "just_Say": Requires "msg" , a generic conversational response if none of the following tools fits best.
-        2. "set_reminder": Requires "input_text" ( simply return enhanced the input Query which I give ).
-        3. "search_wikipedia": Requires "query".
-        4. "get_weather": Requires "city_name".
-        5. "tell_joke": Requires no inputs.
-        6. "play_music": Requires "song_name".
-        7. "open_website": Requires "website_name" ( return an empty string if no website if specified )
-        8. "open_application": Requires "app_name".
-        9. "get_news": Requires no inputs.
-        10. "openfile": Requires "file" (If path is there give file name if there is location description please build file path from description)
-        10. "abort" : Requires a "message" . Call this if the user wants to leave.
-        If the tool requires no inputs, leave the "inputs" field empty.
+            Here is the list of tools:
+            1. "just_Say": Requires "msg", a generic conversational response if none of the following tools fits best.
+            2. "set_reminder": Requires "input_text" (simply return enhanced the input Query which I give).
+            3. "search_wikipedia": Requires "query".
+            4. "get_weather": Requires "city_name".
+            5. "tell_joke": Requires no inputs.
+            6. "play_music": Requires "song_name".
+            7. "open_website": Requires "website_name" (return an empty string if no website is specified).
+            8. "open_application": Requires "app_name".
+            9. "get_news": Requires no inputs.
+            10. "openfile": Requires "file" (If path is there, give file name; if there is a location description, please build file path from description).
+            11. "abort": Requires a "message". Call this if the user wants to leave.
+            If the tool requires no inputs, leave the "inputs" field empty.
 
-        Query: "{query}"
-        """
+            Query: "{query}"
+            """
         
         gemini_response = get_gemini_response(gemini_prompt)
-        # print(gemini_response)
         tool_name, inputs = process_gemini_response(gemini_response)
         
         print(tool_name, inputs)
