@@ -1,21 +1,22 @@
-mport speech_recognition as sr
+import speech_recognition as sr
 import pyttsx3
+
 recognizer = sr.Recognizer()
 tts_engine = pyttsx3.init()
 shopping_list = []
 
 # Function to recognize speech and return text
 def recognize_speech():
-with sr.Microphone() as source:
-print("Listening...")
-audio = recognizer.listen(source)
-try:
-            text = recognizer.recognize_google(audio)
-            return text.lower()  # Standardize by returning lowercased input
-        except sr.UnknownValueError:
-            return "Sorry, I didn't catch that."
-        except sr.RequestError:
-            return "Service is unavailable."
+    with sr.Microphone() as source:
+        print("Listening...")
+        audio = recognizer.listen(source)
+    try:
+        text = recognizer.recognize_google(audio)
+        return text.lower()  # Standardize by returning lowercased input
+    except sr.UnknownValueError:
+        return "Sorry, I didn't catch that."
+    except sr.RequestError:
+        return "Service is unavailable."
 
 # Function to speak text
 def speak_text(text):
@@ -62,7 +63,6 @@ def view_shopping_list():
     else:
         speak_text("Your shopping list is empty.")
 
-
 def main():
     speak_text("Hello, would you like to create a shopping list?")
     response = recognize_speech()
@@ -72,4 +72,4 @@ def main():
         speak_text("Okay, let me know if you need help.")
 
 if __name__ == "__main__":
-main()
+    main()
