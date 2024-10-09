@@ -12,6 +12,7 @@ from weather_info import get_weather
 from news_info import get_news
 from jokes import tell_joke
 from open_app import open_application
+from open_files import *
 from gemini_info import get_gemini_response
 from song_data import SONGS
 from website_data import WEBSITES
@@ -54,6 +55,10 @@ def abort(message):
     RUNNING = False
     print(message)
 
+def openfile(file):
+    logging.info("openinig....", file)
+    return open_file(file)
+
 def play_music(song_name=""):
     if song_name == "":
         response = "Which song would you like to play?"
@@ -87,9 +92,13 @@ def open_website(website_name = ""):
             speak(response)
             webbrowser.open(website_url)
         else:
-            response = "Website not found in the database."
+            response = "Website not found in the database.Searching in google."
             logging.warning(response)
             speak(response)
+            from googlesearch import search
+            webs = search(website_name, advanced=True)
+            webbrowser.open(list(webs)[0].url)
+            
 
 TOOLS = [
     {
@@ -151,7 +160,14 @@ TOOLS = [
         'description': 'Aborts',
         'inputs': ['message'],
         'action': abort
-    }
+    },
+    {
+        'name': 'openfile',
+        'description': 'Opens files',
+        'inputs': ['file'],
+        'action': openfile
+    },
+    
 ]
 
 
@@ -246,7 +262,8 @@ def main():
         7. "open_website": Requires "website_name" ( return an empty string if no website if specified )
         8. "open_application": Requires "app_name".
         9. "get_news": Requires no inputs.
-        9. "abort" : Requires a "message" . Call this if the user wants to leave.
+        10. "openfile": Requires "file" (If path is there give file name if there is location description please build file path from description)
+        10. "abort" : Requires a "message" . Call this if the user wants to leave.
         If the tool requires no inputs, leave the "inputs" field empty.
 
         Query: "{query}"
