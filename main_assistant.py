@@ -20,6 +20,12 @@ from collections import defaultdict
 from reminderr import *
 import threading
 import json
+from email_sender import send_bulk_email
+
+
+USER_MAIL, USER_PASS, RECEPTIONISTS = "YOUR_EMAIL", "YOUR_PASSWORD", ["List of receptionists"]
+
+
 
 ### MAIN
 
@@ -202,6 +208,12 @@ def check_reminders():
         current_time_iso = current_time.isoformat()
         if REMINDERS[current_time_iso]:
             print("Reminder:", REMINDERS[current_time_iso])
+            logging.info("Reminder: " + REMINDERS[current_time_iso])
+            try:
+                send_bulk_email(USER_MAIL, USER_PASS, RECEPTIONISTS, "Your Assisstant", REMINDERS[current_time_iso])
+                logging.info("Sent reminder "+str(REMINDERS[current_time_iso])+" to "+str(RECEPTIONISTS))
+            except:
+                logging.error("Error sending reminder!")
             del REMINDERS[current_time_iso]
         time.sleep(10)
 reminder_thread = threading.Thread(target=check_reminders)
