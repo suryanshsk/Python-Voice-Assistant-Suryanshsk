@@ -311,6 +311,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/from13">
+                    <img src="https://avatars.githubusercontent.com/u/183572254?v=4" width="100;" alt="from13"/>
+                    <br />
+                    <sub><b>from13</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/imDarshanGK">
                     <img src="https://avatars.githubusercontent.com/u/122042809?v=4" width="100;" alt="imDarshanGK"/>
                     <br />
