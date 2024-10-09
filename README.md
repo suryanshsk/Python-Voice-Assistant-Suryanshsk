@@ -216,8 +216,8 @@ We are grateful to all the contributors who have helped improve this project. Yo
 		</tr>
 		<tr>
             <td align="center">
-                <a href="https://github.com/zsquare12">
-                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="zsquare12"/>
+                <a href="https://github.com/jitendra-ky">
+                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="jitendra-ky"/>
                     <br />
                     <sub><b>Jitendra Kumar</b></sub>
                 </a>
@@ -244,12 +244,21 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/ganjivamshiii">
+                    <img src="https://avatars.githubusercontent.com/u/142515794?v=4" width="100;" alt="ganjivamshiii"/>
+                    <br />
+                    <sub><b>ganjivamshiii</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/Codewithmeowmeow">
                     <img src="https://avatars.githubusercontent.com/u/182342654?v=4" width="100;" alt="Codewithmeowmeow"/>
                     <br />
                     <sub><b>codewithvibha</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/23wh1a0513">
                     <img src="https://avatars.githubusercontent.com/u/150132045?v=4" width="100;" alt="23wh1a0513"/>
@@ -257,8 +266,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>23wh1a0513</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/AnujSaha0111">
                     <img src="https://avatars.githubusercontent.com/u/153378181?v=4" width="100;" alt="AnujSaha0111"/>
@@ -294,11 +301,20 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>Kshitij Vijay Hedau</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/ShrishtiSingh26">
                     <img src="https://avatars.githubusercontent.com/u/142707684?v=4" width="100;" alt="ShrishtiSingh26"/>
                     <br />
                     <sub><b>Shrishti</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/imDarshanGK">
+                    <img src="https://avatars.githubusercontent.com/u/122042809?v=4" width="100;" alt="imDarshanGK"/>
+                    <br />
+                    <sub><b>Darshan G K</b></sub>
                 </a>
             </td>
 		</tr>
