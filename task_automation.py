@@ -59,14 +59,14 @@ class TodoList:
             self.connection.execute('''        
                 UPDATE tasks SET completed = ? WHERE id = ?
             ''', (True, task_id))
-        print(f"Task completed: {task_id}")
+        print(f"Task completed no. : {task_id}")
 
     def delete_task(self, task_id):
         with self.connection:
             self.connection.execute('''        
                 DELETE FROM tasks WHERE id = ?
             ''', (task_id,))
-        print(f"Task deleted: {task_id}")
+        print(f"Task deleted no. : {task_id}")
 
     def edit_task(self, task_id, new_task=None, new_priority=None, new_due_date=None):
         with self.connection:
