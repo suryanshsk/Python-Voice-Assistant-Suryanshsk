@@ -200,17 +200,17 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/djv554">
-                    <img src="https://avatars.githubusercontent.com/u/174509658?v=4" width="100;" alt="djv554"/>
-                    <br />
-                    <sub><b>Deanne Vaz</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/Kritika75">
                     <img src="https://avatars.githubusercontent.com/u/142504516?v=4" width="100;" alt="Kritika75"/>
                     <br />
                     <sub><b>Kritika Singh </b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/djv554">
+                    <img src="https://avatars.githubusercontent.com/u/174509658?v=4" width="100;" alt="djv554"/>
+                    <br />
+                    <sub><b>Deanne Vaz</b></sub>
                 </a>
             </td>
 		</tr>
