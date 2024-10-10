@@ -207,14 +207,21 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/23wh1a0513">
+                    <img src="https://avatars.githubusercontent.com/u/150132045?v=4" width="100;" alt="23wh1a0513"/>
+                    <br />
+                    <sub><b>23wh1a0513</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
                 <a href="https://github.com/djv554">
                     <img src="https://avatars.githubusercontent.com/u/174509658?v=4" width="100;" alt="djv554"/>
                     <br />
                     <sub><b>Deanne Vaz</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/Dsmita03">
                     <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
@@ -227,13 +234,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="jitendra-ky"/>
                     <br />
                     <sub><b>Jitendra Kumar</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/jaidh01">
-                    <img src="https://avatars.githubusercontent.com/u/117927011?v=4" width="100;" alt="jaidh01"/>
-                    <br />
-                    <sub><b>Jai Dhingra</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -260,10 +260,10 @@ We are grateful to all the contributors who have helped improve this project. Yo
 		</tr>
 		<tr>
             <td align="center">
-                <a href="https://github.com/23wh1a0513">
-                    <img src="https://avatars.githubusercontent.com/u/150132045?v=4" width="100;" alt="23wh1a0513"/>
+                <a href="https://github.com/jaidh01">
+                    <img src="https://avatars.githubusercontent.com/u/117927011?v=4" width="100;" alt="jaidh01"/>
                     <br />
-                    <sub><b>23wh1a0513</b></sub>
+                    <sub><b>Jai Dhingra</b></sub>
                 </a>
             </td>
             <td align="center">
