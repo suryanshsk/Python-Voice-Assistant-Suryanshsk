@@ -267,6 +267,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/Amulya-B28">
+                    <img src="https://avatars.githubusercontent.com/u/154061817?v=4" width="100;" alt="Amulya-B28"/>
+                    <br />
+                    <sub><b>Amulya-B28</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/AnujSaha0111">
                     <img src="https://avatars.githubusercontent.com/u/153378181?v=4" width="100;" alt="AnujSaha0111"/>
                     <br />
@@ -294,6 +301,8 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>Het Modi</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Herostomo">
                     <img src="https://avatars.githubusercontent.com/u/155301429?v=4" width="100;" alt="Herostomo"/>
@@ -301,8 +310,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>Kshitij Vijay Hedau</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/ShrishtiSingh26">
                     <img src="https://avatars.githubusercontent.com/u/142707684?v=4" width="100;" alt="ShrishtiSingh26"/>
