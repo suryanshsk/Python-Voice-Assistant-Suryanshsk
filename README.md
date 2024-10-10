@@ -216,13 +216,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
 		</tr>
 		<tr>
             <td align="center">
-                <a href="https://github.com/Dsmita03">
-                    <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
-                    <br />
-                    <sub><b>Debasmita Sarkar</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/jitendra-ky">
                     <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="jitendra-ky"/>
                     <br />
@@ -230,17 +223,24 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/Codewithmeowmeow">
-                    <img src="https://avatars.githubusercontent.com/u/182342654?v=4" width="100;" alt="Codewithmeowmeow"/>
+                <a href="https://github.com/Dsmita03">
+                    <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
                     <br />
-                    <sub><b>codewithvibha</b></sub>
+                    <sub><b>Debasmita Sarkar</b></sub>
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/ganjivamshiii">
-                    <img src="https://avatars.githubusercontent.com/u/142515794?v=4" width="100;" alt="ganjivamshiii"/>
+                <a href="https://github.com/23wh1a0513">
+                    <img src="https://avatars.githubusercontent.com/u/150132045?v=4" width="100;" alt="23wh1a0513"/>
                     <br />
-                    <sub><b>ganjivamshiii</b></sub>
+                    <sub><b>23wh1a0513</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/jaidh01">
+                    <img src="https://avatars.githubusercontent.com/u/117927011?v=4" width="100;" alt="jaidh01"/>
+                    <br />
+                    <sub><b>Jai Dhingra</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -251,19 +251,19 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/jaidh01">
-                    <img src="https://avatars.githubusercontent.com/u/117927011?v=4" width="100;" alt="jaidh01"/>
+                <a href="https://github.com/ganjivamshiii">
+                    <img src="https://avatars.githubusercontent.com/u/142515794?v=4" width="100;" alt="ganjivamshiii"/>
                     <br />
-                    <sub><b>Jai Dhingra</b></sub>
+                    <sub><b>ganjivamshiii</b></sub>
                 </a>
             </td>
 		</tr>
 		<tr>
             <td align="center">
-                <a href="https://github.com/23wh1a0513">
-                    <img src="https://avatars.githubusercontent.com/u/150132045?v=4" width="100;" alt="23wh1a0513"/>
+                <a href="https://github.com/Codewithmeowmeow">
+                    <img src="https://avatars.githubusercontent.com/u/182342654?v=4" width="100;" alt="Codewithmeowmeow"/>
                     <br />
-                    <sub><b>23wh1a0513</b></sub>
+                    <sub><b>codewithvibha</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -322,6 +322,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <img src="https://avatars.githubusercontent.com/u/122042809?v=4" width="100;" alt="imDarshanGK"/>
                     <br />
                     <sub><b>Darshan G K</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/wizaye">
+                    <img src="https://avatars.githubusercontent.com/u/117831928?v=4" width="100;" alt="wizaye"/>
+                    <br />
+                    <sub><b>Vijayendher Gatla</b></sub>
                 </a>
             </td>
 		</tr>
