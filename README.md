@@ -118,6 +118,18 @@ Follow these steps to set up the project on your local machine:
      pip install -U google-generativeai
      ```
 
+    - To ensure your Python voice recognition assistant runs smoothly,
+    here's a list of essential packages you should install:
+      ```bash
+        pip install SpeechRecognition
+        pip install pyaudio
+        pip install setuptools
+       ```
+
+    - To use gTTS (Google Text-to-Speech) in your Python project:
+      ```bash
+        pip install gtts
+      ```
 6. **Configure API Keys**
 
    - Replace the placeholder API keys in the code with your actual API keys:
