@@ -200,12 +200,21 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/jitendra-ky">
+                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="jitendra-ky"/>
+                    <br />
+                    <sub><b>Jitendra Kumar</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/Kritika75">
                     <img src="https://avatars.githubusercontent.com/u/142504516?v=4" width="100;" alt="Kritika75"/>
                     <br />
                     <sub><b>Kritika Singh </b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/23wh1a0513">
                     <img src="https://avatars.githubusercontent.com/u/150132045?v=4" width="100;" alt="23wh1a0513"/>
@@ -213,8 +222,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>23wh1a0513</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/djv554">
                     <img src="https://avatars.githubusercontent.com/u/174509658?v=4" width="100;" alt="djv554"/>
@@ -227,13 +234,6 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
                     <br />
                     <sub><b>Debasmita Sarkar</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/jitendra-ky">
-                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="jitendra-ky"/>
-                    <br />
-                    <sub><b>Jitendra Kumar</b></sub>
                 </a>
             </td>
             <td align="center">
