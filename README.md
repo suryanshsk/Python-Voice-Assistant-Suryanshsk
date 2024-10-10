@@ -230,6 +230,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/23wh1a0513">
+                    <img src="https://avatars.githubusercontent.com/u/150132045?v=4" width="100;" alt="23wh1a0513"/>
+                    <br />
+                    <sub><b>23wh1a0513</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/jaidh01">
                     <img src="https://avatars.githubusercontent.com/u/117927011?v=4" width="100;" alt="jaidh01"/>
                     <br />
@@ -250,20 +257,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                     <sub><b>ganjivamshiii</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/wizaye">
                     <img src="https://avatars.githubusercontent.com/u/117831928?v=4" width="100;" alt="wizaye"/>
                     <br />
                     <sub><b>Vijayendher Gatla</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/23wh1a0513">
-                    <img src="https://avatars.githubusercontent.com/u/150132045?v=4" width="100;" alt="23wh1a0513"/>
-                    <br />
-                    <sub><b>23wh1a0513</b></sub>
                 </a>
             </td>
             <td align="center">
