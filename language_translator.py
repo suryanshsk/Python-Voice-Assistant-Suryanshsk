@@ -1,4 +1,5 @@
 
+
 #install speech_recognition , translate and pyttsx3 libraries
 #make sure there are no microphone or hardware issues
 
