@@ -25,6 +25,7 @@ def speak(text):
     
     
     
+    
 
 # Function to capture voice commands and convert speech to text
 def voice_to_text():
