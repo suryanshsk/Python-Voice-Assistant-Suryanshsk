@@ -11,7 +11,7 @@ We as members, contributors, and leaders pledge to make participation in our com
 ## Note
 
 Submit only useful issue , Don't try t submit any type of issue which do not suits for this project
-
+Also warning to all contributors to not to submit same issue which was already submitted by any other Contributors 
 ## Our Standards
 
 Examples of behavior that contributes to creating a positive environment include:
