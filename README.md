@@ -174,6 +174,8 @@ We are grateful to all the contributors who have helped improve this project. Yo
             <td align="center">
                 <a href="https://github.com/suryanshsk">
                     <img src="https://avatars.githubusercontent.com/u/88218773?v=4" width="100;" alt="suryanshsk"/>
+			<br />
+                    <sub><b>Owner</b></sub>
                     <br />
                     <sub><b>Suryansh singh</b></sub>
                 </a>
