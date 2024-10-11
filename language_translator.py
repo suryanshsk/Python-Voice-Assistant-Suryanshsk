@@ -22,6 +22,7 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
     
+    
 
 # Function to capture voice commands and convert speech to text
 def voice_to_text():
