@@ -2,15 +2,11 @@ import os
 import subprocess
 import sys
 import time
+import platform
 
 def custom_progress_bar(task_name, total_steps=10, step_duration=0.3):
     """
     Displays a simple progress bar using hash marks (#) to represent task progress.
-
-    Args:
-        task_name (str): Name of the task to be displayed before the progress bar.
-        total_steps (int): Total number of steps for the progress bar. Default is 10.
-        step_duration (float): Duration of each step in seconds. Default is 0.3 seconds.
     """
     print(f"{task_name}: [", end="", flush=True)
     for i in range(total_steps):
@@ -21,10 +17,6 @@ def custom_progress_bar(task_name, total_steps=10, step_duration=0.3):
 def loading_animation(message, duration=5):
     """
     Displays a loading animation with dots (...) for a specified duration.
-
-    Args:
-        message (str): Message to display before the loading animation.
-        duration (int): Duration for how long the animation should run. Default is 5 seconds.
     """
     print(message, end="", flush=True)
     for _ in range(duration):
@@ -39,43 +31,54 @@ def create_virtual_env():
     """
     if not os.path.exists('venv'):
         loading_animation("Creating virtual environment")
-        subprocess.check_call([sys.executable, "-m", "venv", "venv"])
+        subprocess.check_call([sys.executable, "-m", "venv", "venv"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     else:
         print("Virtual environment already exists.")
 
+def get_venv_executable(executable):
+    """
+    Returns the path to the executable within the virtual environment.
+    """
+    venv_path = os.path.join("venv", "Scripts" if platform.system() == "Windows" else "bin", executable)
+    return venv_path
+
 def install_dependencies():
     """
-    Installs the required dependencies from the 'requirements.txt' file
-    using pip. Displays a custom progress bar during the installation process.
+    Installs the required dependencies from the 'requirements.txt' file using pip.
+    Suppresses the console log during the installation.
     """
     print("Installing dependencies...")
     custom_progress_bar("Setting up packages", total_steps=15, step_duration=0.2)
-    subprocess.check_call([os.path.join("venv", "bin", "pip"), "install", "-r", "requirements.txt"])
+    pip_path = get_venv_executable("pip")
+    subprocess.check_call([pip_path, "install", "-r", "requirements.txt"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 def install_pipreqs():
     """
     Installs the 'pipreqs' package, which is used to generate the 'requirements.txt' file.
-    Displays an animation during installation.
+    Suppresses the console log during installation.
     """
     loading_animation("Installing pipreqs (a tool to generate the requirements.txt)")
-    subprocess.check_call([os.path.join("venv", "bin", "pip"), "install", "pipreqs"])
+    pip_path = get_venv_executable("pip")
+    subprocess.check_call([pip_path, "install", "pipreqs"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 def update_requirements():
     """
     Updates the 'requirements.txt' file using pipreqs, ensuring all installed
-    packages are recorded. Displays an animation during the update process.
+    packages are recorded. Suppresses the console log during the update.
     """
     loading_animation("Updating requirements.txt")
-    subprocess.check_call([os.path.join("venv", "bin", "pipreqs"), ".", "--force"])
+    pipreqs_path = get_venv_executable("pipreqs")
+    subprocess.check_call([pipreqs_path, ".", "--force"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 def run_application():
     """
-    Runs the main application script 'main_assistant.py'. 
+    Runs the main application script 'main_assistant.py'.
     Displays a custom progress bar during the startup process.
     """
     print("Starting the application...\n")
     custom_progress_bar("Launching the Assistant", total_steps=10, step_duration=0.4)
-    subprocess.call([os.path.join("venv", "bin", "python"), "main_assistant.py"])
+    python_path = get_venv_executable("python")
+    subprocess.call([python_path, "main_assistant.py"])
 
 def main():
     """
@@ -83,8 +86,8 @@ def main():
     It creates a virtual environment, installs dependencies, installs pipreqs, updates
     'requirements.txt', and runs the application.
     """
-    print("\nWelcome to the Python Voice Assistant setup! We are setting up everything for you.")
-    print("No coding knowledge needed. Just follow the progress below!\n")
+    print("\nWelcome to the Python Voice Assistant setup!")
+    print("\nWe are setting up everything for you. Just follow the progress below!\n")
     
     create_virtual_env()
     install_dependencies()
