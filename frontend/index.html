@@ -13,21 +13,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 
 </head>
+
 <body>
+    
     <!-- Header Section -->
     <header class="main-header">
         <nav>
             <div class="logo">Voice Assistant AI</div>
             <ul>
+                <img id="icon" src="image/dark_mode.png">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#setup">Setup</a></li>
-                <li><a href="#footer">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
         <div class="header-content">
             <img src="image/ voice.png" alt="Voice Assistant Image" class="header-image" /> <!-- Add image here -->
-            <h1>Python Voice Assistant with Gemini AI</h1>
-            <p>A smart, AI-powered voice assistant that simplifies your living!</p>
+            <h1 class="main_topic">Python Voice Assistant with Gemini AI</h1>
+            <p class="main_para">A smart, AI-powered voice assistant that simplifies your living!</p>
              
         </div>
     </header>
@@ -156,7 +159,7 @@
                     Have questions or feedback? Reach out to us:
                 </p>
                 <ul>
-                    <li>Email: <a href="mailto:suryanshskcontact@gmail.com">suryanshskcontact@gmail.com</a></li>
+                    <li><span class="email-text">Email:</span> <a href="mailto:suryanshskcontact@gmail.com">suryanshskcontact@gmail.com</a></li>
                 </ul>
             </div>
         </div>
@@ -165,4 +168,20 @@
             <p>&copy; 2024 Suryanshsk. All rights reserved.</p>
         </div>
     </footer>
+    
+<script>
+
+    var icon = document.getElementById("icon");
+    icon.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+            icon.src="image/light_mode.png";
+        }
+        else{
+            icon.src="image/dark_mode.png";
+        }
+    }
+</script>
+
+    </body>
     
