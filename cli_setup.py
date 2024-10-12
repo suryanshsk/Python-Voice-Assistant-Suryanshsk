@@ -1,39 +1,13 @@
 import os
 import subprocess
 import sys
-import time
 import platform
+from utils.loader import custom_progress_bar, loading_spinner
+from colorama import init, Fore, Style
+from utils.cli.cli_art import display_art
 
-def custom_progress_bar(task_name, total_steps=10, step_duration=0.3):
-    """
-    Displays a simple progress bar using hash marks (#) to represent task progress.
-    """
-    print(f"{task_name}: [", end="", flush=True)
-    for i in range(total_steps):
-        print("#", end="", flush=True)
-        time.sleep(step_duration)
-    print("] Done!")
-
-def loading_animation(message, duration=5):
-    """
-    Displays a loading animation with dots (...) for a specified duration.
-    """
-    print(message, end="", flush=True)
-    for _ in range(duration):
-        print(".", end="", flush=True)
-        time.sleep(0.5)
-    print(" Done!")
-
-def create_virtual_env():
-    """
-    Creates a virtual environment named 'venv' in the current directory, 
-    if it does not already exist. Displays an animation while creating.
-    """
-    if not os.path.exists('venv'):
-        loading_animation("Creating virtual environment")
-        subprocess.check_call([sys.executable, "-m", "venv", "venv"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    else:
-        print("Virtual environment already exists.")
+# Initialize colorama for colored console output
+init(autoreset=True)
 
 def get_venv_executable(executable):
     """
@@ -45,54 +19,94 @@ def get_venv_executable(executable):
 def install_dependencies():
     """
     Installs the required dependencies from the 'requirements.txt' file using pip.
-    Suppresses the console log during the installation.
+    Displays a progress bar and a success/failure message after installation.
     """
-    print("Installing dependencies...")
-    custom_progress_bar("Setting up packages", total_steps=15, step_duration=0.2)
+    task_name = "Installing dependencies"
+    total_steps = 500
+    step_duration = 0.02
+
+    custom_progress_bar(task_name, total_steps, step_duration, color=Fore.GREEN)
+    
     pip_path = get_venv_executable("pip")
-    subprocess.check_call([pip_path, "install", "-r", "requirements.txt"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        subprocess.check_call([pip_path, "install", "-r", "requirements.txt"])
+        print(f"\n{Fore.GREEN}✓ Successfully installed dependencies!{Style.RESET_ALL}")
+    except subprocess.CalledProcessError as e:
+        print(f"\n{Fore.RED}✗ Failed to install dependencies!{Style.RESET_ALL}")
+        sys.exit(1)
 
 def install_pipreqs():
     """
     Installs the 'pipreqs' package, which is used to generate the 'requirements.txt' file.
-    Suppresses the console log during installation.
+    Displays a progress bar and a success/failure message after installation.
     """
-    loading_animation("Installing pipreqs (a tool to generate the requirements.txt)")
+    task_name = "Installing pipreqs (tool for generating requirements.txt)"
+    total_steps = 500
+    step_duration = 0.02
+
+    custom_progress_bar(task_name, total_steps, step_duration, color=Fore.YELLOW)
+    
     pip_path = get_venv_executable("pip")
-    subprocess.check_call([pip_path, "install", "pipreqs"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        subprocess.check_call([pip_path, "install", "pipreqs"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        print(f"\n{Fore.GREEN}✓ Successfully installed pipreqs!{Style.RESET_ALL}")
+    except subprocess.CalledProcessError as e:
+        print(f"\n{Fore.RED}✗ Failed to install pipreqs!{Style.RESET_ALL}")
+        sys.exit(1)
 
 def update_requirements():
     """
     Updates the 'requirements.txt' file using pipreqs, ensuring all installed
-    packages are recorded. Suppresses the console log during the update.
+    packages are recorded. Displays a progress bar and a success/failure message.
     """
-    loading_animation("Updating requirements.txt")
+    task_name = "Updating requirements.txt"
+    total_steps = 500
+    step_duration = 0.02
+
+    custom_progress_bar(task_name, total_steps, step_duration, color=Fore.YELLOW)
+    
     pipreqs_path = get_venv_executable("pipreqs")
-    subprocess.check_call([pipreqs_path, ".", "--force"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        subprocess.check_call([pipreqs_path, ".", "--force"])
+        print(f"\n{Fore.GREEN}✓ Successfully updated requirements.txt!{Style.RESET_ALL}")
+    except subprocess.CalledProcessError as e:
+        print(f"\n{Fore.RED}✗ Failed to update requirements.txt!{Style.RESET_ALL}")
+        sys.exit(1)
 
 def run_application():
     """
     Runs the main application script 'main_assistant.py'.
-    Displays a custom progress bar during the startup process.
+    Displays a progress bar during the startup process and a success/failure message after.
     """
-    print("Starting the application...\n")
-    custom_progress_bar("Launching the Assistant", total_steps=10, step_duration=0.4)
+    task_name = "Launching the Assistant"
+    total_steps = 500
+    step_duration = 0.05
+
+    custom_progress_bar(task_name, total_steps, step_duration, color=Fore.CYAN)
+    
     python_path = get_venv_executable("python")
-    subprocess.call([python_path, "main_assistant.py"])
+    try:
+        subprocess.call([python_path, "main_assistant.py"])
+        print(f"{Fore.GREEN}✓ Assistant launched successfully!{Style.RESET_ALL}\n")
+    except Exception as e:
+        print(f"\n{Fore.RED}✗ Failed to launch the assistant!{Style.RESET_ALL}")
+        sys.exit(1)
 
 def main():
     """
     Main function that orchestrates the setup process for the Python Voice Assistant.
-    It creates a virtual environment, installs dependencies, installs pipreqs, updates
-    'requirements.txt', and runs the application.
+    It installs dependencies, installs pipreqs, updates 'requirements.txt', and runs the application.
     """
-    print("\nWelcome to the Python Voice Assistant setup!")
-    print("\nWe are setting up everything for you. Just follow the progress below!\n")
+    print("\nWelcome to the Python Voice Assistant setup! We are setting up everything for you.")
+    print("No coding knowledge needed. Just follow the progress below!\n")
     
-    create_virtual_env()
+    display_art()
+    # Use loading spinner for initialization
+    loading_spinner(2, Fore.CYAN, "Initializing setup environment...")
+    # update_requirements()
     install_dependencies()
     install_pipreqs()
-    update_requirements()
+    # update_requirements()
     run_application()
 
 if __name__ == "__main__":
