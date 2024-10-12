@@ -1,5 +1,43 @@
 
 /* General Styles */
+
+:root{
+    --color1: #ffffff; /* Lighter background */
+    --color2: #dfe8f1; /* Light blue for secondary elements */
+    --color3: #3498db; /* Accent color */
+    --color4: #a8c7dc; /* Muted blue for headers/background */
+    --color5: #333333; /* Dark grey text for good contrast */
+    --color6: #f9f9f9; /* Lighter for cards, sections */
+    --color7: #312e2e; /* Light grey for secondary text */
+    --color8: #666666; /* Medium grey for subtle contrasts */
+    --color9: rebeccapurple; /* Accent purple */
+    --color10: #2980b9; /* Darker blue for buttons and hover */
+    --color11: #555555; /* Medium grey for text */
+    --color12: #000000; /* Dark text */
+    --color13: #e9eff6; /* Very light blue/white for background */
+    --color14: #004080; /* Darker blue for emphasis */
+    --color15:#004080;
+}
+
+.dark-theme{
+    --color1: #2c3e50; /* Dark blue/grey background */
+    --color2: #34495e; /* Slightly lighter dark grey/blue */
+    --color3: #ecf0f1; /* Light grey for text */
+    --color4: #3a3f44; /* Dark grey for sections/cards */
+    --color5: #ffffff; /* White for text */
+    --color6: #444444; /* Dark grey background for cards */
+    --color7: #bbbbbb; /* Light grey for secondary text */
+    --color8: #888888; /* Mid-grey for minor contrasts */
+    --color9: wheat; /* Accent purple */
+    --color10: #1abc9c; /* Accent teal for buttons/hover */
+    --color11: #95a5a6; /* Light grey for text */
+    --color12: #ecf0f1; /* Off-white for text */
+    --color13: #2c3e50; /* Deep background */
+    --color14: #2980b9; /* Blue for emphasized elements */
+    --color15: #494d52;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -8,13 +46,20 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(color1);
     padding-top: 80px; /* Prevent content from being hidden under the fixed navbar */
 }
 
 /* Navbar Styles */
+#icon{
+    width: 50px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
 nav {
-    background-color: #a8c7dc;
+    background-color: var(--color4);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +73,7 @@ nav {
 }
 
 nav .logo {
-    color: #3498db;
+    color: var(--color3);
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -47,9 +92,9 @@ nav ul li {
 }
 
 nav ul li a {
-    border: 2px solid white;
+    border: 2px var(--color6);
     padding: 8px 12px;
-    color: white;
+    color: var(--color12);
     text-decoration: none;
     font-weight: bold;
     display: inline-block; /* Keep links in one line */
@@ -57,24 +102,28 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #3498db;
-    color: #333;
+    background-color: var(--color15);
+    color: white;
 }
 
 /* Responsive Styles */
 /* Header Section */
+
+.main_topic, .main_para{
+    color: var(--color9);
+}
 .main-header {
     width: 100%;
     height: 100%;
-    background-color: #a8c7dc;
-    color: white;
+    background-color: var(--color4);
+    color: var(--color6);
     text-align: center;
     padding: 50px 20px;
 }
 
 .header-content img {
     margin-top: 30px;
-    width: 20%;
+    width: 40%;
     align-content: center;
     justify-content: center;
 }
@@ -153,8 +202,8 @@ nav ul li a:hover {
 }
 
 .cta-button {
-    background-color: white;
-    color: #3498db;
+    background-color: var(--color6);
+    color: var(--color3);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -163,16 +212,21 @@ nav ul li a:hover {
 }
 
 .cta-button:hover {
-    background-color: #2980b9;
-    color: white;
+    background-color: var(--color10);
+    color: var(--color6);
 }
 
  
 /* Features Section */
+#features h2{
+    color:var(--color5)
+    /* color:red; */
+}
+
 .features-section {
     padding: 60px 20px;
     text-align: center;
-    background-color: #ffffff;
+    background-color: var(--color6);
 }
 
 .features-slider {
@@ -181,7 +235,7 @@ nav ul li a:hover {
 }
 
 .feature-item {
-    background-color:#B0CFDE;
+    background-color:var(--color4);
     padding: 30px;
     text-align: center;
     border-radius: 10px;
@@ -201,49 +255,50 @@ nav ul li a:hover {
 
 .feature-item i {
     font-size: 50px;
-    color: #3498db;
+    color: var(--color3);
     margin-bottom: 15px;
 }
 
 .feature-item h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    color: var(--color12);
 }
 
 .feature-item p {
     font-size: 1rem;
     margin: 0; /* Remove default margin */
+    color: var(--color12);
 }
 
  
 /* API Setup Section */
 .setup-section {
     padding: 60px 20px;
-    background-color: #f4f4f4;
+    background-color: var(--color13);
     text-align: center;
 }
 
 .setup-section h2 {
     font-size: 2.5rem;
-    color: #333;
+    color: var(--color5);
     margin-bottom: 20px;
 }
 
 .setup-section p {
     font-size: 1.2rem;
-    color: #555;
+    color: var(--color7);
     margin-bottom: 40px;
 }
 
 .api-setup-instructions {
     display: flex;
-    flex-direction: column;
     gap: 40px;
 }
 
 
 .api-item {
-    background-color: #ffffff;
+    background-color: var(--color6);
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -254,19 +309,20 @@ nav ul li a:hover {
 
 .api-item h3 {
     font-size: 1.8rem;
-    color: #3498db;
+    color: var(--color14);
     margin-bottom: 20px;
 }
 
 .api-item p {
     font-size: 1rem;
-    color: #666;
+    color: var(--color5);
     margin-bottom: 20px;
 }
 
 .api-item ul {
     list-style-type: none;
     padding-left: 0;
+    color:var(--color5);
 }
 
 .api-item ul li {
@@ -275,7 +331,7 @@ nav ul li a:hover {
 }
 
 .api-item ul li a {
-    color: #3498db;
+    color: var(--color9);
     text-decoration: none;
 }
 
@@ -284,8 +340,8 @@ nav ul li a:hover {
 }
 /* Footer Section */
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--color4);
+    color: var(--color6);
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
@@ -310,11 +366,12 @@ nav ul li a:hover {
 .footer-section h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color:white;
 }
 
 .footer-section p {
     font-size: 1rem;
-    color: #ddd;
+    color: var(--color7);
 }
 
 .footer-section ul {
@@ -327,20 +384,20 @@ nav ul li a:hover {
 }
 
 .footer-section ul li a {
-    color: #fff;
+    color: var(--color7);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-section ul li a:hover {
-    color: #3498db;
+    color: var(--color3);
 }
 
 .footer-bottom {
     display: flex;
     flex-direction: column;
     text-align: center;
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--color8);
     padding: 20px 0;
     width: 100%;
 }
@@ -348,7 +405,7 @@ nav ul li a:hover {
 .footer-bottom p {
     margin: 0;
     font-size: 0.9rem;
-    color: #bbb;
+    color: var(--color7);
 }
 
 /* Responsive Styles */
@@ -361,4 +418,12 @@ nav ul li a:hover {
     .footer-section {
         margin-bottom: 20px; /* Add spacing between sections */
     }
+}
+
+.email-text{
+    color: var(--color7);
+}
+
+.footer-section ul li{
+    color: var(--color7);
 }
