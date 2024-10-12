@@ -1,0 +1,273 @@
+#####html#########
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Quiz Application</h1>
+    <div id="quiz-container" class="hidden">
+        <div id="question"></div>
+        <div id="options"></div>
+        <button id="next-button" class="hidden">Next Question</button>
+    </div>
+    <button id="start-button">Start Quiz</button>
+    <div id="result" class="hidden"></div>
+    <button id="new-quiz-button" class="hidden">Start New Quiz</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+########css#######
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#question {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#options {
+    margin-bottom: 20px;
+}
+
+.option {
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+    background: #e7e7e7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.option:hover {
+    background: #d0d0d0;
+}
+
+.correct {
+    background-color: #4caf50; /* Green color for correct answer */
+    color: white;
+}
+
+.incorrect {
+    background-color: #f44336; /* Red color for incorrect answer */
+    color: white;
+}
+
+button {
+    padding: 10px 15px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.popup.show {
+    opacity: 1; /* Show popup */
+}
+
+#######js##################
+const questions = [
+    {
+        question: "What is the capital of France?",
+        options: ["Berlin", "Madrid", "Paris", "Rome"],
+        answer: 2 // Correct answer: Paris
+    },
+    {
+        question: "What is 2 + 2?",
+        options: ["3", "4", "5", "6"],
+        answer: 1 // Correct answer: 4
+    },
+    {
+        question: "In which year did the Titanic sink?",
+        options: ["1905", "1912", "1918", "1925"],
+        answer: 1 // Correct answer: 1912
+    },
+    {
+        question: "What is the largest planet in our solar system?",
+        options: ["Earth", "Mars", "Jupiter", "Saturn"],
+        answer: 2 // Correct answer: Jupiter
+    },
+    {
+        question: "What is the chemical symbol for gold?",
+        options: ["Au", "Ag", "Fe", "Pb"],
+        answer: 0 // Correct answer: Au
+    },
+    {
+        question: "Which language is primarily spoken in Brazil?",
+        options: ["Spanish", "Portuguese", "English", "French"],
+        answer: 1 // Correct answer: Portuguese
+    },
+    {
+        question: "Who wrote 'Romeo and Juliet'?",
+        options: ["Charles Dickens", "Mark Twain", "William Shakespeare", "Jane Austen"],
+        answer: 2 // Correct answer: William Shakespeare
+    },
+    {
+        question: "What is the hardest natural substance on Earth?",
+        options: ["Gold", "Iron", "Diamond", "Quartz"],
+        answer: 2 // Correct answer: Diamond
+    },
+    {
+        question: "What is the largest mammal in the world?",
+        options: ["Elephant", "Blue Whale", "Great White Shark", "Giraffe"],
+        answer: 1 // Correct answer: Blue Whale
+    },
+    {
+        question: "What element does 'O' represent on the periodic table?",
+        options: ["Osmium", "Oxygen", "Gold", "Silver"],
+        answer: 1 // Correct answer: Oxygen
+    }
+];
+
+let score = 0;
+let questionIndex = 0;
+
+const quizContainer = document.getElementById('quiz-container');
+const questionElement = document.getElementById('question');
+const optionsElement = document.getElementById('options');
+const nextButton = document.getElementById('next-button');
+const startButton = document.getElementById('start-button');
+const newQuizButton = document.getElementById('new-quiz-button');
+const resultElement = document.getElementById('result');
+
+startButton.addEventListener('click', startGame);
+nextButton.addEventListener('click', loadQuestion);
+newQuizButton.addEventListener('click', resetGame);
+
+function startGame() {
+    score = 0;
+    questionIndex = 0;
+    showQuiz();
+    loadQuestion();
+}
+
+function showQuiz() {
+    startButton.classList.add('hidden');
+    quizContainer.classList.remove('hidden');
+    resultElement.classList.add('hidden');
+    newQuizButton.classList.add('hidden');
+}
+
+function loadQuestion() {
+    if (questionIndex < questions.length) {
+        const currentQuestion = questions[questionIndex];
+        questionElement.textContent = currentQuestion.question;
+        optionsElement.innerHTML = '';
+        currentQuestion.options.forEach((option, index) => {
+            const button = document.createElement('button');
+            button.classList.add('option');
+            button.textContent = option;
+            button.addEventListener('click', () => checkAnswer(index));
+            optionsElement.appendChild(button);
+        });
+        nextButton.classList.add('hidden');
+    } else {
+        displayResult();
+    }
+}
+
+function checkAnswer(selectedIndex) {
+    const currentQuestion = questions[questionIndex];
+
+    // Highlight the selected answer
+    const options = optionsElement.children;
+
+    // Clear previous highlights
+    for (let i = 0; i < options.length; i++) {
+        options[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    if (selectedIndex === currentQuestion.answer) {
+        options[selectedIndex].classList.add('correct'); // Correct answer turns green
+        score++;
+        showPopup("Correct!"); // Show popup for correct answer
+    } else {
+        options[selectedIndex].classList.add('incorrect'); // Wrong answer turns red
+        options[currentQuestion.answer].classList.add('correct'); // Correct answer turns green
+        showPopup(`Incorrect! The correct answer is: ${currentQuestion.options[currentQuestion.answer]}`); // Show popup for incorrect answer
+    }
+
+    // Proceed to the next question after a delay
+    questionIndex++;
+    setTimeout(() => {
+        loadQuestion();
+    }, 2000); // Delay before loading the next question
+}
+
+function displayResult() {
+    quizContainer.classList.add('hidden');
+    resultElement.textContent = `You scored ${score} out of ${questions.length}!`;
+    resultElement.classList.remove('hidden');
+    newQuizButton.classList.remove('hidden');
+}
+
+function resetGame() {
+    startGame();
+}
+
+function showPopup(message) {
+    const popup = document.createElement("div");
+    popup.classList.add("popup");
+    popup.textContent = message;
+
+    document.body.appendChild(popup);
+
+    // Remove the popup after 1.5 seconds
+    setTimeout(() => {
+        popup.remove();
+    }, 1500);
+}
