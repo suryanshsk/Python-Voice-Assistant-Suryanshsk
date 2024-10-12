@@ -11,7 +11,7 @@ if "%VIRTUAL_ENV%" NEQ "" (
     echo Virtual environment activated.
 
     :: Install the required packages
-    :: pip install -r requirements.txt
+    pip install progressbar2 colorama
     :: Run the main application
     python setup.py
 ) else (
