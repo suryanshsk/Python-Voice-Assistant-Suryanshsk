@@ -9,9 +9,9 @@ source venv/bin/activate
 # Check if the activation was successful
 if [ "$VIRTUAL_ENV" != "" ]; then
     echo "Virtual environment activated."
-    
+    pip install progressbar2 colorama
     # Run the main application
-    python setup.py
+    python cli_setup.py
 else
     echo "Failed to activate virtual environment."
 fi
