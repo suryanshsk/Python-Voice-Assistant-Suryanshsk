@@ -59,6 +59,14 @@
 
 A sophisticated Python-based virtual assistant utilizing Gemini AI. This project integrates various functionalities to create a versatile and interactive assistant.
 
+# Table of Contents
+
+1. [Installation](#installation)
+2. [Notice](#notice)
+3. [Contributors](#our-valuable-contributors-%EF%B8%8F)
+4. [Contact](#contact)
+5. [Reporting Issues](#reporting-issues)
+
 ## Installation
 
 Follow these steps to set up the project on your local machine:

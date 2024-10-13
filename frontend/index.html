@@ -24,10 +24,11 @@
                         src="image/voice-assistant-ai-high-resolution-logo-transparent.png" width="20%"
                         alt="Voice-Assistant-Ai"></a></div>
             <ul>
-                <img id="icon" src="image/dark_mode.png">
+               
                 <li><a href="#features">Features</a></li>
                 <li><a href="#setup">Setup</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <img id="icon" src="image/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg">
             </ul>
         </nav>
         <div class="header-content">
@@ -177,6 +178,9 @@
                 <p>&copy; 2024 Suryanshsk. All rights reserved.</p>
             </div>
     </footer>
+    <a href="#" class="to_top" id="scroll_top_btn">
+        <img class="scroll_back" src="image/scroll_top.png">
+    </a>
 
     <script>
 
@@ -190,6 +194,11 @@
                 icon.src = "image/dark_mode.png";
             }
         }
+
+        document.getElementById("scroll_top_btn").addEventListener("click", function(e) {
+        e.preventDefault(); // Prevent default anchor click behavior
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top with smooth animation
+    });
     </script>
 
 </body>
