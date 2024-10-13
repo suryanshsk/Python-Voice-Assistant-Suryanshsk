@@ -65,8 +65,6 @@ def personality_test():
         ("Would you rather watch a documentary or a comedy?", {"documentary": "N", "comedy": "S"}),
         ("Do you tend to think about long-term implications or focus on immediate benefits?", {"long-term": "J", "immediate": "P"}),
         ("Are you more driven by achieving goals or enjoying the journey?", {"achieving goals": "T", "enjoying journey": "F"}),
-
-        # New questions
         ("Do you prefer deep conversations or casual chit-chat?", {"deep conversations": "I", "casual chit-chat": "E"}),
         ("When making a decision, do you rely more on your gut feeling or thorough analysis?", {"gut feeling": "F", "thorough analysis": "T"}),
         ("Do you prefer hands-on learning experiences or theoretical discussions?", {"hands-on": "S", "theoretical": "N"}),
