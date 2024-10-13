@@ -177,6 +177,9 @@
                 <p>&copy; 2024 Suryanshsk. All rights reserved.</p>
             </div>
     </footer>
+    <a href="#" class="to_top" id="scroll_top_btn">
+        <img class="scroll_back" src="image/scroll_top.png">
+    </a>
 
     <script>
 
@@ -190,6 +193,11 @@
                 icon.src = "image/dark_mode.png";
             }
         }
+
+        document.getElementById("scroll_top_btn").addEventListener("click", function(e) {
+        e.preventDefault(); // Prevent default anchor click behavior
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top with smooth animation
+    });
     </script>
 
 </body>
