@@ -1,7 +1,7 @@
 import google.generativeai as genai
 
 # Configure the API key
-genai.configure(api_key="API_Key")  # Replace with your actual API key
+genai.configure(api_key="API Key")  # Replace with your actual API key
 
 # Set up the model configuration
 generation_config = {

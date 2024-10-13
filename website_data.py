@@ -1,6 +1,9 @@
-# website_data.py
 
+
+# website_data.py
 # Dictionary to store website names and their URLs
+
+
 WEBSITES = {
     "LinkedIn": "https://www.linkedin.com",
     "google": "https://www.google.com",
