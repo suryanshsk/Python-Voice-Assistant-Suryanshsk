@@ -427,3 +427,14 @@ nav ul li a:hover {
 .footer-section ul li{
     color: var(--color7);
 }
+
+.to_top{
+    bottom:10px;
+    right: 10px;
+    position: fixed;
+}
+
+.scroll_back{
+    height: auto;
+    width: 50px;
+}
