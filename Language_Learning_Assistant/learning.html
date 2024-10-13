@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning Assistant</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Language Learning Assistant</h1>
+        
+        <div id="word-section">
+            <h2>Today's Language: <span id="language">French</span></h2> <!-- Language Display -->
+            <h2>Today's Word/Phrase:</h2>
+            <p id="word"></p>
+            <p id="translation"></p>
+            <button id="next-word">Next Word</button>
+        </div>
+
+        <div id="quiz-section" style="display: none;">
+            <h2>Quiz Time!</h2>
+            <p id="quiz-question"></p>
+            <input type="text" id="quiz-answer" placeholder="Your answer">
+            <button id="submit-answer">Submit Answer</button>
+            <p id="quiz-feedback"></p>
+        </div>
+    </div>
+    
+    <script src="script3.js"></script>
+</body>
+</html>
