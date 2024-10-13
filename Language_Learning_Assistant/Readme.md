@@ -16,8 +16,5 @@ The Language Learning Assistant is a web application designed to help users lear
 
 ## Getting Started
 
-To use the application, simply open the `index.html` file in your web browser.
+To use the application, simply open the `learning.html` file in your web browser.
 
-## License
-
-This project is licensed under the MIT License.
