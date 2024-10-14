@@ -126,6 +126,18 @@ Follow these steps to set up the project on your local machine:
      pip install -U google-generativeai
      ```
 
+    - To ensure your Python voice recognition assistant runs smoothly,
+    here's a list of essential packages you should install:
+      ```bash
+        pip install SpeechRecognition
+        pip install pyaudio
+        pip install setuptools
+       ```
+
+    - To use gTTS (Google Text-to-Speech) in your Python project:
+      ```bash
+        pip install gtts
+      ```
 6. **Configure API Keys**
 
    - Replace the placeholder API keys in the code with your actual API keys:
@@ -210,95 +222,7 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/jitendra-ky">
-                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="jitendra-ky"/>
-                    <br />
-                    <sub><b>Jitendra Kumar</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Kritika75">
-                    <img src="https://avatars.githubusercontent.com/u/142504516?v=4" width="100;" alt="Kritika75"/>
-                    <br />
-                    <sub><b>Kritika Singh </b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/23wh1a0513">
-                    <img src="https://avatars.githubusercontent.com/u/150132045?v=4" width="100;" alt="23wh1a0513"/>
-                    <br />
-                    <sub><b>23wh1a0513</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/23wh1a0513">
-                    <img src="https://avatars.githubusercontent.com/u/150132045?v=4" width="100;" alt="23wh1a0513"/>
-                    <br />
-                    <sub><b>23wh1a0513</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/djv554">
-                    <img src="https://avatars.githubusercontent.com/u/174509658?v=4" width="100;" alt="djv554"/>
-                    <br />
-                    <sub><b>Deanne Vaz</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Dsmita03">
-                    <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
-                    <br />
-                    <sub><b>Debasmita Sarkar</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Codewithmeowmeow">
-                    <img src="https://avatars.githubusercontent.com/u/182342654?v=4" width="100;" alt="Codewithmeowmeow"/>
-                    <br />
-                    <sub><b>codewithvibha</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/pratikwayal01">
-                    <img src="https://avatars.githubusercontent.com/u/97722446?v=4" width="100;" alt="pratikwayal01"/>
-                    <br />
-                    <sub><b>Pratik wayal</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/AnujSaha0111">
-                    <img src="https://avatars.githubusercontent.com/u/153378181?v=4" width="100;" alt="AnujSaha0111"/>
-                    <br />
-                    <sub><b>Anuj Saha</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/Amulya-B28">
-                    <img src="https://avatars.githubusercontent.com/u/154061817?v=4" width="100;" alt="Amulya-B28"/>
-                    <br />
-                    <sub><b>Amulya-B28</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/23WH1A0507">
-                    <img src="https://avatars.githubusercontent.com/u/150131831?v=4" width="100;" alt="23WH1A0507"/>
-                    <br />
+ 
                     <sub><b>23WH1A0507</b></sub>
                 </a>
             </td>
