@@ -344,8 +344,8 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/harshbharadwaj000">
-                    <img src="https://avatars.githubusercontent.com/u/166915051?v=4" width="100;" alt="harshbharadwaj000"/>
+                <a href="https://github.com/harshbhardwaj000">
+                    <img src="https://avatars.githubusercontent.com/u/166915051?v=4" width="100;" alt="harshbhardwaj000"/>
                     <br />
                     <sub><b>Harsh Bhardwaj</b></sub>
                 </a>
