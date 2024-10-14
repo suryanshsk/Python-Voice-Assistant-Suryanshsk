@@ -1,9 +1,0 @@
-pillow
-pyttsx3
-pywhatkit
-pyaudio 
-pipwin
-pyautogui
-SpeechRecognition
-webbrowser
-wikipedia

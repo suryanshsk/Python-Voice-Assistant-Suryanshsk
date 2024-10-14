@@ -1,0 +1,244 @@
+##########html#############
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Trivia Quiz</h1>
+        <div id="score">Score: 0</div>
+        <div id="question"></div>
+        <div id="options"></div>
+        <button id="next-btn" class="hidden">Next</button>
+    </div>
+    <script src="script.js"></script> <!-- Your JavaScript file -->
+</body>
+</html>
+
+####css########
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0); /* Gradient background */
+    color: #333; /* Default text color */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+}
+
+.container {
+    max-width: 600px;
+    width: 100%; /* Full width for responsiveness */
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent container background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text inside the container */
+}
+
+h1 {
+    font-size: 2.5em; /* Larger font for the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+#score {
+    font-size: 1.5em; /* Score display size */
+    margin: 20px 0; /* Margin for spacing */
+}
+
+button {
+    background-color: #2193b0; /* Button background color */
+    color: black;
+    border: none; /* Remove default border */
+    padding: 15px 20px; /* Padding for buttons */
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    margin-top: 20px; /* Space above the button */
+}
+
+button:hover {
+    background-color: #198b9d; /* Darker shade on hover */
+}
+
+.option {
+    margin: 10px 0; /* Spacing for option buttons */
+    width: 100%; /* Full width for buttons */
+    padding: 10px; /* Padding inside option buttons */
+    background-color: #f1f1f1; /* Background color for options */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color change */
+}
+
+.option:hover {
+    background-color: #e1e1e1; /* Change color on hover */
+}
+
+.hidden {
+    display: none; /* Hides elements with this class */
+}
+
+########js#########
+const questions = [
+    {
+        question: "What is the capital of France?",
+        options: ["Berlin", "Madrid", "London", "Paris"],
+        answer: "Paris"
+    },
+    {
+        question: "Which planet is known as the Red Planet?",
+        options: ["Earth", "Mars", "Jupiter", "Saturn"],
+        answer: "Mars"
+    },
+    {
+        question: "What is the largest mammal in the world?",
+        options: ["Elephant", "Blue Whale", "Great White Shark", "Giraffe"],
+        answer: "Blue Whale"
+    },
+    {
+        question: "What is 2 + 2?",
+        options: ["3", "4", "5", "6"],
+        answer: "4"
+    },
+    {
+        question: "What is the currency of Japan?",
+        options: ["Dollar", "Euro", "Yen", "Pound"],
+        answer: "Yen"
+    },
+    {
+        question: "Which ocean is the largest?",
+        options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+        answer: "Pacific Ocean"
+    },
+    {
+        question: "What element does 'O' represent in the periodic table?",
+        options: ["Gold", "Oxygen", "Osmium", "Oganesson"],
+        answer: "Oxygen"
+    },
+    {
+        question: "What is the hardest natural substance on Earth?",
+        options: ["Gold", "Diamond", "Iron", "Marble"],
+        answer: "Diamond"
+    },
+    {
+        question: "How many continents are there?",
+        options: ["5", "6", "7", "8"],
+        answer: "7"
+    },
+    {
+        question: "What gas do plants absorb from the atmosphere?",
+        options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Helium"],
+        answer: "Carbon Dioxide"
+    }
+];
+
+// Array of sound files
+const songs = [
+    "https://www.bensound.com/bensound-music/bensound-summer.mp3",
+    "https://www.bensound.com/bensound-music/bensound-cute.mp3",
+    "https://www.bensound.com/bensound-music/bensound-betterdays.mp3",
+    "https://www.bensound.com/bensound-music/bensound-goinghigher.mp3"
+];
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+// Get DOM elements
+const questionElement = document.getElementById('question');
+const optionsElement = document.getElementById('options');
+const scoreElement = document.getElementById('score');
+const nextButton = document.getElementById('next-btn');
+const audio = new Audio();
+
+// Start the game
+function startGame() {
+    currentQuestionIndex = 0;
+    score = 0;
+    scoreElement.textContent = `Score: ${score}`;
+    nextButton.classList.add('hidden');
+    showQuestion(questions[currentQuestionIndex]);
+}
+
+// Show the current question
+function showQuestion(question) {
+    questionElement.textContent = question.question;
+    optionsElement.innerHTML = '';
+    question.options.forEach(option => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        button.classList.add('option');
+        button.addEventListener('click', () => selectOption(option, question.answer));
+        optionsElement.appendChild(button);
+    });
+}
+
+// Select an option
+async function selectOption(selectedOption, correctAnswer) {
+    // Disable buttons after selection
+    const optionButtons = document.querySelectorAll('.option');
+    optionButtons.forEach(button => button.disabled = true);
+  
+    if (selectedOption === correctAnswer) { // Correct answer
+        score++; // Increment score
+        scoreElement.textContent = `Score: ${score}`; // Update score display
+        await playRandomSong(); // Play the song for 5 seconds
+        await waitFor(5000); // Wait for song duration (5 seconds)
+    } else { // Wrong answer
+        highlightCorrectAnswer(correctAnswer); // Highlight correct answer
+    }
+  
+    // Proceed to the next question
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion(questions[currentQuestionIndex]);
+        nextButton.classList.add('hidden'); // Hide next button
+    } else {
+        questionElement.textContent = 'Quiz Completed! Your final score is: ' + score;
+        optionsElement.innerHTML = '';
+    }
+}
+
+// Play a random song
+async function playRandomSong() {
+    const randomIndex = Math.floor(Math.random() * songs.length);
+    const selectedSong = songs[randomIndex];
+    audio.src = selectedSong; // Set the source of the audio element
+    audio.play();
+}
+
+// Highlight the correct answer in green
+function highlightCorrectAnswer(correctAnswer) {
+    const optionButtons = document.querySelectorAll('.option');
+    optionButtons.forEach(button => {
+        if (button.textContent === correctAnswer) {
+            button.style.backgroundColor = 'green'; // Change background color to green
+        }
+    });
+}
+
+// Wait for specified milliseconds
+function waitFor(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Handle click on Next button
+nextButton.addEventListener('click', () => {
+    nextButton.classList.add('hidden'); // Hide next button
+});
+
+// Start the game
+startGame();
