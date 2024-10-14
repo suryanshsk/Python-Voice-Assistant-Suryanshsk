@@ -9,12 +9,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Recipe Selector</h1>
+        <h1>Recipe Menu</h1>
         <label for="recipeType">Choose a type of recipe:</label>
         <select id="recipeType" onchange="showRecipes()">
             <option value="">Select...</option>
             <option value="sweet">Sweet</option>
             <option value="hot">Hot</option>
+            <option value="spicy">Spicy</option>
+            <option value="Desserts">Desserts</option>
         </select>
         
         <div id="recipeList" class="hidden">
