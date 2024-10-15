@@ -8,6 +8,10 @@
 
 We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
+## Note
+
+Submit only useful issue , Don't try t submit any type of issue which do not suits for this project
+Also warning to all contributors to not to submit same issue which was already submitted by any other Contributors 
 ## Our Standards
 
 Examples of behavior that contributes to creating a positive environment include:

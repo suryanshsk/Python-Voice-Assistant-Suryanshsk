@@ -1,4 +1,5 @@
-#install speech_recognition , translate and pyttsx3 libraries
+
+ion , translate and pyttsx3 libraries
 #make sure there are no microphone or hardware issues
 
 import speech_recognition as sr
@@ -21,6 +22,11 @@ def translate_text(text, target_language):
 def speak(text):
     engine.say(text)
     engine.runAndWait()
+    
+
+
+    
+    
 
 # Function to capture voice commands and convert speech to text
 def voice_to_text():
