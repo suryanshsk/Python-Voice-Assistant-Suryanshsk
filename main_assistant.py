@@ -15,6 +15,13 @@ from open_app import open_application
 from gemini_info import get_gemini_response
 from song_data import SONGS
 from website_data import WEBSITES
+import genai
+import speech_recognition as sr
+
+gemini_api_key = "3589d8356bff4d6b8d1204c44d4030f2"  # Your Gemini AI API key
+news_api_key = '3589d8356bff4d6b8d1204c44d4030f2'  # Your News API key
+weather_api_key = 'b6b4b3cdebebe7fe2a74fe942aa20830'  
+genai.configure(api_key=gemini_api_key)
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -188,4 +195,3 @@ if __name__ == "__main__":
     logging.info(response)
     speak(response)
     main()
-
