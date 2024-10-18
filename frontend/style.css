@@ -1,4 +1,43 @@
- /* General Styles */
+
+/* General Styles */
+
+:root{
+    --color1: #ffffff; /* Lighter background */
+    --color2: #dfe8f1; /* Light blue for secondary elements */
+    --color3: #3498db; /* Accent color */
+    --color4: #a8c7dc; /* Muted blue for headers/background */
+    --color5: #333333; /* Dark grey text for good contrast */
+    --color6: #f9f9f9; /* Lighter for cards, sections */
+    --color7: #312e2e; /* Light grey for secondary text */
+    --color8: #666666; /* Medium grey for subtle contrasts */
+    --color9: rebeccapurple; /* Accent purple */
+    --color10: #2980b9; /* Darker blue for buttons and hover */
+    --color11: #555555; /* Medium grey for text */
+    --color12: #000000; /* Dark text */
+    --color13: #e9eff6; /* Very light blue/white for background */
+    --color14: #004080; /* Darker blue for emphasis */
+    --color15:#004080;
+}
+
+.dark-theme{
+    --color1: #2c3e50; /* Dark blue/grey background */
+    --color2: #34495e; /* Slightly lighter dark grey/blue */
+    --color3: #ecf0f1; /* Light grey for text */
+    --color4: #3a3f44; /* Dark grey for sections/cards */
+    --color5: #ffffff; /* White for text */
+    --color6: #444444; /* Dark grey background for cards */
+    --color7: #bbbbbb; /* Light grey for secondary text */
+    --color8: #888888; /* Mid-grey for minor contrasts */
+    --color9: wheat; /* Accent purple */
+    --color10: #1abc9c; /* Accent teal for buttons/hover */
+    --color11: #95a5a6; /* Light grey for text */
+    --color12: #ecf0f1; /* Off-white for text */
+    --color13: #2c3e50; /* Deep background */
+    --color14: #2980b9; /* Blue for emphasized elements */
+    --color15: #494d52;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -7,52 +46,92 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(color1);
+    padding-top: 80px; /* Prevent content from being hidden under the fixed navbar */
 }
 
-/* Header Section */
-.main-header {
-    background-color: #a8c7dc;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
+/* Navbar Styles */
+#icon{
+    width: 50px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 nav {
+    background-color: var(--color4);
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
+    padding: 20px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
 }
 
 nav .logo {
+    color: var(--color3);
     font-size: 1.5rem;
     font-weight: bold;
 }
 
+/* Adjusted nav ul styles for inline buttons */
 nav ul {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0 10px; /* Add margin for spacing */
 }
 
 nav ul li a {
-    color: white;
+    border: 2px var(--color6);
+    padding: 8px 12px;
+    color: var(--color12);
     text-decoration: none;
     font-weight: bold;
+    display: inline-block; /* Keep links in one line */
+    transition: background-color 0.3s ease;
 }
 
-.header-content {
-    margin-top: 50px;
+nav ul li a:hover {
+    background-color: var(--color15);
+    color: white;
 }
+
+/* Responsive Styles */
+/* Header Section */
+
+.main_topic, .main_para{
+    color: var(--color9);
+}
+.main-header {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color4);
+    color: var(--color6);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.header-content img {
+    margin-top: 30px;
+    width: 40%;
+    align-content: center;
+    justify-content: center;
+}
+
 .header-image {
     max-width: 100%; /* Ensure the image is responsive */
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 20px; /* Add some space below the image */
 }
-
 
 .header-content h1 {
     font-size: 2.5rem;
@@ -63,9 +142,69 @@ nav ul li a {
     font-size: 1.2rem;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    nav .logo {
+        margin-bottom: 10px;
+        font-size: 1.2rem; 
+        display: flex;/* Adjust logo size on smaller screens */
+    }
+
+    nav ul {
+        flex-direction: row; /* Keep buttons in one line */
+        justify-content: flex-start; /* Align buttons to the left */
+        width: auto; /* Adjust width to fit buttons */
+    }
+
+    nav ul li {
+        margin: 0 5px; /* Adjust margin for closer spacing */
+    }
+
+    nav ul li a {
+        padding: 10px 15px; /* More padding for better touch targets */
+    }
+
+    body {
+        padding-top: 90px; /* Adjust padding to avoid overlap with the navbar */
+    }
+
+    .header-content img {
+        width: 50%; /* Adjust image size for smaller screens */
+    }
+    
+    .header-content h1 {
+        font-size: 2rem; /* Adjust heading size for smaller screens */
+    }
+
+    .header-content p {
+        font-size: 1rem; /* Adjust paragraph size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content img {
+        width: 70%; /* Further reduce image size on very small screens */
+    }
+    
+    .header-content h1 {
+        font-size: 1.8rem; /* Further adjust heading size */
+    }
+
+    .header-content p {
+        font-size: 0.9rem; /* Further adjust paragraph size */
+    }
+}
+
 .cta-button {
-    background-color: white;
-    color: #3498db;
+    background-color: var(--color6);
+    color: var(--color3);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -74,26 +213,32 @@ nav ul li a {
 }
 
 .cta-button:hover {
-    background-color: #2980b9;
-    color: white;
+    background-color: var(--color10);
+    color: var(--color6);
 }
 
  
 /* Features Section */
+#features h2{
+    color:var(--color5)
+    /* color:red; */
+}
+
 .features-section {
     padding: 60px 20px;
     text-align: center;
-    background-color: #ffffff;
+    background-color: var(--color6);
 }
 
 .features-slider {
+    display: flex;
     width: 80%;
     margin: 0 auto; /* Center the slider */
 }
 
 .feature-item {
-    background-color:#B0CFDE;
-    padding: 30px;
+    background-color:var(--color4);
+    padding: 60px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -103,7 +248,7 @@ nav ul li a {
     height: 250px;  /* Set a fixed height */
     display: flex;   /* Use flexbox for alignment */
     flex-direction: column; /* Stack children vertically */
-    justify-content: space-between; /* Space items evenly */
+    justify-content:space-between; /* Space items evenly */
 }
 
 .feature-item:hover {
@@ -112,92 +257,114 @@ nav ul li a {
 
 .feature-item i {
     font-size: 50px;
-    color: #3498db;
+    color: var(--color3);
     margin-bottom: 15px;
 }
 
 .feature-item h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    color: var(--color12);
 }
 
 .feature-item p {
     font-size: 1rem;
     margin: 0; /* Remove default margin */
+    color: var(--color12);
 }
 
  
 /* API Setup Section */
+/* General styling */
 .setup-section {
-    padding: 60px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .setup-section h2 {
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 2rem;
     margin-bottom: 20px;
-}
-
-.setup-section p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 40px;
 }
 
 .api-setup-instructions {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .api-item {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    margin: 0 auto;
-    max-width: 800px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1 1 30%; /* Flexible and responsive */
+    min-width: 250px; /* Minimum width to prevent shrinking too much */
 }
 
 .api-item h3 {
-    font-size: 1.8rem;
-    color: #3498db;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 .api-item p {
     font-size: 1rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.api-item ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.api-item ul li {
-    font-size: 1rem;
     margin-bottom: 10px;
 }
 
-.api-item ul li a {
-    color: #3498db;
-    text-decoration: none;
+.api-item ul {
+    padding-left: 20px;
 }
 
-.api-item ul li a:hover {
-    text-decoration: underline;
+.api-item li {
+    margin-bottom: 5px;
 }
 
- 
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .api-setup-instructions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .api-item {
+        flex: 1 1 100%; /* Stack items vertically */
+        max-width: 100%;
+    }
+
+    .setup-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .api-item h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .setup-section {
+        padding: 15px;
+    }
+
+    .setup-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .api-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .api-item p, .api-item li {
+        font-size: 0.9rem;
+    }
+}
+
 /* Footer Section */
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--color4);
+    color: var(--color6);
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
@@ -210,21 +377,24 @@ nav ul li a {
     width: 100%;
     max-width: 1200px;
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Allows the content to wrap on smaller screens */
 }
 
 .footer-section {
     flex: 1;
     padding: 10px;
+    min-width: 250px; /* Ensures each section has a minimum width */
 }
 
 .footer-section h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color:white;
 }
 
 .footer-section p {
     font-size: 1rem;
-    color: #ddd;
+    color: var(--color7);
 }
 
 .footer-section ul {
@@ -237,18 +407,20 @@ nav ul li a {
 }
 
 .footer-section ul li a {
-    color: #fff;
+    color: var(--color7);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-section ul li a:hover {
-    color: #3498db;
+    color: var(--color3);
 }
 
 .footer-bottom {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--color8);
     padding: 20px 0;
     width: 100%;
 }
@@ -256,5 +428,36 @@ nav ul li a {
 .footer-bottom p {
     margin: 0;
     font-size: 0.9rem;
-    color: #bbb;
+    color: var(--color7);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack the sections vertically on smaller screens */
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px; /* Add spacing between sections */
+    }
+}
+
+.email-text{
+    color: var(--color7);
+}
+
+.footer-section ul li{
+    color: var(--color7);
+}
+
+.to_top{
+    bottom:10px;
+    right: 10px;
+    position: fixed;
+}
+
+.scroll_back{
+    height: auto;
+    width: 50px;
 }

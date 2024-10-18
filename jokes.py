@@ -140,4 +140,5 @@ def joke_voice_assistant():
         else:
             print("Oops! That's not on the list, try again later")
 
-joke_voice_assistant()
+if __name__ == "__main__":
+    joke_voice_assistant()

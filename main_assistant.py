@@ -189,10 +189,14 @@ def main():
                 response = "Sorry, I couldn't find the information."
                 logging.error(f"Error fetching Gemini response: {e}")
                 speak(response)
-
-
 if __name__ == "__main__":
+    RUNNING = True
+    
+    reminder_thread.start()
     response = "Hello, I'm Your PA. How can I assist you today?"
     logging.info(response)
     speak(response)
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        RUNNING = False

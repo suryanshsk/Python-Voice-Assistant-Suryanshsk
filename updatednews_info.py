@@ -1,6 +1,6 @@
 import requests
 
-def get_news(api_key, category=None, country='us', num_articles=5):
+def get_news(api_key = 'YOUR_API_KEY', category=None, country='us', num_articles=5):
     """
     Fetches the latest news headlines from the News API.
 

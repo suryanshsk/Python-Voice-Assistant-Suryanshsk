@@ -59,6 +59,14 @@
 
 A sophisticated Python-based virtual assistant utilizing Gemini AI. This project integrates various functionalities to create a versatile and interactive assistant.
 
+# Table of Contents
+
+1. [Installation](#installation)
+2. [Notice](#notice)
+3. [Contributors](#our-valuable-contributors-%EF%B8%8F)
+4. [Contact](#contact)
+5. [Reporting Issues](#reporting-issues)
+
 ## Installation
 
 Follow these steps to set up the project on your local machine:
@@ -118,6 +126,18 @@ Follow these steps to set up the project on your local machine:
      pip install -U google-generativeai
      ```
 
+    - To ensure your Python voice recognition assistant runs smoothly,
+    here's a list of essential packages you should install:
+      ```bash
+        pip install SpeechRecognition
+        pip install pyaudio
+        pip install setuptools
+       ```
+
+    - To use gTTS (Google Text-to-Speech) in your Python project:
+      ```bash
+        pip install gtts
+      ```
 6. **Configure API Keys**
 
    - Replace the placeholder API keys in the code with your actual API keys:
@@ -174,6 +194,8 @@ We are grateful to all the contributors who have helped improve this project. Yo
             <td align="center">
                 <a href="https://github.com/suryanshsk">
                     <img src="https://avatars.githubusercontent.com/u/88218773?v=4" width="100;" alt="suryanshsk"/>
+			<br />
+                    <sub><b>Owner</b></sub>
                     <br />
                     <sub><b>Suryansh singh</b></sub>
                 </a>
@@ -186,6 +208,13 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/PavanTeja2005">
+                    <img src="https://avatars.githubusercontent.com/u/98730339?v=4" width="100;" alt="PavanTeja2005"/>
+                    <br />
+                    <sub><b>PavanTeja2005</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/Chin-may02">
                     <img src="https://avatars.githubusercontent.com/u/179141504?v=4" width="100;" alt="Chin-may02"/>
                     <br />
@@ -193,84 +222,8 @@ We are grateful to all the contributors who have helped improve this project. Yo
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/Dsmita03">
-                    <img src="https://avatars.githubusercontent.com/u/123728188?v=4" width="100;" alt="Dsmita03"/>
-                    <br />
-                    <sub><b>Debasmita Sarkar</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/djv554">
-                    <img src="https://avatars.githubusercontent.com/u/174509658?v=4" width="100;" alt="djv554"/>
-                    <br />
-                    <sub><b>Deanne Vaz</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/jaidh01">
-                    <img src="https://avatars.githubusercontent.com/u/117927011?v=4" width="100;" alt="jaidh01"/>
-                    <br />
-                    <sub><b>Jai Dhingra</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/Codewithmeowmeow">
-                    <img src="https://avatars.githubusercontent.com/u/182342654?v=4" width="100;" alt="Codewithmeowmeow"/>
-                    <br />
-                    <sub><b>codewithvibha</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/AnujSaha0111">
-                    <img src="https://avatars.githubusercontent.com/u/153378181?v=4" width="100;" alt="AnujSaha0111"/>
-                    <br />
-                    <sub><b>Anuj Saha</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Deeptig9138">
-                    <img src="https://avatars.githubusercontent.com/u/156528626?v=4" width="100;" alt="Deeptig9138"/>
-                    <br />
-                    <sub><b>Deepti Gupta</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/say-het">
-                    <img src="https://avatars.githubusercontent.com/u/71073587?v=4" width="100;" alt="say-het"/>
-                    <br />
-                    <sub><b>Het Modi</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Kritika75">
-                    <img src="https://avatars.githubusercontent.com/u/142504516?v=4" width="100;" alt="Kritika75"/>
-                    <br />
-                    <sub><b>Kritika Singh </b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Herostomo">
-                    <img src="https://avatars.githubusercontent.com/u/155301429?v=4" width="100;" alt="Herostomo"/>
-                    <br />
-                    <sub><b>Kshitij Vijay Hedau</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/ShrishtiSingh26">
-                    <img src="https://avatars.githubusercontent.com/u/142707684?v=4" width="100;" alt="ShrishtiSingh26"/>
-                    <br />
-                    <sub><b>Shrishti</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/zsquare12">
-                    <img src="https://avatars.githubusercontent.com/u/36557466?v=4" width="100;" alt="zsquare12"/>
-                    <br />
-                    <sub><b>Jitendra Kumar</b></sub>
+ 
+                    <sub><b>23WH1A0507</b></sub>
                 </a>
             </td>
 		</tr>

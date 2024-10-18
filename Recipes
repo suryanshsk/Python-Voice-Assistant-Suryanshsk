@@ -1,0 +1,257 @@
+#####html#########
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Selector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recipe Menu</h1>
+        <label for="recipeType">Choose a type of recipe:</label>
+        <select id="recipeType" onchange="showRecipes()">
+            <option value="">Select...</option>
+            <option value="sweet">Sweet</option>
+            <option value="hot">Hot</option>
+            <option value="spicy">Spicy</option>
+            <option value="Desserts">Desserts</option>
+        </select>
+        
+        <div id="recipeList" class="hidden">
+            <h2>Recipes:</h2>
+            <ul id="recipes"></ul>
+            <div id="procedure" class="hidden">
+                <h3>Procedure:</h3>
+                <ul id="procedureText"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+####css########
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+li {
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+li:hover {
+    color: blue;
+}
+
+######js######
+const recipes = {
+    sweet: {
+        "Brownies": [
+            "Preheat your oven to 350°F (175°C).",
+            "In a bowl, mix 1 cup of melted butter with 2 cups of sugar.",
+            "Stir in 4 eggs, one at a time.",
+            "Add 1 teaspoon of vanilla extract.",
+            "In another bowl, combine 1 cup of cocoa powder, 1 cup of flour, and a pinch of salt.",
+            "Gradually mix the dry ingredients into the wet mixture.",
+            "Pour the batter into a greased 9x13 inch pan.",
+            "Bake for 30 to 35 minutes.",
+            "Allow to cool before cutting into squares."
+        ],
+        "Chocolate Cake": [
+            "Preheat your oven to 350°F (175°C).",
+            "In a bowl, mix 2 cups of flour, 2 cups of sugar, 3/4 cup of cocoa powder, and 1.5 teaspoons of baking powder.",
+            "Add 1 cup of butter, 4 eggs, and 1 cup of milk.",
+            "Mix until smooth.",
+            "Pour the batter into two greased 9-inch round pans.",
+            "Bake for 25 to 30 minutes.",
+            "Once cooled, frost as desired."
+        ],
+        "Cupcakes": [
+            "Preheat your oven to 350°F (175°C).",
+            "In a bowl, cream together 1/2 cup of butter and 1 cup of sugar.",
+            "Add 2 eggs and 1 teaspoon of vanilla extract, mix well.",
+            "In another bowl, combine 1 1/2 cups of flour, 1 3/4 teaspoons of baking powder, and 1/2 cup of milk.",
+            "Gradually add the dry mixture to the wet mixture.",
+            "Fill cupcake liners 2/3 full.",
+            "Bake for 15 to 20 minutes.",
+            "Allow to cool before frosting."
+        ],
+        "Donuts": [
+            "Preheat your oil in a deep fryer to 375°F (190°C).",
+            "In a large bowl, mix 2 cups flour, 2/3 cup sugar, 2 teaspoons baking powder, and 1/2 teaspoon salt.",
+            "In another bowl, mix 2 eggs, 1/2 cup milk, and 1/4 cup melted butter.",
+            "Combine the wet and dry ingredients until smooth.",
+            "Pipe the batter into donut shapes.",
+            "Fry for about 2-3 minutes on each side.",
+            "Remove and dust with sugar."
+        ],
+        "Ice Cream": [
+            "In a bowl, mix together 2 cups of cream, 1 cup of milk, and 3/4 cup of sugar.",
+            "Add 1 teaspoon of vanilla extract.",
+            "Pour the mixture into an ice cream maker.",
+            "Churn until it reaches a soft-serve consistency.",
+            "Transfer to a container and freeze for at least 4 hours."
+        ],
+        "Pancakes": [
+            "In a bowl, mix 1 cup flour, 2 tablespoons sugar, 1 tablespoon baking powder, and a pinch of salt.",
+            "In another bowl, whisk together 1 cup milk, 1 egg, and 2 tablespoons melted butter.",
+            "Combine both mixtures and stir until just mixed.",
+            "Heat a skillet over medium heat and pour 1/4 cup of batter for each pancake.",
+            "Cook until bubbles form and then flip, cooking until golden brown."
+        ],
+        "Pudding": [
+            "In a saucepan, combine 2 cups of milk and 1/2 cup of sugar over medium heat.",
+            "In a separate bowl, mix 1/4 cup of cornstarch with a little cold milk to dissolve.",
+            "Once milk is hot, whisk in the cornstarch mixture.",
+            "Continue to stir until the mixture thickens.",
+            "Remove from heat and stir in vanilla extract.",
+            "Pour into dishes and chill in the refrigerator."
+        ],
+        "Tarts": [
+            "Preheat your oven to 375°F (190°C).",
+            "Prepare tart pastry by mixing 1 1/4 cups flour with 1/2 cup butter and 1/4 cup sugar.",
+            "Press into a tart pan.",
+            "Fill with your choice of fruit filling or custard.",
+            "Bake for 25-30 minutes until golden.",
+            "Let cool before removing from the pan."
+        ],
+        "Waffles": [
+            "Preheat your waffle maker.",
+            "In a bowl, mix 2 cups of flour, 2 tablespoons of sugar, 1 tablespoon of baking powder, and 1/2 teaspoon of salt.",
+            "In another bowl, whisk together 2 eggs, 1 3/4 cups of milk, and 1/2 cup of melted butter.",
+            "Combine both mixtures until just combined.",
+            "Pour batter into the waffle maker and cook until golden brown."
+        ]
+    },
+    hot: {
+        "Chili": [
+            "In a large pot, cook 1 lb of ground beef until browned.",
+            "Add chopped onions, garlic, and bell peppers, cook until soft.",
+            "Stir in 2 cans of diced tomatoes, 1 can of kidney beans, and 1 can of chili beans.",
+            "Add chili powder and cumin to taste.",
+            "Simmer for at least 30 minutes."
+        ],
+        "Curry": [
+            "Heat 2 tablespoons of oil in a pot.",
+            "Add 1 chopped onion and cook until soft.",
+            "Stir in garlic, ginger, and curry powder.",
+            "Add your choice of protein (chicken/tofu) and cook until browned.",
+            "Add vegetables and coconut milk, simmer until cooked."
+        ],
+        "Jalapeno Poppers": [
+            "Preheat your oven to 400°F (200°C).",
+            "Cut jalapenos in half and remove seeds.",
+            "Mix cream cheese with shredded cheese.",
+            "Fill jalapenos with cheese mixture.",
+            "Wrap with bacon and arrange on a baking sheet.",
+            "Bake for 20-25 minutes until bacon is crispy."
+        ],
+        "Hot Wings": [
+            "Preheat your oven to 400°F (200°C).",
+            "Mix melted butter with hot sauce.",
+            "Toss chicken wings in the sauce and place on a baking sheet.",
+            "Bake for 40-45 minutes until crispy.",
+            "Serve with ranch or blue cheese dressing."
+        ],
+        "Spicy Tacos": [
+            "Cook ground beef with taco seasoning in a skillet.",
+            "Warm taco shells according to package instructions.",
+            "Fill with meat, shredded lettuce, diced tomatoes, and shredded cheese.",
+            "Top with hot sauce or jalapenos."
+        ],
+        "Salsa": [
+            "Dice 4 tomatoes, 1 onion, and 1 jalapeno.",
+            "Combine in a bowl with 1/4 cup chopped cilantro and juice of 1 lime.",
+            "Season with salt to taste.",
+            "Chill in the refrigerator before serving."
+        ],
+        "Pepper Pot Soup": [
+            "In a pot, sauté chopped onions and bell peppers in oil.",
+            "Add 1 lb of meat (beef/chicken) and brown it.",
+            "Pour in 4 cups of broth and add spices.",
+            "Simmer until the meat is tender.",
+            "Serve hot."
+        ],
+        "Buffalo Cauliflower": [
+            "Preheat your oven to 450°F (230°C).",
+            "Cut cauliflower into florets.",
+            "Toss with hot sauce and olive oil.",
+            "Spread on a baking sheet and roast for 20 minutes until crispy."
+        ],
+        "Spicy Pizza": [
+            "Preheat your oven according to the pizza dough instructions.",
+            "Roll out pizza dough on a baking sheet.",
+            "Spread pizza sauce and sprinkle with cheese.",
+            "Add sliced hot peppers and additional spices.",
+            "Bake until crust is golden and cheese is bubbly."
+        ]
+    }
+};
+
+function showRecipes() {
+    const recipeType = document.getElementById('recipeType').value;
+    const recipeList = document.getElementById('recipes');
+    const recipeDisplay = document.getElementById('recipeList');
+    const procedureDisplay = document.getElementById('procedure');
+    const procedureText = document.getElementById('procedureText');
+    
+    // Clear previous list and procedure
+    recipeList.innerHTML = '';
+    procedureDisplay.classList.add('hidden');
+    
+    if (recipeType) {
+        // Get recipes and sort them
+        const selectedRecipes = Object.keys(recipes[recipeType]).sort();
+        
+        // Populate the list
+        selectedRecipes.forEach(recipe => {
+            const li = document.createElement('li');
+            li.textContent = recipe;
+            li.onclick = () => showProcedure(recipe, recipeType); // Set procedure display on click
+            recipeList.appendChild(li);
+        });
+        
+        // Show the recipe list section
+        recipeDisplay.classList.remove('hidden');
+    } else {
+        // If no selection, hide the recipe list
+        recipeDisplay.classList.add('hidden');
+    }
+}
+
+function showProcedure(recipeName, recipeType) {
+    const procedureText = document.getElementById('procedureText');
+    const procedureDisplay = document.getElementById('procedure');
+    
+    // Display the procedure for the selected recipe
+    procedureText.innerHTML = recipes[recipeType][recipeName].map(step => `<li>${step}</li>`).join('');
+    procedureDisplay.classList.remove('hidden');
+}
