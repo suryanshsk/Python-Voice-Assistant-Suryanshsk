@@ -16,4 +16,6 @@ document.getElementById('start-button').addEventListener('click', function() {
     ws.onclose = function() {
         console.log('WebSocket connection closed');
     };
+
+    
 });
