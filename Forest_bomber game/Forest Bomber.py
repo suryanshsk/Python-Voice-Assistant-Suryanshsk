@@ -9,7 +9,7 @@ pygame.mixer.init()
 
 # Define colors
 WHITE = (255, 255, 255)
-PURPLE = (96, 85, 154)
+PURPLE = (96, 86, 154)
 LIGHT_BLUE = (157, 220, 241)
 DARK_BLUE = (63, 111, 182)
 GREEN = (57, 180, 22)
