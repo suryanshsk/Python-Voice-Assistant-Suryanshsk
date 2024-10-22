@@ -1,0 +1,13 @@
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "year": 1925,
+  "genres": ["Fiction", "Classic", "Literary"],
+  "available": true,
+  "details": {
+    "pages": 180,
+    "language": "English",
+    "isbn": "978-0-7432-7356-5"
+  }
+}
+  
