@@ -4,7 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 import re
-
+import plotly.graph_objs as go
+import plotly.io as pio
 
 def basic_arithmetic(op, a, b):
     try:
@@ -91,27 +92,64 @@ def matrix_operations(matrix_a, matrix_b, operation):
     except Exception as e:
         return f"Error: {str(e)}"
 
-
 def plot_function(expr, x_range):
     try:
         x = sp.symbols('x')
         f = sp.lambdify(x, expr, 'numpy')
-        x_vals = np.linspace(x_range[0], x_range[1], 100)
+
+        x_vals = np.linspace(x_range[0], x_range[1], 1000)
         y_vals = f(x_vals)
 
-        plt.figure()
-        plt.plot(x_vals, y_vals, label=str(expr))
-        plt.title('Function Plot')
-        plt.xlabel('x')
-        plt.ylabel('f(x)')
-        plt.axhline(0, color='black', lw=0.5, ls='--')
-        plt.axvline(0, color='black', lw=0.5, ls='--')
-        plt.grid()
-        plt.legend()
-        plt.show()
+        fig = go.Figure()
+
+        fig.add_trace(go.Scatter(
+            x=x_vals, y=y_vals,
+            mode='lines',
+            name=str(expr),
+            line=dict(color='blue', width=2),
+            hoverinfo='x+y',  
+        ))
+
+        fig.add_trace(go.Scatter(
+            x=[x_range[0], x_range[1]], y=[0, 0],
+            mode='lines',
+            line=dict(color='black', dash='dash'),
+            hoverinfo='skip',
+            showlegend=False
+        ))
+        fig.add_trace(go.Scatter(
+            x=[0, 0], y=[min(y_vals), max(y_vals)],
+            mode='lines',
+            line=dict(color='black', dash='dash'),
+            hoverinfo='skip',
+            showlegend=False
+        ))
+        fig.update_layout(
+            title=f'Plot of {str(expr)}',
+            xaxis_title='x',
+            yaxis_title='f(x)',
+            xaxis=dict(
+                zeroline=True,
+                showline=True,
+                showgrid=True,
+                gridcolor='lightgray',
+                zerolinecolor='black'
+            ),
+            yaxis=dict(
+                zeroline=True,
+                showline=True,
+                showgrid=True,
+                gridcolor='lightgray',
+                zerolinecolor='black'
+            ),
+            plot_bgcolor='white', 
+            hovermode="closest",   
+        )
+
+        fig.show()
+
     except Exception as e:
         return f"Error in plotting: {str(e)}"
-
 
 def statistical_analysis(data):
     try:
