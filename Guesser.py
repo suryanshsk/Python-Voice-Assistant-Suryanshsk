@@ -8,8 +8,10 @@ class QuestionNode:
         self.yes = None
         self.no = None
 
+# Initialize pyttsx3 engine globally
+engine = pyttsx3.init()
+
 def speak(text):
-    engine = pyttsx3.init()
     engine.say(text)
     engine.runAndWait()
 
