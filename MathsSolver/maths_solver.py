@@ -4,7 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 import re
-
+import plotly.graph_objs as go
+import plotly.io as pio
 
 def basic_arithmetic(op, a, b):
     try:
@@ -91,27 +92,64 @@ def matrix_operations(matrix_a, matrix_b, operation):
     except Exception as e:
         return f"Error: {str(e)}"
 
-
 def plot_function(expr, x_range):
     try:
         x = sp.symbols('x')
         f = sp.lambdify(x, expr, 'numpy')
-        x_vals = np.linspace(x_range[0], x_range[1], 100)
+
+        x_vals = np.linspace(x_range[0], x_range[1], 1000)
         y_vals = f(x_vals)
 
-        plt.figure()
-        plt.plot(x_vals, y_vals, label=str(expr))
-        plt.title('Function Plot')
-        plt.xlabel('x')
-        plt.ylabel('f(x)')
-        plt.axhline(0, color='black', lw=0.5, ls='--')
-        plt.axvline(0, color='black', lw=0.5, ls='--')
-        plt.grid()
-        plt.legend()
-        plt.show()
+        fig = go.Figure()
+
+        fig.add_trace(go.Scatter(
+            x=x_vals, y=y_vals,
+            mode='lines',
+            name=str(expr),
+            line=dict(color='blue', width=2),
+            hoverinfo='x+y',  
+        ))
+
+        fig.add_trace(go.Scatter(
+            x=[x_range[0], x_range[1]], y=[0, 0],
+            mode='lines',
+            line=dict(color='black', dash='dash'),
+            hoverinfo='skip',
+            showlegend=False
+        ))
+        fig.add_trace(go.Scatter(
+            x=[0, 0], y=[min(y_vals), max(y_vals)],
+            mode='lines',
+            line=dict(color='black', dash='dash'),
+            hoverinfo='skip',
+            showlegend=False
+        ))
+        fig.update_layout(
+            title=f'Plot of {str(expr)}',
+            xaxis_title='x',
+            yaxis_title='f(x)',
+            xaxis=dict(
+                zeroline=True,
+                showline=True,
+                showgrid=True,
+                gridcolor='lightgray',
+                zerolinecolor='black'
+            ),
+            yaxis=dict(
+                zeroline=True,
+                showline=True,
+                showgrid=True,
+                gridcolor='lightgray',
+                zerolinecolor='black'
+            ),
+            plot_bgcolor='white', 
+            hovermode="closest",   
+        )
+
+        fig.show()
+
     except Exception as e:
         return f"Error in plotting: {str(e)}"
-
 
 def statistical_analysis(data):
     try:
@@ -314,7 +352,7 @@ def process_command(command):
 
 
 if __name__ == "__main__":
-    # Sample commands (for testing)
+    print("Testing Phase-")  
     print(basic_arithmetic('add', 10, 5))  # Output: 15
     print(solve_equation(sp.sympify('x**2 - 4')))  # Output: [-2, 2]
     print(trigonometric_function('sin', 30))  # Output: 0.5
@@ -330,3 +368,96 @@ if __name__ == "__main__":
     print(process_command("statistical analysis [1, 2, 3, 4, 5]"))  # Output: {'mean': 3.0, 'median': 3.0, 'std_dev': 1.4142135623730951, 'variance': 2.0, 'correlation': None, 'slope': 1.0, 'intercept': 1.0}
     print(process_command("plot x**3 from -10 to 10"))  # Generates a plot
     print(process_command("convert 10 meters to feet"))  # Output: 32.8084
+
+def user_input():
+    while True: 
+        print("\nWelcome to the Maths Solver!")
+        print("Choose the operation you want to perform:")
+        print("1. Basic Arithmetic (add, subtract, multiply, divide)")
+        print("2. Solve Equation")
+        print("3. Trigonometric Function (sin, cos, tan)")
+        print("4. Differentiation")
+        print("5. Integration")
+        print("6. Factorial")
+        print("7. Fibonacci")
+        print("8. Matrix Operations (add, subtract, multiply)")
+        print("9. Complex Number Operations (add, subtract, multiply, divide)")
+        print("10. Unit Conversion")
+        print("11. Plot Function")
+        print("12. Statistical Analysis")
+        print("13. Exit")  
+        
+        choice = input("Enter the number of your choice: ")
+
+        if choice == '1':
+            a = float(input("Enter first number: "))
+            b = float(input("Enter second number: "))
+            operation = input("Enter operation (add, subtract, multiply, divide): ").lower()
+            print(f"Result: {basic_arithmetic(operation, a, b)}")
+
+        elif choice == '2':
+            equation = input("Enter the equation to solve (e.g., x**2 - 4): ")
+            x = sp.symbols('x')
+            equation_expr = sp.sympify(equation)
+            print(f"Solution: {solve_equation(equation_expr)}")
+
+        elif choice == '3':
+            angle = float(input("Enter the angle (in degrees): "))
+            function = input("Enter the trigonometric function (sin, cos, tan): ").lower()
+            print(f"Result: {trigonometric_function(function, angle)}")
+
+        elif choice == '4':
+            expression = input("Enter the expression to differentiate (e.g., x**3 + x): ")
+            expr = sp.sympify(expression)
+            print(f"Derivative: {differentiate(expr)}")
+
+        elif choice == '5':
+            expression = input("Enter the expression to integrate (e.g., x**2): ")
+            expr = sp.sympify(expression)
+            print(f"Integral: {integrate(expr)}")
+
+        elif choice == '6':
+            n = int(input("Enter a number for factorial: "))
+            print(f"Factorial: {factorial(n)}")
+
+        elif choice == '7':
+            n = int(input("Enter the number of Fibonacci terms to generate: "))
+            print(f"Fibonacci sequence: {fibonacci(n)}")
+
+        elif choice == '8':
+            matrix_a = eval(input("Enter matrix A (e.g., [[1, 2], [3, 4]]): "))
+            matrix_b = eval(input("Enter matrix B (e.g., [[5, 6], [7, 8]]): "))
+            operation = input("Enter matrix operation (add, subtract, multiply): ").lower()
+            print(f"Matrix Result: {matrix_operations(np.array(matrix_a), np.array(matrix_b), operation)}")
+
+        elif choice == '9':
+            a = input("Enter the first complex number (e.g., 1+2j): ")
+            b = input("Enter the second complex number (e.g., 3+4j): ")
+            operation = input("Enter complex operation (add, subtract, multiply, divide): ").lower()
+            print(f"Result: {complex_operations(operation, a, b)}")
+
+        elif choice == '10':
+            value = float(input("Enter the value to convert: "))
+            from_unit = input("Enter the from unit (e.g., meters, kilograms): ").lower()
+            to_unit = input("Enter the to unit (e.g., feet, pounds): ").lower()
+            print(f"Converted Value: {unit_conversion(value, from_unit, to_unit)}")
+
+        elif choice == '11':
+            expression = input("Enter the function to plot (e.g., x**3): ")
+            x_range = eval(input("Enter the x-range as a tuple (e.g., (-10, 10)): "))
+            expr = sp.sympify(expression)
+            plot_function(expr, x_range)
+
+        elif choice == '12':
+            data = eval(input("Enter the data for statistical analysis (e.g., [1, 2, 3, 4, 5]): "))
+            print(f"Statistical Analysis: {statistical_analysis(data)}")
+
+        elif choice == '13':
+            print("Exiting the Maths Solver. Goodbye!")
+            break 
+
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    user_input() 
