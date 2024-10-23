@@ -57,6 +57,11 @@ body {
     margin-right: 10px;
 }
 
+.icon1{
+    height: 40px;
+    width: 50px;
+}
+
 nav {
     background-color: var(--color4);
     display: flex;
@@ -88,6 +93,7 @@ nav ul {
 
 nav ul li {
     margin: 0 10px; /* Add margin for spacing */
+    display: flex;
 }
 
 nav ul li a {
