@@ -101,6 +101,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
+    border-radius: 8px;
     background-color: var(--color15);
     color: white;
 }
@@ -118,6 +119,7 @@ nav ul li a:hover {
     color: var(--color6);
     text-align: center;
     padding: 50px 20px;
+
 }
 
 .header-content img {
@@ -453,7 +455,7 @@ nav ul li a:hover {
 
 .to_top{
     bottom:10px;
-    right: 10px;
+    right: 70px;
     position: fixed;
 }
 
