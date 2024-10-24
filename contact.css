@@ -1,0 +1,19 @@
+.contact .heading{
+    font-size: 50px;
+    color:rgb(134, 134, 134);
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+}
+.input-group-1{
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-group-2{
+    margin: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
