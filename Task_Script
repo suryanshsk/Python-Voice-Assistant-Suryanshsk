@@ -1,0 +1,17 @@
+# Revised Task Script (task1_script.py)
+def perform_task_actions():
+    try:
+        print("Initiating Action 1 for Task 1")
+        input("Press Enter to proceed...")  # Awaiting user input
+        # Implement your code for action 1 here
+        print("Action 1 for Task 1 has been completed")
+
+        print("Now commencing Action 2 for Task 1")
+        input("Press Enter to continue...")  # Awaiting user input
+        # Implement your code for action 2 here
+        print("Action 2 for Task 1 has been completed")
+    except Exception as error:
+        print(f"An error occurred while executing task actions: {str(error)}")
+
+if __name__ == "__main__":
+    perform_task_actions()

@@ -1,0 +1,97 @@
+class UserProfile:
+    def __init__(self, username):
+        self.username = username
+        self.preferences = {
+            'language': 'English',
+            'voice': 'default',
+            'news_categories': []
+        }
+
+    def set_preference(self, key, value):
+        if key in self.preferences:
+            self.preferences[key] = value
+        else:
+            print(f"Preference '{key}' does not exist.")
+
+    def get_preferences(self):
+        return self.preferences
+
+
+user1 = UserProfile('Alice')
+user1.set_preference('language', 'Spanish')
+print(user1.get_preferences())
+class CustomCommand:
+    def __init__(self):
+        self.commands = {}
+
+    def add_command(self, command, action):
+        self.commands[command] = action
+
+    def execute_command(self, command):
+        if command in self.commands:
+            self.commands[command]()
+        else:
+            print("Command not found.")
+
+
+custom_commands = CustomCommand()
+
+def greet_user():
+    print("Hello, Alice!")
+
+custom_commands.add_command("greet", greet_user)
+custom_commands.execute_command("greet")
+
+
+
+class InteractionLearner:
+    def __init__(self):
+        self.interaction_history = []
+
+    def record_interaction(self, user_input, response):
+        self.interaction_history.append((user_input, response))
+
+    def learn(self):
+        # A simple learning mechanism
+        # In a real application, you'd implement machine learning here
+        print("Learning from interactions...")
+        for interaction in self.interaction_history:
+            print(f"User said: {interaction[0]}, Assistant responded: {interaction[1]}")
+
+# Example usage
+learner = InteractionLearner()
+learner.record_interaction("What's the weather?", "It's sunny.")
+learner.learn()
+#voice assistant
+
+class VoiceAssistant:
+    def __init__(self):
+        self.profiles = {}
+        self.custom_commands = CustomCommand()
+        self.learner = InteractionLearner()
+
+    def create_profile(self, username):
+        self.profiles[username] = UserProfile(username)
+
+    def set_profile_preference(self, username, key, value):
+        if username in self.profiles:
+            self.profiles[username].set_preference(key, value)
+
+    def execute_custom_command(self, command):
+        self.custom_commands.execute_command(command)
+
+    def record_user_interaction(self, username, user_input, response):
+        self.learner.record_interaction(user_input, response)
+
+
+assistant = VoiceAssistant()
+assistant.create_profile('Alice')
+assistant.set_profile_preference('Alice', 'language', 'Spanish')
+
+
+assistant.custom_commands.add_command("greet", greet_user)
+assistant.execute_custom_command("greet")
+
+# Record an interaction
+assistant.record_user_interaction('Alice', "What's the weather?", "It's sunny.")
+assistant.learner.learn()

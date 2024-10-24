@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Voice Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <!-- jQuery and Slick Slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <nav>
+            <div class="logo"><a style="display: flex; justify-content: left" href="/index.html"><img
+                        src="image/voice-assistant-ai-high-resolution-logo-transparent.png" width="20%"
+                        alt="Voice-Assistant-Ai"></a></div>
+            <ul>
+               
+                <li><a href="#features">Features</a></li>
+                <li><a href="#setup">Setup</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <img id="icon" src="image/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg">
+            </ul>
+        </nav>
+        <div class="header-content">
+            <img src="image/voice.png" alt="Voice Assistant Image" class="header-image" /> <!-- Add image here -->
+            <h1 class="main_topic">Python Voice Assistant with Gemini AI</h1>
+            <p class="main_para">A smart, AI-powered voice assistant that simplifies your living!</p>
+
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section ">
+        <h2>Features</h2>
+        <div  class="features-slider ">
+            <div class="feature-item" style="height: 250px;">
+                <i class="fas fa-microphone"></i>
+                <h3>Voice Recognition</h3>
+                <p>Processes and understands
+                    <span></span>spoken commands.
+                </p>
+            </div>
+            <div class="feature-item" style="height: 250px; align-items: center;">
+                <i class="fas fa-comment-dots"></i>
+                <h3>Text-to-Speech</h3>
+                <p>Converts written text into natural, clear speech,enabling auditory feedback.
+                </p>
+            </div>
+            <div class="feature-item " style="height: 250px;">
+                <i class="fas fa-cloud-sun"></i>
+                <h3>Weather Updates</h3>
+                <p>Provides real-time <br>weather information.</p>
+            </div>
+            <div class="feature-item" style="height: 250px; align-items: center;">
+                <i class="fas fa-newspaper"></i>
+                <h3>News Retrieval</h3>
+                <p>Fetches the latest<br> news headlines.
+                </p>
+            </div>
+            <div class="feature-item" style="height: 250px;">
+                <i class="fas fa-joke"></i>
+                <h3>Jokes</h3>
+                <p>Delivers fun and entertaining <br>jokes.
+                </p>
+            </div>
+            <div class="feature-item" style="height: 250px;">
+                <i class="fas fa-book"></i>
+                <h3>Wikipedia Information</h3>
+                <p>Retrieves relevant information from Wiki,offering quick access to knowledge.
+                </p>
+            </div>
+            <div class="feature-item" style="height: 250px;">
+                <i class="fas fa-music"></i>
+                <h3>Music Management</h3>
+                <p>Plays,pauses,and manages your music library,letting you enjoy your favorite tracks.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- API Key Setup Section -->
+    <section id="setup" class="setup-section">
+        <h2>API Key Setup</h2>
+        <p>To enable the advanced features of your Python Voice Assistant, you'll need to configure the following API
+            keys. These keys are necessary to connect to external services that provide live data and intelligent
+            responses.</p>
+
+        <div class="api-setup-instructions">
+            <div class="api-item">
+                <h3>🌟 Gemini AI API Key</h3>
+                <p>
+                    Unlock the power of AI-driven responses by integrating Gemini AI. To get started:
+                </p>
+                <ul>
+                    <li>Visit <a href="https://geminiaiplatform.com" target="_blank">Gemini AI Platform</a> and sign up.
+                    </li>
+                    <li>Generate your API key in the account settings.</li>
+                    <li>Replace <code>Your_Own_API_KEY_FOR_GEMINI_AI</code> in the configuration file.</li>
+                </ul>
+            </div>
+
+            <div class="api-item">
+                <h3>🌤 Weather API Key</h3>
+                <p>
+                    To receive real-time weather updates, integrate the Weather API. Here's how:
+                </p>
+                <ul>
+                    <li>Create an account on <a href="https://openweathermap.org" target="_blank">OpenWeatherMap</a> or
+                        <a href="https://weatherapi.com" target="_blank">WeatherAPI</a>.</li>
+                    <li>Generate your API key from the dashboard.</li>
+                    <li>Replace <code>YOUR_WEATHER_API_KEY</code> in the weather module of the project.</li>
+                </ul>
+            </div>
+
+            <div class="api-item">
+                <h3>📰 News API Key</h3>
+                <p>
+                    Fetch the latest headlines with the News API. Set it up by following these steps:
+                </p>
+                <ul>
+                    <li>Go to <a href="https://newsapi.org" target="_blank">NewsAPI</a> and create an account.</li>
+                    <li>Generate an API key under your account settings.</li>
+                    <li>Replace <code>YOUR_NEWS_API_KEY</code> in the news retrieval module.</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <footer class="footer">
+        <section id="footer" class="footer-section">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>Suryanshsk Voice Assistant</h2>
+                    <p>
+                        A sophisticated Python-based virtual assistant utilizing Gemini AI to provide voice recognition,
+                        weather updates, news retrieval, and more.
+                    </p>
+                </div>
+
+                <div class="footer-section links">
+                    <h2>Quick Links </h2>
+                    <ul>
+                        <li><a href="#setup">API Key Setup</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contact">
+                    <h2>Contact Us</h2>
+                    <p>
+                        Have questions or feedback? Reach out to us:
+                    </p>
+                    <ul>
+                        <li><span class="email-text">Email:</span> <a
+                                href="mailto:suryanshskcontact@gmail.com">suryanshskcontact@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Suryanshsk. All rights reserved.</p>
+            </div>
+    </footer>
+    <a href="#" class="to_top" id="scroll_top_btn">
+        <img class="scroll_back" src="image/scroll_top.png">
+    </a>
+
+    <script>
+
+        var icon = document.getElementById("icon");
+        icon.onclick = function () {
+            document.body.classList.toggle("dark-theme");
+            if (document.body.classList.contains("dark-theme")) {
+                icon.src = "image/light_mode.png";
+            }
+            else {
+                icon.src = "image/dark_mode.png";
+            }
+        }
+
+        document.getElementById("scroll_top_btn").addEventListener("click", function(e) {
+        e.preventDefault(); // Prevent default anchor click behavior
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top with smooth animation
+    });
+    </script>
+
+</body>

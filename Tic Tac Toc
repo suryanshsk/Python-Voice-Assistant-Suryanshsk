@@ -1,0 +1,153 @@
+#########html#######
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Multiplayer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div id="gameBoard" class="game-board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+    </div>
+    <div id="statusMessage" class="status-message"></div>
+    <button id="resetButton">Reset Game</button>
+    <script src="script.js"></script>
+</body>
+</html>
+
+######css########
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #d0d0d0;
+}
+
+.cell.x {
+    color: blue;
+}
+
+.cell.o {
+    color: red;
+}
+
+#resetButton {
+    margin-top: 20px;
+}
+
+.status-message {
+    margin: 20px;
+    font-size: 1.5em;
+}
+
+########js#########
+const cells = document.querySelectorAll('.cell');
+const resetButton = document.getElementById('resetButton');
+const statusMessage = document.getElementById('statusMessage');
+let currentPlayer = 'x'; // 'x' starts first
+let board = ['', '', '', '', '', '', '', '', '']; // Game board state
+
+cells.forEach(cell => {
+    cell.addEventListener('click', handleClick);
+});
+
+resetButton.addEventListener('click', resetGame);
+
+function handleClick(event) {
+    const index = event.target.getAttribute('data-index');
+
+    if (board[index] !== '' || checkWinner()) {
+        // Cell already filled or game is over
+        return; 
+    }
+
+    // Update the board and cell display
+    board[index] = currentPlayer;
+    event.target.textContent = currentPlayer;
+    event.target.classList.add(currentPlayer);
+
+    // Check for a winner or a draw
+    const winningCombination = checkWinner(); // Now it returns the combination if there's a winner
+    if (winningCombination) {
+        winningCombination.forEach(i => cells[i].style.backgroundColor = 'green'); // Highlight winning cells
+        statusMessage.textContent = `Player ${currentPlayer.toUpperCase()} wins!`;
+    } else if (board.every(cell => cell)) {
+        statusMessage.textContent = 'It\'s a draw!';
+    } else {
+        currentPlayer = currentPlayer === 'x' ? 'o' : 'x'; // Switch player
+    }
+}
+
+function checkWinner() {
+    const winningCombinations = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    // Check for a winning combination
+    for (let combination of winningCombinations) {
+        const [a, b, c] = combination;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+            return combination; // return the winning combination
+        }
+    }
+    return null; // No winner yet
+}
+
+function resetGame() {
+    // Reset the game board and player turn
+    board = ['', '', '', '', '', '', '', '', ''];
+    currentPlayer = 'x';
+    cells.forEach(cell => {
+        cell.textContent = '';
+        cell.classList.remove('x', 'o');
+        cell.style.backgroundColor = ''; // Reset background color
+    });
+    statusMessage.textContent = ''; // Clear the status message
+}
