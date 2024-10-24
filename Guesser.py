@@ -26,7 +26,7 @@ def listen():
             return answer.lower()
         except sr.UnknownValueError:
             speak("Sorry, I didn't catch that. Can you please repeat?")
-            return listen()
+            return listen()  # Recursion ensures another attempt to capture audio
         except sr.RequestError:
             speak("There was a problem with the service. Please try again later.")
             return None
@@ -38,12 +38,17 @@ def ask_question(node):
     speak(node.question)
     answer = listen()
     
+    # Handle case where speech recognition returns None
+    if answer is None:
+        speak("I couldn't understand your response. Let's try again.")
+        return ask_question(node)
+
     if answer == 'yes':
         return ask_question(node.yes)
     elif answer == 'no':
         return ask_question(node.no)
     else:
-        speak("I didn't understand that. Please say 'yes' or 'no'.")
+        speak("Please answer with 'yes' or 'no'.")
         return ask_question(node)
 
 def add_new_thing(node, question, new_thing):
