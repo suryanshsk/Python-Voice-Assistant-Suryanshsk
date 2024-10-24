@@ -212,6 +212,27 @@ We are grateful to all the contributors who have helped improve this project. Yo
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Stargazers ❤️
+
+<div align='left'>
+
+[![Stargazers repo roster for @suryanshsk/Python-Voice-Assistant-Suryanshsk](https://reporoster.com/stars/dark/suryanshsk/Python-Voice-Assistant-Suryanshsk)](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/stargazers)
+
+
+</div>
+
+## Forkers ❤️
+
+[![Forkers repo roster for @suryanshsk/Python-Voice-Assistant-Suryanshsk](https://reporoster.com/forks/dark/suryanshsk/Python-Voice-Assistant-Suryanshsk)](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/network/members)
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+
 ## Contact
 
 For questions or feedback, reach out to [suryanshskcontact@gmail.com](mailto:suryanshskcontact@gmail.com).
