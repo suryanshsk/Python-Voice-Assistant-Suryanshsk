@@ -6,14 +6,37 @@
 }
 
 body {
-    background: linear-gradient(to right, #ffafbd, #ffc3a0);
-    color: #333;
+    background: black;
 }
 
 /* Navigation Bar */
-.nave ul {
-    background-color: #6200ea;
+.nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #6200ea ;
+}
+
+.nav-right {
+    display: flex;
+}
+
+.nav-right a {
+    color: rgb(255, 255, 255);
+    padding: 0 10px;
+    text-decoration: none;
+    font-size: 20px;
+
+}
+
+.nav-right a:hover {
+    color: rgb(84, 84, 84);
+}
+
+/* .nave ul {
+    background-color: #6200ea;
+    display:flex;
     list-style: none;
     justify-content: flex-end;
     padding: 10px;
@@ -41,7 +64,7 @@ body {
     color: #ffeb3b;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1.5px;
-}
+} */
 
 /* Notice Section */
 .A {
@@ -62,40 +85,49 @@ body {
 
 /* Content Section */
 .B {
-    margin: 20px auto;
+    margin: 50px 20px 20px 20px;
     padding: 30px;
-    max-width: 80%;
-    background-color: #ffdfd3;
-    border: 2px solid #ff6f61;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* background-color: #ffdfd3;
+    border: 2px solid #ff6f61; */
+    /* border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(253, 253, 253, 0.2); */
     text-align: center;
 }
 
 .B p {
     font-size: 1.2rem;
-    color: #333;
+    color: #b8b6b6;
+    padding: 10px;
+    font-size: 25px;
+    font-family:'Times New Roman', Times, serif;
 }
 
 /* Assistant Section */
 #assistant {
-    background-color: #f0f4c3;
+    /* background-color: #f0f4c3; */
     padding: 20px;
-    border: 2px solid #cddc39;
-    position: fixed;
+    /* border: 2px solid #cddc39; */
+    /* position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 1000;
+    z-index: 1000; */
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 20px;
 }
 
 #animation {
+    margin-left: 70px;
     width: 60px;
     height: 60px;
     background: radial-gradient(circle, #6200ea 10%, #bb86fc 40%, #03dac6 80%);
     border-radius: 50%;
     animation: pulse 1.5s infinite;
+    margin-bottom: 20px;
 }
 
 @keyframes pulse {
@@ -130,7 +162,9 @@ body {
 
 /* Responsiveness */
 @media (max-width: 768px) {
-    .A, .B {
+
+    .A,
+    .B {
         margin: 10px;
         padding: 20px;
     }
@@ -142,55 +176,57 @@ body {
 }
 
 .faq {
-    max-width: 1400px; /* Adjust as needed */
+    max-width: 1400px;
+    /* Adjust as needed */
     margin: 0 auto;
     font-family: "Montserrat", sans-serif
-  }
-  
-  .faq-item {
-    border: 1px solid #F3FF35; /* Border around all sides */
-    border-radius: 8px; /* Rounded corners */
-    margin-bottom: 15px; /* Gap between items */
-    overflow: hidden; /* Ensures rounded corners are applied to children */
-  }
-  
-  .faq-question {
+}
+
+.faq-item {
+    border: 1px solid #F3FF35;
+    /* Border around all sides */
+    border-radius: 8px;
+    /* Rounded corners */
+    margin-bottom: 15px;
+    /* Gap between items */
+    overflow: hidden;
+    /* Ensures rounded corners are applied to children */
+}
+
+.faq-question {
     width: 100%;
     padding: 20px;
-    background-color: #FFFACD ;
+    background-color: #FFFACD;
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .arrow {
+}
+
+.arrow {
     font-size: 16px;
     transition: transform 0.3s ease;
-    
-  }
-  
-  
-  .faq-answer {
+
+}
+
+
+.faq-answer {
     padding: 15px 20px;
-    background-color:#ADD8E6;
+    background-color: #ADD8E6;
     display: none;
     font-size: 20px;
-  }
-  
-  .faq-item:hover .faq-answer {
-    display: block;
-  }
-  
-  .faq-item:hover .faq-question {
-    background-color: #f4eff6;
-  }
-  
-  .faq-item:hover .arrow {
-    transform: rotate(180deg);
-  }
-  
-  
+}
 
+.faq-item:hover .faq-answer {
+    display: block;
+}
+
+.faq-item:hover .faq-question {
+    background-color: #f4eff6;
+}
+
+.faq-item:hover .arrow {
+    transform: rotate(180deg);
+}
