@@ -1,0 +1,26 @@
+[
+    {
+        "mood": "happy",
+        "notes": "nothing. Grateful for: home. Completed positive habit"
+    },
+    {
+        "mood": "calm",
+        "notes": "no. Grateful for: education. Didn't completed the positive habit"
+    },
+    {
+        "mood": "calm",
+        "notes": "no. Grateful for: i learned something new. Completed positive habit"
+    },
+    {
+        "mood": "stresses",
+        "notes": "I've a exam today. Grateful for: for food. Completed positive habit"
+    },
+    {
+        "mood": "stressed",
+        "notes": "I've a exam today. Grateful for: for food . Completed positive habit"
+    },
+    {
+        "mood": "Happy",
+        "notes": "no. Grateful for: food. Didn't completed the positive habit"
+    }
+]
