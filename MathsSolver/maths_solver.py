@@ -30,7 +30,6 @@ def solve_equation(equation):
     except Exception as e:
         return f"Error solving equation: {str(e)}"
 
-
 def trigonometric_function(func, angle):
     try:
         angle_rad = np.radians(angle)
@@ -44,7 +43,6 @@ def trigonometric_function(func, angle):
             return "Error: Invalid trigonometric function"
     except Exception as e:
         return f"Error: {str(e)}"
-
 
 def differentiate(expr):
     try:
@@ -60,12 +58,10 @@ def integrate(expr):
     except Exception as e:
         return f"Error in integration: {str(e)}"
 
-
 def factorial(n):
     if n < 0:
         raise ValueError("Negative numbers do not have a factorial.")
     return math.factorial(n)
-
 
 def fibonacci(n):
     try:
@@ -77,7 +73,6 @@ def fibonacci(n):
         return seq[:n]
     except Exception as e:
         return f"Error: {str(e)}"
-
 
 def matrix_operations(matrix_a, matrix_b, operation):
     try:
@@ -172,7 +167,6 @@ def statistical_analysis(data):
     except Exception as e:
         return f"Error in statistical analysis: {str(e)}"
 
-
 def complex_operations(op, a, b):
     try:
         a_complex = complex(a)
@@ -190,7 +184,6 @@ def complex_operations(op, a, b):
             return "Error: Invalid operation"
     except Exception as e:
         return f"Error: {str(e)}"
-
 
 def unit_conversion(value, from_unit, to_unit):
     conversion_factors = {
@@ -275,189 +268,10 @@ def extract_complex_operation(command):
 
 def extract_units(command):
     # Example: extract value and units from "convert 10 meters to feet"
-    match = re.search(r'convert (\d+\.?\d*) (\w+) to (\w+)', command)
+    match = re.search(r'convert (\d+) (\w+) to (\w+)', command)
     if match:
         value = float(match.group(1))
         from_unit = match.group(2)
         to_unit = match.group(3)
         return value, from_unit, to_unit
     return None, None, None
-
-def extract_range(command):
-    # Example: extract range from "plot x**2 from -10 to 10"
-    match = re.search(r'plot (.+) from (-?\d+) to (-?\d+)', command)
-    if match:
-        expr = sp.sympify(match.group(1))
-        x_range = (float(match.group(2)), float(match.group(3)))
-        return expr, x_range
-    return None, None
-
-
-def process_command(command):
-    try:
-        if "solve" in command:
-            equation = extract_equation(command)
-            return solve_equation(equation)
-        
-        elif "add" in command or "subtract" in command or "multiply" in command or "divide" in command:
-            numbers = extract_numbers(command)
-            op = 'add' if 'add' in command else 'subtract' if 'subtract' in command else 'multiply' if 'multiply' in command else 'divide'
-            return basic_arithmetic(op, numbers[0], numbers[1])
-        
-        elif "factorial" in command:
-            n = int(extract_numbers(command)[0])  
-            return factorial(n)
-        
-        elif "fibonacci" in command:
-            n = int(extract_numbers(command)[0])  
-            return fibonacci(n)
-        
-        elif "differentiate" in command or "integrate" in command:
-            expression = extract_expression(command)
-            return differentiate(expression) if "differentiate" in command else integrate(expression)
-        
-        elif "sin" in command or "cos" in command or "tan" in command:
-            func = extract_trig_function(command)
-            angle = extract_angle(command)
-            return trigonometric_function(func, angle)
-        
-        elif "matrix" in command:
-            matrix_a = extract_matrix_a(command)
-            matrix_b = extract_matrix_b(command)
-            operation = extract_matrix_operation(command)
-            return matrix_operations(matrix_a, matrix_b, operation)
-        
-        elif "complex" in command:
-            operation = extract_complex_operation(command)
-            numbers = extract_complex_numbers(command)
-            return complex_operations(operation, numbers[0], numbers[1])
-        
-        elif "convert" in command:
-            value, from_unit, to_unit = extract_units(command)
-            return unit_conversion(value, from_unit, to_unit)
-        
-        elif "plot" in command:
-            expr, x_range = extract_range(command)
-            return plot_function(expr, x_range)
-        
-        elif "statistical" in command:
-            data = extract_numbers(command)
-            return statistical_analysis(data)
-        
-        else:
-            return "Error: Command not recognized."
-        
-    except Exception as e:
-        return f"Error processing command: {str(e)}"
-
-
-if __name__ == "__main__":
-    print("Testing Phase-")  
-    print(basic_arithmetic('add', 10, 5))  # Output: 15
-    print(solve_equation(sp.sympify('x**2 - 4')))  # Output: [-2, 2]
-    print(trigonometric_function('sin', 30))  # Output: 0.5
-    print(differentiate(sp.sympify('x**3 + x')))  # Output: 3*x**2 + 1
-    print(integrate(sp.sympify('x**2')))  # Output: x**3/3
-    print(factorial(5))  # Output: 120
-    print(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-
-    # Example commands for testing
-    print(process_command("solve x**2 - 4"))  # Output: [-2, 2]
-    print(process_command("add 10 and 5"))  # Output: 15
-    print(process_command("differentiate x**3 + x"))  # Output: 3*x**2 + 1
-    print(process_command("statistical analysis [1, 2, 3, 4, 5]"))  # Output: {'mean': 3.0, 'median': 3.0, 'std_dev': 1.4142135623730951, 'variance': 2.0, 'correlation': None, 'slope': 1.0, 'intercept': 1.0}
-    print(process_command("plot x**3 from -10 to 10"))  # Generates a plot
-    print(process_command("convert 10 meters to feet"))  # Output: 32.8084
-
-def user_input():
-    while True: 
-        print("\nWelcome to the Maths Solver!")
-        print("Choose the operation you want to perform:")
-        print("1. Basic Arithmetic (add, subtract, multiply, divide)")
-        print("2. Solve Equation")
-        print("3. Trigonometric Function (sin, cos, tan)")
-        print("4. Differentiation")
-        print("5. Integration")
-        print("6. Factorial")
-        print("7. Fibonacci")
-        print("8. Matrix Operations (add, subtract, multiply)")
-        print("9. Complex Number Operations (add, subtract, multiply, divide)")
-        print("10. Unit Conversion")
-        print("11. Plot Function")
-        print("12. Statistical Analysis")
-        print("13. Exit")  
-        
-        choice = input("Enter the number of your choice: ")
-
-        if choice == '1':
-            a = float(input("Enter first number: "))
-            b = float(input("Enter second number: "))
-            operation = input("Enter operation (add, subtract, multiply, divide): ").lower()
-            print(f"Result: {basic_arithmetic(operation, a, b)}")
-
-        elif choice == '2':
-            equation = input("Enter the equation to solve (e.g., x**2 - 4): ")
-            x = sp.symbols('x')
-            equation_expr = sp.sympify(equation)
-            print(f"Solution: {solve_equation(equation_expr)}")
-
-        elif choice == '3':
-            angle = float(input("Enter the angle (in degrees): "))
-            function = input("Enter the trigonometric function (sin, cos, tan): ").lower()
-            print(f"Result: {trigonometric_function(function, angle)}")
-
-        elif choice == '4':
-            expression = input("Enter the expression to differentiate (e.g., x**3 + x): ")
-            expr = sp.sympify(expression)
-            print(f"Derivative: {differentiate(expr)}")
-
-        elif choice == '5':
-            expression = input("Enter the expression to integrate (e.g., x**2): ")
-            expr = sp.sympify(expression)
-            print(f"Integral: {integrate(expr)}")
-
-        elif choice == '6':
-            n = int(input("Enter a number for factorial: "))
-            print(f"Factorial: {factorial(n)}")
-
-        elif choice == '7':
-            n = int(input("Enter the number of Fibonacci terms to generate: "))
-            print(f"Fibonacci sequence: {fibonacci(n)}")
-
-        elif choice == '8':
-            matrix_a = eval(input("Enter matrix A (e.g., [[1, 2], [3, 4]]): "))
-            matrix_b = eval(input("Enter matrix B (e.g., [[5, 6], [7, 8]]): "))
-            operation = input("Enter matrix operation (add, subtract, multiply): ").lower()
-            print(f"Matrix Result: {matrix_operations(np.array(matrix_a), np.array(matrix_b), operation)}")
-
-        elif choice == '9':
-            a = input("Enter the first complex number (e.g., 1+2j): ")
-            b = input("Enter the second complex number (e.g., 3+4j): ")
-            operation = input("Enter complex operation (add, subtract, multiply, divide): ").lower()
-            print(f"Result: {complex_operations(operation, a, b)}")
-
-        elif choice == '10':
-            value = float(input("Enter the value to convert: "))
-            from_unit = input("Enter the from unit (e.g., meters, kilograms): ").lower()
-            to_unit = input("Enter the to unit (e.g., feet, pounds): ").lower()
-            print(f"Converted Value: {unit_conversion(value, from_unit, to_unit)}")
-
-        elif choice == '11':
-            expression = input("Enter the function to plot (e.g., x**3): ")
-            x_range = eval(input("Enter the x-range as a tuple (e.g., (-10, 10)): "))
-            expr = sp.sympify(expression)
-            plot_function(expr, x_range)
-
-        elif choice == '12':
-            data = eval(input("Enter the data for statistical analysis (e.g., [1, 2, 3, 4, 5]): "))
-            print(f"Statistical Analysis: {statistical_analysis(data)}")
-
-        elif choice == '13':
-            print("Exiting the Maths Solver. Goodbye!")
-            break 
-
-        else:
-            print("Invalid choice. Please try again.")
-
-if __name__ == "__main__":
-    user_input() 
