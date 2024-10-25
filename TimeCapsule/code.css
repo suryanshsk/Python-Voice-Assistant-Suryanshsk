@@ -1,0 +1,217 @@
+body {
+    background-color: #FFF1E6;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    background-color: black;
+    margin-top: -8px;
+}
+
+.introduction {
+    margin: 20px;
+    padding: 20px;
+    font-family: "Playwrite GB S", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.36rem;
+}
+
+.image {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    /* Use flex-start for alignment */
+}
+
+.text {
+    margin-right: 10px;
+    /* Space between text and image */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    max-width: 1000px;
+    /* Fixed width */
+    height: 200px;
+    /* Fixed height */
+    resize: none;
+    /* Prevent resizing */
+    padding: 10px;
+    /* Optional: Add padding */
+    box-sizing: border-box;
+    /* Include padding in width/height */
+    border: 1px solid #ccc;
+    /* Add border */
+    border-radius: 5px;
+    /* Optional: Rounded corners */
+}
+
+.buttons {
+    background-color: #E6B2D2;
+    width: 100px;
+    height: 50px;
+    border-radius: 5%;
+}
+
+.pinterest-grid {
+    display: grid;
+    /* Change to grid for layout */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    gap: 10px;
+    /* Space between grid items */
+    margin-top: 20px;
+    /* Add top margin */
+}
+
+.grid-item {
+    overflow: hidden;
+    /* Prevent overflow */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow effect */
+    height: 400px;
+    /* Fixed height for grid items */
+}
+
+.grid-item img {
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Ensure image fills grid item */
+    object-fit: cover;
+    /* Maintain aspect ratio */
+}
+
+.centered {
+    text-align: center;
+}
+
+.buttons {
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buttons:hover {
+    background-color: #45a049;
+}
+
+.text-message {
+    width: 400px;
+    /* Fixed width for notepad effect */
+    background-color: #fefbd8;
+    /* Light background color for the notepad */
+    border: 1px solid #ccc;
+    /* Border around the notepad */
+    padding: 20px;
+    /* Padding inside the notepad */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow effect */
+    font-family: 'Courier New', Courier, monospace;
+    /* Monospace font for notepad effect */
+    margin: 20px auto;
+    /* Center the notepad */
+    position: relative;
+    /* Positioning for the pseudo element */
+    line-height: 1.5;
+    /* Increase line spacing for readability */
+}
+
+.text-message {
+    width: 400px;
+    /* Fixed width for notepad effect */
+    background-color: #fefbd8;
+    /* Light background color for the notepad */
+    border: 1px solid #ccc;
+    /* Border around the notepad */
+    padding: 20px;
+    /* Padding inside the notepad */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow effect */
+    font-family: 'Courier New', Courier, monospace;
+    /* Monospace font for notepad effect */
+    margin: 20px auto;
+    /* Center the notepad */
+    position: relative;
+    /* Positioning for the pseudo element */
+    line-height: 1.5;
+    /* Increase line spacing for readability */
+    display: flex;
+    /* Enable flexbox layout */
+    flex-wrap: wrap;
+    /* Allow wrapping of items */
+}
+
+.capsules {
+    background-color: white;
+    /* Background for each capsule */
+    padding: 10px;
+    /* Some padding for spacing */
+    margin: 10px;
+    /* Space between capsules */
+    border-radius: 5px;
+    /* Rounded corners */
+    border-left: 5px solid #FFDB58;
+    /* Left border in mustard color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for capsules */
+    flex: 1;
+    /* Allow capsules to grow equally */
+    min-width: 150px;
+    /* Minimum width for each capsule */
+    max-width: 200px;
+    /* Maximum width for each capsule */
+}
+
+.reminder {
+    background-color: #FFDB58;
+    /* Mustard color for reminders */
+    padding: 5px;
+    /* Padding for the heading */
+    border-radius: 3px;
+    /* Rounded corners */
+    display: inline-block;
+    /* Prevents full width */
+    margin-bottom: 5px;
+    /* Space below the heading */
+    font-weight: bold;
+    /* Bold text for headings */
+}
+
+/* Optional: Add lined paper effect */
+.text-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 100%;
+    background: repeating-linear-gradient(to bottom,
+            transparent,
+            transparent 19px,
+            rgba(255, 255, 255, 0.1) 19px,
+            rgba(255, 255, 255, 0.1) 20px);
+    pointer-events: none;
+    /* Prevents interaction with the lines */
+}

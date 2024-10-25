@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="code.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+        rel="stylesheet">
+    <title>Front page</title>
+</head>
+
+<body>
+    <h1>Time Capsule</h1>
+    <div class="container">
+        <div class="introduction">
+            Welcome to a journey back in time, where memories, dreams, and moments are preserved for the future. This
+            time capsule holds a piece of today, waiting to be rediscovered.
+        </div>
+        <img alt="Time capsule" src="Timecapsule1.webp" class="image" width="300" height="300">
+    </div>
+
+    <h2>Write down anything for our time capsule</h2>
+    <div class="form-group">
+        <label for="comment"></label>
+        <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+    <button type="button" id="submitBtn" class="buttons">Submit</button>
+
+    <br><br><br><br>
+
+    <!-- Buttons to display images or text -->
+    <button class="buttons" onclick="showImages()">Display Images</button>
+    <button class="buttons" onclick="showText()">Display Text</button>
+
+    <!-- Image grid -->
+    <div class="pinterest-grid" id="imageGrid" style="display:none;">
+        <div class="grid-item"><img src="Image1.png" alt="Image 1"></div>
+        <div class="grid-item"><img src="Image2.png" alt="Image 2"></div>
+        <div class="grid-item"><img src="Image3.png" alt="Image 3"></div>
+        <div class="grid-item"><img src="Image4.png" alt="Image 4"></div>
+        <div class="grid-item"><img src="Image5.png" alt="Image 5"></div>
+        <div class="grid-item"><img src="Image6.png" alt="Image 6"></div>
+    </div>
+
+    <!-- Text message -->
+    <div class="text-message" id="textMessage" style="display:none;">
+        <p>20th was the day where jack got married</p>
+    </div>
+
+    <script>
+        const comments = []; // Array to store comments
+
+        document.getElementById('submitBtn').addEventListener('click', storeComment);
+
+        function storeComment() {
+            const commentBox = document.getElementById('comment');
+            const comment = commentBox.value.trim(); // Get and trim the comment
+            if (comment) {
+                comments.push(comment); // Store the comment
+                commentBox.value = ''; // Clear the input box
+            }
+        }
+
+        function showImages() {
+            document.getElementById('imageGrid').style.display = 'grid';
+            document.getElementById('textMessage').style.display = 'none';
+        }
+
+        function showText() {
+            document.getElementById('imageGrid').style.display = 'none';
+            const textMessage = document.getElementById('textMessage');
+            textMessage.style.display = 'block';
+
+            // Clear existing comment capsules except for the initial reminder
+            const existingCapsules = textMessage.querySelectorAll('.capsules:not(:first-child)');
+            existingCapsules.forEach(capsule => capsule.remove());
+
+            // Display each comment as a reminder
+            comments.forEach((comment, index) => {
+                const capsule = document.createElement('div');
+                capsule.className = 'capsules';
+                capsule.innerHTML = `
+                    <p class="reminder">Entry ${index + 1}: ${comment}</p>
+                `;
+                textMessage.appendChild(capsule);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
