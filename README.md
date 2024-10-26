@@ -183,55 +183,55 @@ Make sure to replace `"GEMINI_API_KEY"`, `'YOUR_NEWS_API_KEY'`, and `'YOUR_WEATH
 
 ---
 
-## Our Valuable Contributors ❤️✨
+ # Project Admin⚡
+ 
+<table>
+<tr>
+<td align="center"><a href="https://github.com/suryanshsk"><img src="https://avatars.githubusercontent.com/u/88218773?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Suryansh singh</h4>
+ <a href="https://www.linkedin.com/in/avanishsinghengineer/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+   </td>
+
+</tr>
+</table>
+  
+</div>
+
+## Acknowledgements
 
 We are grateful to all the contributors who have helped improve this project. Your contributions are what make this project better!
 
-<!-- readme: contributors -start -->
-<table>
-	<tbody>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/suryanshsk">
-                    <img src="https://avatars.githubusercontent.com/u/88218773?v=4" width="100;" alt="suryanshsk"/>
-			<br />
-                    <sub><b>Owner</b></sub>
-                    <br />
-                    <sub><b>Suryansh singh</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/yashksaini-coder">
-                    <img src="https://avatars.githubusercontent.com/u/115717039?v=4" width="100;" alt="yashksaini-coder"/>
-                    <br />
-                    <sub><b>Yash Kumar Saini</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/PavanTeja2005">
-                    <img src="https://avatars.githubusercontent.com/u/98730339?v=4" width="100;" alt="PavanTeja2005"/>
-                    <br />
-                    <sub><b>PavanTeja2005</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Chin-may02">
-                    <img src="https://avatars.githubusercontent.com/u/179141504?v=4" width="100;" alt="Chin-may02"/>
-                    <br />
-                    <sub><b>Vuppu Chinmay</b></sub>
-                </a>
-            </td>
-            <td align="center">
- 
-                    <sub><b>23WH1A0507</b></sub>
-                </a>
-            </td>
-		</tr>
-	<tbody>
-</table>
-<!-- readme: contributors -end -->
+<p align ="center">
+  <img src="https://api.vaunt.dev/v1/github/entities/suryanshsk/repositories/Python-Voice-Assistant-Suryanshsk/contributors?format=svg&limit=54" width="700" height= "250" />
+</p>
+<p align ="center">
+<a href="https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/graphs/contributors">
+  <img align="center" src="https://contrib.rocks/image?max=100&repo=suryanshsk/Python-Voice-Assistant-Suryanshsk" />
+</a>
+</p>
+<br><br>
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Stargazers ❤️
+
+<div align='left'>
+
+[![Stargazers repo roster for @suryanshsk/Python-Voice-Assistant-Suryanshsk](https://reporoster.com/stars/dark/suryanshsk/Python-Voice-Assistant-Suryanshsk)](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/stargazers)
+
+
+</div>
+
+## Forkers ❤️
+
+[![Forkers repo roster for @suryanshsk/Python-Voice-Assistant-Suryanshsk](https://reporoster.com/forks/dark/suryanshsk/Python-Voice-Assistant-Suryanshsk)](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/network/members)
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
 
 ## Contact
 

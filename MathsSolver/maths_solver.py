@@ -4,7 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 import re
-
+import plotly.graph_objs as go
+import plotly.io as pio
 
 def basic_arithmetic(op, a, b):
     try:
@@ -29,7 +30,6 @@ def solve_equation(equation):
     except Exception as e:
         return f"Error solving equation: {str(e)}"
 
-
 def trigonometric_function(func, angle):
     try:
         angle_rad = np.radians(angle)
@@ -43,7 +43,6 @@ def trigonometric_function(func, angle):
             return "Error: Invalid trigonometric function"
     except Exception as e:
         return f"Error: {str(e)}"
-
 
 def differentiate(expr):
     try:
@@ -59,12 +58,10 @@ def integrate(expr):
     except Exception as e:
         return f"Error in integration: {str(e)}"
 
-
 def factorial(n):
     if n < 0:
         raise ValueError("Negative numbers do not have a factorial.")
     return math.factorial(n)
-
 
 def fibonacci(n):
     try:
@@ -76,7 +73,6 @@ def fibonacci(n):
         return seq[:n]
     except Exception as e:
         return f"Error: {str(e)}"
-
 
 def matrix_operations(matrix_a, matrix_b, operation):
     try:
@@ -91,27 +87,64 @@ def matrix_operations(matrix_a, matrix_b, operation):
     except Exception as e:
         return f"Error: {str(e)}"
 
-
 def plot_function(expr, x_range):
     try:
         x = sp.symbols('x')
         f = sp.lambdify(x, expr, 'numpy')
-        x_vals = np.linspace(x_range[0], x_range[1], 100)
+
+        x_vals = np.linspace(x_range[0], x_range[1], 1000)
         y_vals = f(x_vals)
 
-        plt.figure()
-        plt.plot(x_vals, y_vals, label=str(expr))
-        plt.title('Function Plot')
-        plt.xlabel('x')
-        plt.ylabel('f(x)')
-        plt.axhline(0, color='black', lw=0.5, ls='--')
-        plt.axvline(0, color='black', lw=0.5, ls='--')
-        plt.grid()
-        plt.legend()
-        plt.show()
+        fig = go.Figure()
+
+        fig.add_trace(go.Scatter(
+            x=x_vals, y=y_vals,
+            mode='lines',
+            name=str(expr),
+            line=dict(color='blue', width=2),
+            hoverinfo='x+y',  
+        ))
+
+        fig.add_trace(go.Scatter(
+            x=[x_range[0], x_range[1]], y=[0, 0],
+            mode='lines',
+            line=dict(color='black', dash='dash'),
+            hoverinfo='skip',
+            showlegend=False
+        ))
+        fig.add_trace(go.Scatter(
+            x=[0, 0], y=[min(y_vals), max(y_vals)],
+            mode='lines',
+            line=dict(color='black', dash='dash'),
+            hoverinfo='skip',
+            showlegend=False
+        ))
+        fig.update_layout(
+            title=f'Plot of {str(expr)}',
+            xaxis_title='x',
+            yaxis_title='f(x)',
+            xaxis=dict(
+                zeroline=True,
+                showline=True,
+                showgrid=True,
+                gridcolor='lightgray',
+                zerolinecolor='black'
+            ),
+            yaxis=dict(
+                zeroline=True,
+                showline=True,
+                showgrid=True,
+                gridcolor='lightgray',
+                zerolinecolor='black'
+            ),
+            plot_bgcolor='white', 
+            hovermode="closest",   
+        )
+
+        fig.show()
+
     except Exception as e:
         return f"Error in plotting: {str(e)}"
-
 
 def statistical_analysis(data):
     try:
@@ -134,7 +167,6 @@ def statistical_analysis(data):
     except Exception as e:
         return f"Error in statistical analysis: {str(e)}"
 
-
 def complex_operations(op, a, b):
     try:
         a_complex = complex(a)
@@ -152,7 +184,6 @@ def complex_operations(op, a, b):
             return "Error: Invalid operation"
     except Exception as e:
         return f"Error: {str(e)}"
-
 
 def unit_conversion(value, from_unit, to_unit):
     conversion_factors = {
@@ -237,96 +268,10 @@ def extract_complex_operation(command):
 
 def extract_units(command):
     # Example: extract value and units from "convert 10 meters to feet"
-    match = re.search(r'convert (\d+\.?\d*) (\w+) to (\w+)', command)
+    match = re.search(r'convert (\d+) (\w+) to (\w+)', command)
     if match:
         value = float(match.group(1))
         from_unit = match.group(2)
         to_unit = match.group(3)
         return value, from_unit, to_unit
     return None, None, None
-
-def extract_range(command):
-    # Example: extract range from "plot x**2 from -10 to 10"
-    match = re.search(r'plot (.+) from (-?\d+) to (-?\d+)', command)
-    if match:
-        expr = sp.sympify(match.group(1))
-        x_range = (float(match.group(2)), float(match.group(3)))
-        return expr, x_range
-    return None, None
-
-
-def process_command(command):
-    try:
-        if "solve" in command:
-            equation = extract_equation(command)
-            return solve_equation(equation)
-        
-        elif "add" in command or "subtract" in command or "multiply" in command or "divide" in command:
-            numbers = extract_numbers(command)
-            op = 'add' if 'add' in command else 'subtract' if 'subtract' in command else 'multiply' if 'multiply' in command else 'divide'
-            return basic_arithmetic(op, numbers[0], numbers[1])
-        
-        elif "factorial" in command:
-            n = int(extract_numbers(command)[0])  
-            return factorial(n)
-        
-        elif "fibonacci" in command:
-            n = int(extract_numbers(command)[0])  
-            return fibonacci(n)
-        
-        elif "differentiate" in command or "integrate" in command:
-            expression = extract_expression(command)
-            return differentiate(expression) if "differentiate" in command else integrate(expression)
-        
-        elif "sin" in command or "cos" in command or "tan" in command:
-            func = extract_trig_function(command)
-            angle = extract_angle(command)
-            return trigonometric_function(func, angle)
-        
-        elif "matrix" in command:
-            matrix_a = extract_matrix_a(command)
-            matrix_b = extract_matrix_b(command)
-            operation = extract_matrix_operation(command)
-            return matrix_operations(matrix_a, matrix_b, operation)
-        
-        elif "complex" in command:
-            operation = extract_complex_operation(command)
-            numbers = extract_complex_numbers(command)
-            return complex_operations(operation, numbers[0], numbers[1])
-        
-        elif "convert" in command:
-            value, from_unit, to_unit = extract_units(command)
-            return unit_conversion(value, from_unit, to_unit)
-        
-        elif "plot" in command:
-            expr, x_range = extract_range(command)
-            return plot_function(expr, x_range)
-        
-        elif "statistical" in command:
-            data = extract_numbers(command)
-            return statistical_analysis(data)
-        
-        else:
-            return "Error: Command not recognized."
-        
-    except Exception as e:
-        return f"Error processing command: {str(e)}"
-
-
-if __name__ == "__main__":
-    # Sample commands (for testing)
-    print(basic_arithmetic('add', 10, 5))  # Output: 15
-    print(solve_equation(sp.sympify('x**2 - 4')))  # Output: [-2, 2]
-    print(trigonometric_function('sin', 30))  # Output: 0.5
-    print(differentiate(sp.sympify('x**3 + x')))  # Output: 3*x**2 + 1
-    print(integrate(sp.sympify('x**2')))  # Output: x**3/3
-    print(factorial(5))  # Output: 120
-    print(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-
-    # Example commands for testing
-    print(process_command("solve x**2 - 4"))  # Output: [-2, 2]
-    print(process_command("add 10 and 5"))  # Output: 15
-    print(process_command("differentiate x**3 + x"))  # Output: 3*x**2 + 1
-    print(process_command("statistical analysis [1, 2, 3, 4, 5]"))  # Output: {'mean': 3.0, 'median': 3.0, 'std_dev': 1.4142135623730951, 'variance': 2.0, 'correlation': None, 'slope': 1.0, 'intercept': 1.0}
-    print(process_command("plot x**3 from -10 to 10"))  # Generates a plot
-    print(process_command("convert 10 meters to feet"))  # Output: 32.8084

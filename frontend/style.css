@@ -55,6 +55,12 @@ body {
     width: 50px;
     height: 30px;
     margin-right: 10px;
+    mix-blend-mode: multiply;
+}
+
+.icon1{
+    height: 40px;
+    width: 50px;
 }
 
 nav {
@@ -88,6 +94,7 @@ nav ul {
 
 nav ul li {
     margin: 0 10px; /* Add margin for spacing */
+    display: flex;
 }
 
 nav ul li a {
@@ -101,6 +108,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
+    border-radius: 8px;
     background-color: var(--color15);
     color: white;
 }
@@ -118,6 +126,7 @@ nav ul li a:hover {
     color: var(--color6);
     text-align: center;
     padding: 50px 20px;
+
 }
 
 .header-content img {
@@ -453,7 +462,7 @@ nav ul li a:hover {
 
 .to_top{
     bottom:10px;
-    right: 10px;
+    right: 70px;
     position: fixed;
 }
 
@@ -461,3 +470,14 @@ nav ul li a:hover {
     height: auto;
     width: 50px;
 }
+
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    position: fixed;
+    background-color: black;  /* Default color of circles */
+    pointer-events: none;     /* Prevent interaction with circles */
+    z-index: 9999;
+    transition: transform 0.1s ease-out;
+    }

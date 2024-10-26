@@ -12,10 +12,83 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
-
+    
 </head>
 
 <body>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <script>
+        // Store the mouse coordinates
+const coords = { x: 0, y: 0 };
+
+// Select all circles (you can add more circles to HTML as needed)
+const circles = document.querySelectorAll(".circle");
+
+// Customize the colors for the circles (optional)
+const colors = ["#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d", "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060", "#680060", "#60005f", "#48005f", "#3d005e"];
+
+// Initialize circle positions
+circles.forEach((circle, index) => {
+    circle.x = 0;
+    circle.y = 0;
+    circle.style.backgroundColor = colors[index % colors.length];  // Assign colors
+});
+
+// Update mouse coordinates on move
+window.addEventListener("mousemove", (e) => {
+    coords.x = e.clientX;
+    coords.y = e.clientY;
+});
+
+// Animation loop for circles
+function animateCircles() {
+    let x = coords.x;
+    let y = coords.y;
+
+    circles.forEach((circle, index) => {
+        circle.style.left = `${x - 12}px`;   // Offset for center alignment
+        circle.style.top = `${y - 12}px`;
+
+        circle.style.transform = `scale(${(circles.length - index) / circles.length})`;  // Shrink effect
+
+        circle.x = x;
+        circle.y = y;
+
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+    });
+
+    requestAnimationFrame(animateCircles);
+}
+
+// Start animation
+animateCircles();
+
+    </script>
 
     <!-- Header Section -->
     <header class="main-header">
@@ -24,15 +97,24 @@
                         src="image/voice-assistant-ai-high-resolution-logo-transparent.png" width="20%"
                         alt="Voice-Assistant-Ai"></a></div>
             <ul>
-               
-                <li><a href="#features">Features</a></li>
-                <li><a href="#setup">Setup</a></li>
-                <li><a href="contact.html">Contact</a></li>
+
+                <li>
+                    <img class="icon1" src="image/features.png" alt="">
+                    <a href="#features">Features</a></li>
+
+                <li>
+                    <img class="icon1" src="image/setup.png" alt="">
+                    <a href="#setup">Setup</a></li>
+
+                <li>
+                    <img class="icon1" src="image/contact_us.jpg" alt="">
+                    <a href="contact.html">Contact</a></li>
+
                 <img id="icon" src="image/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg">
             </ul>
         </nav>
         <div class="header-content">
-            <img src="image/voice.png" alt="Voice Assistant Image" class="header-image" /> <!-- Add image here -->
+            <img src="image/ voice.png" alt="Voice Assistant Image" class="header-image" /> <!-- Add image here -->
             <h1 class="main_topic">Python Voice Assistant with Gemini AI</h1>
             <p class="main_para">A smart, AI-powered voice assistant that simplifies your living!</p>
 
@@ -42,7 +124,7 @@
     <!-- Features Section -->
     <section id="features" class="features-section ">
         <h2>Features</h2>
-        <div  class="features-slider ">
+        <div class="features-slider ">
             <div class="feature-item" style="height: 250px;">
                 <i class="fas fa-microphone"></i>
                 <h3>Voice Recognition</h3>
@@ -118,7 +200,8 @@
                 </p>
                 <ul>
                     <li>Create an account on <a href="https://openweathermap.org" target="_blank">OpenWeatherMap</a> or
-                        <a href="https://weatherapi.com" target="_blank">WeatherAPI</a>.</li>
+                        <a href="https://weatherapi.com" target="_blank">WeatherAPI</a>.
+                    </li>
                     <li>Generate your API key from the dashboard.</li>
                     <li>Replace <code>YOUR_WEATHER_API_KEY</code> in the weather module of the project.</li>
                 </ul>
@@ -158,7 +241,7 @@
                         <li><a href="#setup">API Key Setup</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
 
@@ -195,10 +278,25 @@
             }
         }
 
-        document.getElementById("scroll_top_btn").addEventListener("click", function(e) {
-        e.preventDefault(); // Prevent default anchor click behavior
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top with smooth animation
-    });
+        document.getElementById("scroll_top_btn").addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent default anchor click behavior
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top with smooth animation
+        });
     </script>
-
+   <script>
+    window.embeddedChatbotConfig = {
+    chatbotId: "awMKW3zFwW7jzUNsN4Q8O",
+    domain: "www.chatbase.co"
+    }
+    </script>
+    <script
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="awMKW3zFwW7jzUNsN4Q8O"
+    domain="www.chatbase.co"
+    defer>
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
