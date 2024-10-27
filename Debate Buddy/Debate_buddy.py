@@ -2,6 +2,7 @@ import random
 import requests
 import speech_recognition as sr
 import pyttsx3
+from plyer import notification
 
 # Initialize the speech engine
 engine = pyttsx3.init()
@@ -72,13 +73,20 @@ def debate(topic, arguments):
         speak(response)
 
 def main():
+    Title="your Debate Buddy is Here"
+    msg="practising your Debating skills with me"
+
+    notification.notify (title=Title,message=msg,app_icon=None) # type: ignore
     speak("Welcome to your Virtual Debate Partner! I'm here to help you practice your debating skills.")
     
     while True:
         topics = fetch_debate_topics()
         if not topics:
             break
-        
+        Title="choose a Debate Topic"
+        msg="here carefully"
+    
+        notification.notify (title=Title,message=msg,app_icon=None)
         topic = choose_topic(list(topics.keys()))
         arguments = topics[topic]
         
