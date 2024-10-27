@@ -1,16 +1,38 @@
-# Bouncing ball simulator
-This script shows the simulation of few balls bouncing in a container under gravity.
-They also collide with the bottom part and the walls of the container.
+# 🎾 Bouncing Ball Simulator
 
-### Prerequisites
-The script runs in python3.
-pygame module is needed
+This project simulates the movement of balls bouncing within a container under the effect of gravity. The balls interact by bouncing off the walls and bottom of the container, creating a simple physics-based simulation.
 
-pip3 install requirements.txt
+## 🔧 Prerequisites
 
-### How to run the script
-Navigate to the folder where the source code is written.
-Open a terminal and execute the command:
+This simulation runs on **Python 3** and requires the `pygame` module.
 
+### Installation
+Install the required dependencies by running:
+```bash
+pip3 install -r requirements.txt
+```
+
+## 🚀 How to Run the Script
+
+1. Clone or download the project files.
+2. Open a terminal and navigate to the folder containing the script.
+3. Run the following command:
+```bash
 python3 ball_bounce.py
+```
 
+## 📜 How It Works
+
+The script uses `pygame` to create a container where the balls are affected by gravity, bounce off the walls, and interact with the environment.
+
+### Features:
+
+* Realistic gravity-based ball bouncing.
+* Collision detection with the walls and container base.
+
+## 📂 Project Structure
+
+* `ball_bounce.py` - Main script that runs the simulation.
+* `requirements.txt` - List of dependencies for the project.
+
+### Enjoy watching the balls in action! 🎉
