@@ -1,0 +1,89 @@
+import speech_recognition as sr
+import pyttsx3
+import wikipediaapi
+import requests
+
+# Initialize text-to-speech engine
+engine = pyttsx3.init()
+engine.setProperty('rate', 150)  # Adjust speaking rate
+
+# Initialize Wikipedia API
+wiki_wiki = wikipediaapi.Wikipedia('en')
+
+# Speak function
+def speak(text):
+    engine.say(text)
+    engine.runAndWait()
+
+# Recognize speech and convert to text
+def recognize_speech():
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening...")
+        recognizer.adjust_for_ambient_noise(source)
+        audio = recognizer.listen(source)
+    try:
+        query = recognizer.recognize_google(audio)
+        print(f"User said: {query}")
+        return query.lower()
+    except sr.UnknownValueError:
+        speak("Sorry, I didn't understand that.")
+        return None
+    except sr.RequestError:
+        speak("Sorry, the service is down.")
+        return None
+
+# Wikipedia search
+def get_wikipedia_summary(query):
+    page = wiki_wiki.page(query)
+    if page.exists():
+        return page.summary[:500]  # Get first 500 characters
+    else:
+        return "Sorry, I couldn't find any information on that."
+
+# Weather information placeholder
+def get_weather(city):
+    api_key = "YOUR_OPENWEATHERMAP_API_KEY"  # Add your OpenWeatherMap API key here
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+    response = requests.get(url)
+    data = response.json()
+
+    if data["cod"] != "404":
+        main = data["main"]
+        temperature = main["temp"]
+        weather_description = data["weather"][0]["description"]
+        return f"The temperature in {city} is {temperature}°C with {weather_description}."
+    else:
+        return "Sorry, I couldn't retrieve the weather for that location."
+
+# Main assistant loop
+def assistant():
+    speak("Hello, I'm Gemini. How can I assist you?")
+    while True:
+        query = recognize_speech()
+        
+        if query:
+            if "wikipedia" in query:
+                speak("What topic would you like to know about?")
+                topic = recognize_speech()
+                if topic:
+                    summary = get_wikipedia_summary(topic)
+                    speak(summary)
+
+            elif "weather" in query:
+                speak("Which city do you want the weather for?")
+                city = recognize_speech()
+                if city:
+                    weather_info = get_weather(city)
+                    speak(weather_info)
+
+            elif "stop" in query or "exit" in query:
+                speak("Goodbye!")
+                break
+
+            else:
+                speak("I'm not sure how to help with that. Please try asking something else.")
+
+# Start the assistant
+if __name__ == "__main__":
+    assistant()
