@@ -25,9 +25,7 @@ def animate_wave():
     for x in range(width):
         y = height + amplitude * math.sin(2 * math.pi * frequency * x + phase)
         canvas.create_line(x, height, x, y, fill="black")
-
     phase += speed
-
     canvas.after(20, animate_wave)
 
 animate_wave()
