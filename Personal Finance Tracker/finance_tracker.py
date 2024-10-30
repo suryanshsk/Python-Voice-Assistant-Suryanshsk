@@ -169,9 +169,12 @@ class FinanceAssistant:
             await self.check_budget()
 
         elif "recurring expense" in command:
-            _, _, category, amount_str = command.split(maxsplit=3)
-            amount = float(amount_str)
-            await self.manage_recurring_expenses(category, amount)
+            try:
+                _, _, category, amount_str = command.split(maxsplit=3)
+                amount = float(amount_str)
+                await self.manage_recurring_expenses(category, amount)
+            except (ValueError, IndexError):
+                await self.speak_async("Please specify a valid category and amount for the recurring expense.")
 
         elif "generate report" in command:
             await self.generate_monthly_report()
@@ -188,9 +191,9 @@ class FinanceAssistant:
 
         elif "exit" in command:
             await self.speak_async("Goodbye!")
-            return False
+            return False  # Signal to exit the main loop
 
-        return True
+        return True  # Continue running
 
     async def run(self):
         """Main loop for voice command processing."""

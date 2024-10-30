@@ -210,7 +210,12 @@ We are grateful to all the contributors who have helped improve this project. Yo
 </p>
 <br><br>
 
+### Contributors
+- ![Mehuli Biswas](https://github.com/Sanchita76.png?size=50) [Mehuli Biswas](https://github.com/Sanchita76) - Contributor.
+
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
@@ -241,3 +246,8 @@ For questions or feedback, reach out to [suryanshskcontact@gmail.com](mailto:sur
 ## Reporting Issues
 
 If you encounter any bugs or have suggestions for improvements, please open an [issue](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/issues/new) on GitHub. We appreciate detailed and insightful reports that help us address the issue more effectively.
+
+
+## Main Project Link
+
+https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/tree/29b12a535b599f7e1c6141058871dccfa38eadfa
