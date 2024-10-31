@@ -1,0 +1,4 @@
+paho-mqtt
+SpeechRecognition
+python3-pyaudio
+pyttsx3

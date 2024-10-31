@@ -1,0 +1,8 @@
+{
+    "lights": ["on", "off", "dim", "brighten"],
+    "fan": ["on", "off", "speed up", "slow down"],
+    "tv": ["on", "off", "volume up", "volume down"],
+    "ac": ["on", "off", "temperature up", "temperature down"],
+    "curtains": ["open", "close"],
+    "heater": ["on", "off", "increase", "decrease"]
+}
