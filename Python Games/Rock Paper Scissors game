@@ -1,0 +1,147 @@
+##html##
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Multiplayer Rock Paper Scissors</h1>
+        <div class="score-board">
+            <div id="player1-score">Player 1: 0</div>
+            <div id="player2-score">Player 2: 0</div>
+        </div>
+        <div class="choices">
+            <button class="choice" id="rock">Rock</button>
+            <button class="choice" id="paper">Paper</button>
+            <button class="choice" id="scissors">Scissors</button>
+        </div>
+        <div class="result" id="result"></div>
+        <button id="reset">Reset Game</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+########css########
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.choices {
+    margin-bottom: 20px;
+}
+
+.choice {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.choice:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.result {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#reset {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ff5733;
+    color: white;
+}
+
+#######js##########
+let player1Score = 0;
+let player2Score = 0;
+let player1Choice = null;
+let player2Choice = null;
+
+const player1ScoreDisplay = document.getElementById('player1-score');
+const player2ScoreDisplay = document.getElementById('player2-score');
+const resultDisplay = document.getElementById('result');
+
+document.querySelectorAll('.choice').forEach(button => {
+    button.addEventListener('click', () => {
+        if (player1Choice === null) {
+            player1Choice = button.id;
+            resultDisplay.textContent = "Player 1 chose " + player1Choice + ". Player 2, make your choice!";
+        } else if (player2Choice === null) {
+            player2Choice = button.id;
+            determineWinner();
+        }
+    });
+});
+
+function determineWinner() {
+    if (player1Choice === player2Choice) {
+        resultDisplay.textContent = `It's a draw! Both players chose ${player1Choice}.`;
+    } else if (
+        (player1Choice === 'rock' && player2Choice === 'scissors') ||
+        (player1Choice === 'scissors' && player2Choice === 'paper') ||
+        (player1Choice === 'paper' && player2Choice === 'rock')
+    ) {
+        player1Score++;
+        resultDisplay.textContent = `Player 1 wins! ${player1Choice} beats ${player2Choice}.`;
+    } else {
+        player2Score++;
+        resultDisplay.textContent = `Player 2 wins! ${player2Choice} beats ${player1Choice}.`;
+    }
+    
+    updateScores();
+}
+
+function updateScores() {
+    player1ScoreDisplay.textContent = `Player 1: ${player1Score}`;
+    player2ScoreDisplay.textContent = `Player 2: ${player2Score}`;
+    
+    // Reset choices for next round
+    player1Choice = null;
+    player2Choice = null;
+}
+
+document.getElementById('reset').addEventListener('click', () => {
+    player1Score = 0;
+    player2Score = 0;
+    updateScores();
+    resultDisplay.textContent = '';
+});

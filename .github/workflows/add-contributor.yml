@@ -3,6 +3,7 @@ name: Update Contributors in README
 on:
     push:
         branches: ["main","yash/fix-17+20"]
+        branches: ["main"]
     workflow_dispatch:
     schedule:
         - cron: "0 0 * * *"
@@ -24,5 +25,7 @@ jobs:
                 commit_message: "Updated contributors list"
                 committer_username: "yashksaini-coder"
                 committer_email: "115717039+yashksaini-coder@users.noreply.github.com"
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

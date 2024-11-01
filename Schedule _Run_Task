@@ -1,0 +1,17 @@
+# Task Scheduler Implementation (task_scheduler.py)
+
+# List of tasks with their maximum permitted runtimes (in hours) and corresponding commands
+task_list = [
+    {"task_name": "Task1", "max_hours": 3, "cmd": r"python task1_script.py"},
+    {"task_name": "Task2", "max_hours": 6, "cmd": r"python task2_script.py"},
+    # You can add additional tasks to this list as required
+]
+
+# Schedule the tasks
+for item in task_list:
+    schedule.every().minute.do(run_task, item["task_name"], item["max_hours"], item["cmd"])
+
+# Infinite loop to keep the scheduler running
+while True:
+    schedule.run_pending()  # Execute any pending tasks
+    time.sleep(1)  # Pause for a second between checks

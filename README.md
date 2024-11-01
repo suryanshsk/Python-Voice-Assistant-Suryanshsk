@@ -59,6 +59,14 @@
 
 A sophisticated Python-based virtual assistant utilizing Gemini AI. This project integrates various functionalities to create a versatile and interactive assistant.
 
+# Table of Contents
+
+1. [Installation](#installation)
+2. [Notice](#notice)
+3. [Contributors](#our-valuable-contributors-%EF%B8%8F)
+4. [Contact](#contact)
+5. [Reporting Issues](#reporting-issues)
+
 ## Installation
 
 Follow these steps to set up the project on your local machine:
@@ -118,6 +126,18 @@ Follow these steps to set up the project on your local machine:
      pip install -U google-generativeai
      ```
 
+    - To ensure your Python voice recognition assistant runs smoothly,
+    here's a list of essential packages you should install:
+      ```bash
+        pip install SpeechRecognition
+        pip install pyaudio
+        pip install setuptools
+       ```
+
+    - To use gTTS (Google Text-to-Speech) in your Python project:
+      ```bash
+        pip install gtts
+      ```
 6. **Configure API Keys**
 
    - Replace the placeholder API keys in the code with your actual API keys:
@@ -280,6 +300,61 @@ We are grateful to all the contributors who have helped improve this project. Yo
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
+ # Project Admin⚡
+ 
+<table>
+<tr>
+<td align="center"><a href="https://github.com/suryanshsk"><img src="https://avatars.githubusercontent.com/u/88218773?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Suryansh singh</h4>
+ <a href="https://www.linkedin.com/in/avanishsinghengineer/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+   </td>
+
+</tr>
+</table>
+  
+</div>
+
+## Acknowledgements
+
+We are grateful to all the contributors who have helped improve this project. Your contributions are what make this project better!
+
+<p align ="center">
+  <img src="https://api.vaunt.dev/v1/github/entities/suryanshsk/repositories/Python-Voice-Assistant-Suryanshsk/contributors?format=svg&limit=54" width="700" height= "250" />
+</p>
+<p align ="center">
+<a href="https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/graphs/contributors">
+  <img align="center" src="https://contrib.rocks/image?max=100&repo=suryanshsk/Python-Voice-Assistant-Suryanshsk" />
+</a>
+</p>
+<br><br>
+
+### Contributors
+- ![Mehuli Biswas](https://github.com/Sanchita76.png?size=50) [Mehuli Biswas](https://github.com/Sanchita76) - Contributor.
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Stargazers ❤️
+
+<div align='left'>
+
+[![Stargazers repo roster for @suryanshsk/Python-Voice-Assistant-Suryanshsk](https://reporoster.com/stars/dark/suryanshsk/Python-Voice-Assistant-Suryanshsk)](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/stargazers)
+
+
+</div>
+
+## Forkers ❤️
+
+[![Forkers repo roster for @suryanshsk/Python-Voice-Assistant-Suryanshsk](https://reporoster.com/forks/dark/suryanshsk/Python-Voice-Assistant-Suryanshsk)](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/network/members)
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+
 ## Contact
 
 For questions or feedback, reach out to [suryanshskcontact@gmail.com](mailto:suryanshskcontact@gmail.com).
@@ -288,3 +363,10 @@ For questions or feedback, reach out to [suryanshskcontact@gmail.com](mailto:sur
 ## Reporting Issues
 
 If you encounter any bugs or have suggestions for improvements, please open an [issue](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/issues/new) on GitHub. We appreciate detailed and insightful reports that help us address the issue more effectively.
+
+If you encounter any bugs or have suggestions for improvements, please open an [issue](https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/issues/new) on GitHub. We appreciate detailed and insightful reports that help us address the issue more effectively.
+
+
+## Main Project Link
+
+https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/tree/29b12a535b599f7e1c6141058871dccfa38eadfa

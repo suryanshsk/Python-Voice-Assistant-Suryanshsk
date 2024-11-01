@@ -22,6 +22,107 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#setup">Setup</a></li>
                 <li><a href="#footer">Contact</a></li>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    
+</head>
+
+<body>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <script>
+        // Store the mouse coordinates
+const coords = { x: 0, y: 0 };
+
+// Select all circles (you can add more circles to HTML as needed)
+const circles = document.querySelectorAll(".circle");
+
+// Customize the colors for the circles (optional)
+const colors = ["#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d", "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060", "#680060", "#60005f", "#48005f", "#3d005e"];
+
+// Initialize circle positions
+circles.forEach((circle, index) => {
+    circle.x = 0;
+    circle.y = 0;
+    circle.style.backgroundColor = colors[index % colors.length];  // Assign colors
+});
+
+// Update mouse coordinates on move
+window.addEventListener("mousemove", (e) => {
+    coords.x = e.clientX;
+    coords.y = e.clientY;
+});
+
+// Animation loop for circles
+function animateCircles() {
+    let x = coords.x;
+    let y = coords.y;
+
+    circles.forEach((circle, index) => {
+        circle.style.left = `${x - 12}px`;   // Offset for center alignment
+        circle.style.top = `${y - 12}px`;
+
+        circle.style.transform = `scale(${(circles.length - index) / circles.length})`;  // Shrink effect
+
+        circle.x = x;
+        circle.y = y;
+
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+    });
+
+    requestAnimationFrame(animateCircles);
+}
+
+// Start animation
+animateCircles();
+
+    </script>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <nav>
+            <div class="logo"><a style="display: flex; justify-content: left" href="/index.html"><img
+                        src="image/voice-assistant-ai-high-resolution-logo-transparent.png" width="20%"
+                        alt="Voice-Assistant-Ai"></a></div>
+            <ul>
+
+                <li>
+                    <img class="icon1" src="image/features.png" alt="">
+                    <a href="#features">Features</a></li>
+
+                <li>
+                    <img class="icon1" src="image/setup.png" alt="">
+                    <a href="#setup">Setup</a></li>
+
+                <li>
+                    <img class="icon1" src="image/contact_us.jpg" alt="">
+                    <a href="contact.html">Contact</a></li>
+
+                <img id="icon" src="image/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg">
             </ul>
         </nav>
         <div class="header-content">
@@ -29,6 +130,9 @@
             <h1>Python Voice Assistant with Gemini AI</h1>
             <p>A smart, AI-powered voice assistant that simplifies your life!</p>
              
+            <h1 class="main_topic">Python Voice Assistant with Gemini AI</h1>
+            <p class="main_para">A smart, AI-powered voice assistant that simplifies your living!</p>
+
         </div>
     </header>
 
@@ -50,29 +154,55 @@
             </p>
             </div>
             <div class="feature-item">
+
+    <section id="features" class="features-section ">
+        <h2>Features</h2>
+        <div class="features-slider ">
+            <div class="feature-item" style="height: 250px;">
+                <i class="fas fa-microphone"></i>
+                <h3>Voice Recognition</h3>
+                <p>Processes and understands
+                    <span></span>spoken commands.
+                </p>
+            </div>
+            <div class="feature-item" style="height: 250px; align-items: center;">
+                <i class="fas fa-comment-dots"></i>
+                <h3>Text-to-Speech</h3>
+                <p>Converts written text into natural, clear speech,enabling auditory feedback.
+                </p>
+            </div>
+            <div class="feature-item " style="height: 250px;">
                 <i class="fas fa-cloud-sun"></i>
                 <h3>Weather Updates</h3>
                 <p>Provides real-time <br>weather information.</p>
             </div>
             <div class="feature-item">
+
+            <div class="feature-item" style="height: 250px; align-items: center;">
                 <i class="fas fa-newspaper"></i>
                 <h3>News Retrieval</h3>
                 <p>Fetches the latest<br> news headlines.
                 </p>
             </div>
             <div class="feature-item">
+
+            <div class="feature-item" style="height: 250px;">
                 <i class="fas fa-joke"></i>
                 <h3>Jokes</h3>
                 <p>Delivers fun and entertaining <br>jokes.
                 </p>
             </div>
             <div class="feature-item">
+
+            <div class="feature-item" style="height: 250px;">
                 <i class="fas fa-book"></i>
                 <h3>Wikipedia Information</h3>
                 <p>Retrieves relevant information from Wiki,offering quick access to knowledge.
                 </p>
             </div>
             <div class="feature-item">
+
+            <div class="feature-item" style="height: 250px;">
                 <i class="fas fa-music"></i>
                 <h3>Music Management</h3>
                 <p>Plays,pauses,and manages your music library,letting you enjoy your favorite tracks.
@@ -81,13 +211,14 @@
         </div>
     </section>
 
-    
-
     <!-- API Key Setup Section -->
     <section id="setup" class="setup-section">
         <h2>API Key Setup</h2>
         <p>To enable the advanced features of your Python Voice Assistant, you'll need to configure the following API keys. These keys are necessary to connect to external services that provide live data and intelligent responses.</p>
         
+        <p>To enable the advanced features of your Python Voice Assistant, you'll need to configure the following API
+            keys. These keys are necessary to connect to external services that provide live data and intelligent
+            responses.</p>
         <div class="api-setup-instructions">
             <div class="api-item">
                 <h3>🌟 Gemini AI API Key</h3>
@@ -96,11 +227,12 @@
                 </p>
                 <ul>
                     <li>Visit <a href="https://geminiaiplatform.com" target="_blank">Gemini AI Platform</a> and sign up.</li>
+                    <li>Visit <a href="https://geminiaiplatform.com" target="_blank">Gemini AI Platform</a> and sign up.
+                    </li>
                     <li>Generate your API key in the account settings.</li>
                     <li>Replace <code>Your_Own_API_KEY_FOR_GEMINI_AI</code> in the configuration file.</li>
                 </ul>
             </div>
-    
             <div class="api-item">
                 <h3>🌤 Weather API Key</h3>
                 <p>
@@ -108,11 +240,14 @@
                 </p>
                 <ul>
                     <li>Create an account on <a href="https://openweathermap.org" target="_blank">OpenWeatherMap</a> or <a href="https://weatherapi.com" target="_blank">WeatherAPI</a>.</li>
+
+                    <li>Create an account on <a href="https://openweathermap.org" target="_blank">OpenWeatherMap</a> or
+                        <a href="https://weatherapi.com" target="_blank">WeatherAPI</a>.
+                    </li>
                     <li>Generate your API key from the dashboard.</li>
                     <li>Replace <code>YOUR_WEATHER_API_KEY</code> in the weather module of the project.</li>
                 </ul>
             </div>
-    
             <div class="api-item">
                 <h3>📰 News API Key</h3>
                 <p>
@@ -127,7 +262,6 @@
         </div>
 
     </section>
-    
 
     <!-- Contact Section -->
     <footer class="footer">
@@ -166,3 +300,77 @@
         </div>
     </footer>
     
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>Suryanshsk Voice Assistant</h2>
+                    <p>
+                        A sophisticated Python-based virtual assistant utilizing Gemini AI to provide voice recognition,
+                        weather updates, news retrieval, and more.
+                    </p>
+                </div>
+
+                <div class="footer-section links">
+                    <h2>Quick Links </h2>
+                    <ul>
+                        <li><a href="#setup">API Key Setup</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contact">
+                    <h2>Contact Us</h2>
+                    <p>
+                        Have questions or feedback? Reach out to us:
+                    </p>
+                    <ul>
+                        <li><span class="email-text">Email:</span> <a
+                                href="mailto:suryanshskcontact@gmail.com">suryanshskcontact@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Suryanshsk. All rights reserved.</p>
+            </div>
+    </footer>
+    <a href="#" class="to_top" id="scroll_top_btn">
+        <img class="scroll_back" src="image/scroll_top.png">
+    </a>
+
+    <script>
+
+        var icon = document.getElementById("icon");
+        icon.onclick = function () {
+            document.body.classList.toggle("dark-theme");
+            if (document.body.classList.contains("dark-theme")) {
+                icon.src = "image/light_mode.png";
+            }
+            else {
+                icon.src = "image/dark_mode.png";
+            }
+        }
+
+        document.getElementById("scroll_top_btn").addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent default anchor click behavior
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top with smooth animation
+        });
+    </script>
+   <script>
+    window.embeddedChatbotConfig = {
+    chatbotId: "awMKW3zFwW7jzUNsN4Q8O",
+    domain: "www.chatbase.co"
+    }
+    </script>
+    <script
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="awMKW3zFwW7jzUNsN4Q8O"
+    domain="www.chatbase.co"
+    defer>
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
