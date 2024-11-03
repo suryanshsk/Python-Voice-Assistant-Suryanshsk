@@ -1,7 +1,3 @@
-
-# json , translate and pyttsx3 libraries
-#make sure there are no microphone or hardware issues
-
 import speech_recognition as sr
 import pyttsx3
 from translate import Translator
@@ -12,22 +8,22 @@ import os
 # Initialize the TTS engine
 engine = pyttsx3.init()
 
-#Define a file to save the translaton history
+# Define a file to save the translation history
 HISTORY_FILE = 'translation_history.json'
 
-#load previous history if it exists
+# Load previous history if it exists
 def load_translation_history():
     if os.path.exists(HISTORY_FILE):
         with open(HISTORY_FILE, "r") as f:
             return json.load(f)
     return []
 
-#save translation history
+# Save translation history
 def save_translation_history(history):
     with open(HISTORY_FILE, 'w') as f:
         json.dump(history, f)
-        
-#Initialize translation history
+
+# Initialize translation history
 translation_history = load_translation_history()
 
 # Function to translate using translate-python
@@ -45,7 +41,7 @@ def translate_text(text, target_language):
 def speak(text):
     engine.say(text)
     engine.runAndWait()
-    
+
 # Function to capture voice commands and convert speech to text
 def voice_to_text():
     recognizer = sr.Recognizer()
@@ -106,7 +102,7 @@ def process_translation_command(command):
             print(f"Error: {e}")
     else:
         speak("Please give a translation command that includes 'Translate'.")
-        
+
 def show_history():
     if translation_history:
         print("Translation History: ")
@@ -114,7 +110,7 @@ def show_history():
             print(f"Source: {entry['source']} | Translations: {entry['translations']} | Detected Language: {entry['source_language']}")
     else:
         print("No translation history available")
-        
+
 # Main function for the voice assistant
 if __name__ == "__main__":
     speak("Hello! I'm your translation assistant. How can I help you?")
