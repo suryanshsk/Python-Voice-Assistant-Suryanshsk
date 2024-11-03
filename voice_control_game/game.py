@@ -30,7 +30,7 @@ object_speed = 5
 
 # Score
 score = 0
-font = pygame.font.Font(None, 36)
+font = pygame.font.Font(None, 34)
 
 # Voice recognition setup
 recognizer = sr.Recognizer()
