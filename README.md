@@ -35,10 +35,19 @@
 </div>
 <br>
 
+## 📋 Participating Programs
+
+| Name                  | Logo                                                      | Purpose                                                                                                      |
+|-----------------------|-----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| GSSoC'2024-Extd       | ![GSSoC Logo](assets/GSSoC-Ext.png)                       | The coding period is from October 1st to October 30th, during which contributors make contributions and earn points on the platform. |
+| Hacktoberfest 2024    | ![Hacktoberfest Logo](assets/hacktoberfest.png)           | Hacktoberfest is a month-long October event welcoming all skill levels to join the open-source community.     |
+
+---
 
 
-<p align="center">
-<img height='80%' src="Banner.png" alt="Suryanshsk Python Voice Assistant" > </p>
+
+<!--<p align="center">
+ <img height='80%' src="Banner.png" alt="Suryanshsk Python Voice Assistant" > </p> -->
 
 
 ## Features
