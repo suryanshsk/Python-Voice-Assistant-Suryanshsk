@@ -212,22 +212,22 @@ We are grateful to all the contributors who have helped improve this project. Yo
 <p align ="center">
   <img src="https://api.vaunt.dev/v1/github/entities/suryanshsk/repositories/Python-Voice-Assistant-Suryanshsk/contributors?format=svg&limit=54" width="700" height= "250" />
 </p>
+
+<br>
+
+## Contributors❤️
+
 <p align ="center">
 <a href="https://github.com/suryanshsk/Python-Voice-Assistant-Suryanshsk/graphs/contributors">
   <img align="center" src="https://contrib.rocks/image?max=100&repo=suryanshsk/Python-Voice-Assistant-Suryanshsk" />
 </a>
 </p>
-<br><br>
-
-### Contributors
-- ![Mehuli Biswas](https://github.com/Sanchita76.png?size=50) [Mehuli Biswas](https://github.com/Sanchita76) - Contributor.
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Stargazers ❤️
 
