@@ -1,3 +1,9 @@
+// change navbar style on scroll
+
+window.addEventListener('scroll', () =>{
+    document.querySelector('nav').classList.toggle('window-scroll', window.scrollY > 0 )
+})
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {

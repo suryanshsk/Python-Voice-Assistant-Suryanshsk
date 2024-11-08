@@ -1,0 +1,218 @@
+/* General Styles */
+:root{
+    --color1: #ffffff;
+    --color2: #dfe8f1;
+    --color3: #3498db;
+    --color4: #a8c7dc;
+    --color5: #333333;
+    --color6: #f9f9f9;
+    --color7: #312e2e;
+    --color8: #666666;
+    --color9: rebeccapurple;
+    --color10: #2980b9;
+    --color11: #555555;
+    --color12: #000000;
+    --color13: #e9eff6;
+    --color14: #004080;
+    --color15: #004080;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #3498db, #a8c7dc);
+    padding-top: 80px;
+}
+
+/* Navbar Gradient */
+nav {
+    background: linear-gradient(to right, #004080, #2980b9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+nav .logo {
+    color: var(--color3);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+}
+
+nav ul li {
+    margin: 0 10px;
+    display: flex;
+}
+
+nav ul li a {
+    border: 2px var(--color6);
+    padding: 8px 12px;
+    color: var(--color12);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    border-radius: 8px;
+    background-color: var(--color15);
+    color: white;
+}
+
+/* Button Gradient */
+button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #3498db, #1974b1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #1974b1, #3498db);
+}
+
+/* Footer Gradient */
+.footer {
+    background: linear-gradient(to right, #004080, #2c3e50);
+    color: var(--color6);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+    min-width: 250px;
+}
+
+.footer-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    color: var(--color7);
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: var(--color7);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: var(--color3);
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-top: 1px solid var(--color8);
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color7);
+}
+
+/* Header and Highlighted Text Gradient */
+.header-content h1, .footer-section h2 {
+    background: linear-gradient(to right, #3498db, #a8c7dc);
+    /* -webkit-background-clip: text; */
+    -webkit-text-fill-color: transparent;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    nav .logo {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-start;
+        width: auto;
+    }
+
+    nav ul li {
+        margin: 0 5px;
+    }
+
+    .header-content img {
+        width: 50%;
+    }
+    
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content img {
+        width: 70%;
+    }
+    
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-content p {
+        font-size: 0.9rem;
+    }
+}
