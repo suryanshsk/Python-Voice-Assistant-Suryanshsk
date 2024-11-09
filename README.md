@@ -128,6 +128,17 @@ Follow these steps to set up the project on your local machine:
      wikipedia
      requests
      pyjokes
+     pyarrow==17.0.0
+     pyasn1==0.6.1
+     pyasn1_modules==0.4.1
+     PyAudio==0.2.14
+     pydeck==0.9.1
+     Pygments==2.18.0
+     pypiwin32==223
+     python-dateutil==2.9.0.post0
+     python-dotenv==1.0.1
+     pytz==2024.2
+     pywin32==307
      ```
 
    - Additionally, ensure you have the latest version of `google-generativeai`:
