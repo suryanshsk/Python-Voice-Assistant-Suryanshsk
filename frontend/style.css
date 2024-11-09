@@ -35,6 +35,8 @@
     --color13: #2c3e50; /* Deep background */
     --color14: #2980b9; /* Blue for emphasized elements */
     --color15: #494d52;
+
+    --transition: all 400ms ease;
 }
 
 
@@ -51,6 +53,13 @@ body {
 }
 
 /* Navbar Styles */
+
+.window-scroll {
+    background: var(--color4);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
 #icon{
     width: 50px;
     height: 30px;
@@ -64,7 +73,7 @@ body {
 }
 
 nav {
-    background-color: var(--color4);
+    /* background-color: var(--color4); */
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -75,12 +84,15 @@ nav {
     width: 100%;
     z-index: 1000;
     box-sizing: border-box;
+    background: transparent;
 }
+
 
 nav .logo {
     color: var(--color3);
     font-size: 1.5rem;
     font-weight: bold;
+    /* background: transparent; */
 }
 
 /* Adjusted nav ul styles for inline buttons */
@@ -113,6 +125,7 @@ nav ul li a:hover {
     color: white;
 }
 
+
 /* Responsive Styles */
 /* Header Section */
 
@@ -122,7 +135,7 @@ nav ul li a:hover {
 .main-header {
     width: 100%;
     height: 100%;
-    background-color: var(--color4);
+    background:transparent;
     color: var(--color6);
     text-align: center;
     padding: 50px 20px;
@@ -280,6 +293,7 @@ nav ul li a:hover {
     font-size: 1rem;
     margin: 0; /* Remove default margin */
     color: var(--color12);
+    padding: 10%;
 }
 
  
@@ -290,6 +304,10 @@ nav ul li a:hover {
     background-color: #f9f9f9;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.setup-section p {
+    margin-bottom: 20px;
 }
 
 .setup-section h2 {
@@ -320,7 +338,7 @@ nav ul li a:hover {
 
 .api-item p {
     font-size: 1rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .api-item ul {
@@ -464,11 +482,13 @@ nav ul li a:hover {
     bottom:10px;
     right: 70px;
     position: fixed;
+    
 }
 
 .scroll_back{
     height: auto;
-    width: 50px;
+    width: 58px;
+    margin-right: 10px;
 }
 
 .circle {
