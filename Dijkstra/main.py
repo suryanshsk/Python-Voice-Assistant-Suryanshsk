@@ -1,3 +1,4 @@
+```python
 import networkx as nx
 import matplotlib.pyplot as plt
 
@@ -7,6 +8,7 @@ def graph_create():
     nodes_num = int(input("Enter the number of nodes: "))
     for i in range(nodes_num):
         nodes_name = input(f"Enter the name of node {i+1} : ")
+        G.add_node(nodes_name)
         
     edges = int(input("Enter the number of edges: "))
     for i in range(edges):
@@ -28,11 +30,12 @@ def dijkstra(graph, start):
         min_node = min(not_visited, key=not_visited.get) # to get node with minimum distance from start node
         visited.add(min_node)
 
-        for neighbor, weight in graph[min_node].items():
+        for neighbor in graph.neighbors(min_node):
+            weight = graph[min_node][neighbor]['weight']
             # If the distance to the neighbor through the current node is less than the previously known shortest distance to the neighbor
-            if distances[min_node] + weight["weight"] < distances[neighbor]:
+            if distances[min_node] + weight < distances[neighbor]:
                 # Update the shortest distance and path to the neighbor
-                distances[neighbor] = distances[min_node] + weight["weight"]
+                distances[neighbor] = distances[min_node] + weight
                 paths[neighbor] = paths[min_node] + [min_node]
                 
     # After visiting all nodes, finalize the shortest paths by adding the destination node to each path
@@ -68,8 +71,4 @@ if __name__ == "__main__":
     user_graph = graph_create()
     start_node = input("Enter the start node: ")
     visualise_dijkstra(user_graph, start_node)
-    
-        
-        
-
-    
+```
