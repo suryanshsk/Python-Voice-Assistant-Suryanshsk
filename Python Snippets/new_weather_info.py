@@ -1,3 +1,4 @@
+```python
 import requests
 import json
 import logging
@@ -98,3 +99,4 @@ def get_favourite_cities():
         return cities
     except FileNotFoundError:
         return "No favourite cities saved"
+```
